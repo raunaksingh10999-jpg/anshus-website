@@ -4,16 +4,28 @@
 
 :root {
   color-scheme: dark;
-  --mouse-x: 50%;
-  --mouse-y: 50%;
 }
 
-/* Background & Body */
+/* Base Body Typography */
 body {
   background-color: #08090C;
   color: #F5F7FA;
-  font-family: 'Space Grotesk', 'Inter', sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Headings System: Space Grotesk */
+h1, h2, h3, h4, h5, h6, .font-display {
+  font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* Small Technical Labels: IBM Plex Mono */
+.font-mono, code, [data-mono] {
+  font-family: 'IBM Plex Mono', monospace;
+  letter-spacing: 0.04em;
 }
 
 /* Custom Scrollbar */
@@ -64,6 +76,11 @@ body {
 html, body {
   max-width: 100%;
   overflow-x: hidden;
+}
+
+/* Standard cursor for text fields */
+input, textarea {
+  cursor: text !important;
 }
 
 /* Smooth motion when requested */

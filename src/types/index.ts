@@ -1,12 +1,12 @@
 export type ProjectCategory = 
   | 'All'
+  | 'Graphic Design'
   | 'AI Video Creation'
   | 'Cinematic Video Editing'
   | 'Motion Graphics'
   | 'Visual Effects'
   | 'Social Media Reels'
-  | 'Brand and Promotional Videos'
-  | 'Graphic Design';
+  | 'Brand and Promotional Videos';
 
 export interface Project {
   id: string;
@@ -22,10 +22,11 @@ export interface Project {
   featured?: boolean;
   duration?: string;
   date?: string;
-  aspectRatio?: '9:16' | '16:9' | '1:1' | '4:5';
+  aspectRatio?: '9:16' | '16:9' | '1:1' | '4:5' | 'banner';
   clientName?: string;
   externalWatchUrl?: string;
   isPlaceholder?: boolean;
+  isGraphic?: boolean;
 }
 
 export interface ServiceItem {

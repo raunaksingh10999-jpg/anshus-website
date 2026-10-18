@@ -1,44 +1,38 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-interface TrailPoint {
+interface Point {
   x: number;
   y: number;
   time: number;
 }
 
-interface ElectricStreak {
+interface Spark {
   x: number;
   y: number;
-  targetX: number;
-  targetY: number;
-  midX: number;
-  midY: number;
-  alpha: number;
-  decay: number;
-  width: number;
+  vx: number;
+  vy: number;
+  life: number;
+  maxLife: number;
+  size: number;
+  color: string;
 }
 
 export const CustomCursor: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
-  const [isTouchDevice, setIsTouchDevice] = useState(false);
+  const badgeRef = useRef<HTMLDivElement | null>(null);
+  const [cursorText, setCursorText] = useState<string | null>(null);
   const [isHovered, setIsHovered] = useState(false);
-  const [cursorLabel, setCursorLabel] = useState<string | null>(null);
+  const [isMouseDown, setIsMouseDown] = useState(false);
+  const [isTouchDevice, setIsTouchDevice] = useState(true);
 
-  // High performance positions without React re-renders
-  const targetPos = useRef({ x: -200, y: -200 });
-  const prevTargetPos = useRef({ x: -200, y: -200 });
-  const smoothPos = useRef({ x: -200, y: -200 });
-  const trailPos = useRef({ x: -200, y: -200 });
-  const history = useRef<TrailPoint[]>([]);
-  const streaks = useRef<ElectricStreak[]>([]);
-  const isHoveredRef = useRef(false);
+  // High-performance positions without React re-render lag
+  const mousePos = useRef({ x: -100, y: -100 });
+  const prevMousePos = useRef({ x: -100, y: -100 });
+  const history = useRef<Point[]>([]);
+  const sparks = useRef<Spark[]>([]);
 
   useEffect(() => {
-    // Check if user has reduced motion preference
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReducedMotion) return;
-
-    // Check if user is on touch device
+    // Disable on touch devices
     const checkTouch = () => {
       return (
         'ontouchstart' in window ||
@@ -53,9 +47,14 @@ export const CustomCursor: React.FC = () => {
     }
     setIsTouchDevice(false);
 
+    // Respect reduced-motion
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      return;
+    }
+
     const canvas = canvasRef.current;
     if (!canvas) return;
-    const ctx = canvas.getContext('2d', { alpha: true });
+    const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
     let width = (canvas.width = window.innerWidth);
@@ -67,202 +66,228 @@ export const CustomCursor: React.FC = () => {
       height = canvas.height = window.innerHeight;
     };
 
-    window.addEventListener('resize', handleResize, { passive: true });
+    window.addEventListener('resize', handleResize);
 
-    const handleMouseMove = (e: MouseEvent) => {
-      prevTargetPos.current = { ...targetPos.current };
-      targetPos.current = { x: e.clientX, y: e.clientY };
+    const onMouseMove = (e: MouseEvent) => {
+      prevMousePos.current = { ...mousePos.current };
+      mousePos.current = { x: e.clientX, y: e.clientY };
 
-      // Initialize on first movement
-      if (smoothPos.current.x < 0) {
-        smoothPos.current = { x: e.clientX, y: e.clientY };
-        trailPos.current = { x: e.clientX, y: e.clientY };
+      // Update badge position directly with zero frame lag
+      if (badgeRef.current) {
+        badgeRef.current.style.transform = `translate3d(${e.clientX + 16}px, ${e.clientY - 28}px, 0)`;
       }
 
-      // Feed trail history
       const now = performance.now();
       history.current.push({ x: e.clientX, y: e.clientY, time: now });
 
-      // Calculate movement speed for restrained dynamic streak trigger
-      const dx = targetPos.current.x - prevTargetPos.current.x;
-      const dy = targetPos.current.y - prevTargetPos.current.y;
-      const speed = Math.hypot(dx, dy);
+      // Calculate speed
+      const dx = mousePos.current.x - prevMousePos.current.x;
+      const dy = mousePos.current.y - prevMousePos.current.y;
+      const speed = Math.sqrt(dx * dx + dy * dy);
 
-      // Spawn restrained electric streak only during fast movement
-      if (speed > 18 && streaks.current.length < 5) {
-        const angle = Math.atan2(dy, dx) + (Math.random() - 0.5) * 0.7;
-        const length = Math.min(speed * 0.9 + 12, 40);
-        const streakX2 = e.clientX - Math.cos(angle) * length;
-        const streakY2 = e.clientY - Math.sin(angle) * length;
-        const midJitter = (Math.random() - 0.5) * 8;
-
-        streaks.current.push({
-          x: e.clientX,
-          y: e.clientY,
-          targetX: streakX2,
-          targetY: streakY2,
-          midX: (e.clientX + streakX2) / 2 + midJitter,
-          midY: (e.clientY + streakY2) / 2 + midJitter,
-          alpha: 0.85,
-          decay: Math.random() * 0.05 + 0.06,
-          width: Math.random() * 1.2 + 0.8,
+      // Spawn electrical sparks when moving or dragging
+      const sparkCount = isMouseDown ? 6 : Math.min(Math.floor(speed * 0.4) + 1, 5);
+      for (let i = 0; i < sparkCount; i++) {
+        const angle = Math.random() * Math.PI * 2;
+        const sparkSpeed = Math.random() * (isMouseDown ? 7 : 4) + 1.2;
+        sparks.current.push({
+          x: e.clientX + (Math.random() - 0.5) * 8,
+          y: e.clientY + (Math.random() - 0.5) * 8,
+          vx: Math.cos(angle) * sparkSpeed + dx * 0.1,
+          vy: Math.sin(angle) * sparkSpeed + dy * 0.1,
+          life: 0,
+          maxLife: Math.random() * 22 + 12,
+          size: Math.random() * 2.2 + 1,
+          // Electric-blue palette: #168BFF, #55B7FF, #FFFFFF
+          color: Math.random() > 0.4 ? '#168BFF' : Math.random() > 0.4 ? '#55B7FF' : '#FFFFFF',
         });
       }
 
-      // Check hover states
+      // Contextual target hover detection
       const target = e.target as HTMLElement | null;
       if (target) {
-        const cursorEl = target.closest('[data-cursor-text]');
-        if (cursorEl) {
-          setCursorLabel(cursorEl.getAttribute('data-cursor-text'));
+        // Keep standard cursor in text inputs and textareas
+        if (target.closest('input') || target.closest('textarea')) {
+          setCursorText(null);
+          setIsHovered(false);
+          return;
+        }
+
+        const cursorElement = target.closest('[data-cursor-text]');
+        if (cursorElement) {
+          setCursorText(cursorElement.getAttribute('data-cursor-text'));
           setIsHovered(true);
-          isHoveredRef.current = true;
         } else if (
           target.closest('button') ||
           target.closest('a') ||
-          target.closest('input') ||
-          target.closest('textarea') ||
           target.closest('[role="button"]') ||
           target.closest('.cinema-glass-hover')
         ) {
-          setCursorLabel(null);
+          setCursorText(null);
           setIsHovered(true);
-          isHoveredRef.current = true;
         } else {
-          setCursorLabel(null);
+          setCursorText(null);
           setIsHovered(false);
-          isHoveredRef.current = false;
         }
       }
-
-      // Update CSS variables for edge glow on nearby elements
-      document.documentElement.style.setProperty('--cursor-x', `${e.clientX}px`);
-      document.documentElement.style.setProperty('--cursor-y', `${e.clientY}px`);
     };
 
-    window.addEventListener('mousemove', handleMouseMove, { passive: true });
+    const onMouseDown = () => setIsMouseDown(true);
+    const onMouseUp = () => setIsMouseDown(false);
 
+    window.addEventListener('mousemove', onMouseMove, { passive: true });
+    window.addEventListener('mousedown', onMouseDown);
+    window.addEventListener('mouseup', onMouseUp);
+
+    // Fractal lightning bolt generator with recursive midpoint displacement
+    const drawLightningBolt = (
+      x1: number,
+      y1: number,
+      x2: number,
+      y2: number,
+      displace: number,
+      depth: number,
+      color: string,
+      lineWidth: number
+    ) => {
+      if (depth === 0) {
+        ctx.beginPath();
+        ctx.moveTo(x1, y1);
+        ctx.lineTo(x2, y2);
+        ctx.strokeStyle = color;
+        ctx.lineWidth = lineWidth;
+        ctx.shadowBlur = 14;
+        ctx.shadowColor = color;
+        ctx.stroke();
+        return;
+      }
+
+      const midX = (x1 + x2) / 2 + (Math.random() - 0.5) * displace;
+      const midY = (y1 + y2) / 2 + (Math.random() - 0.5) * displace;
+
+      drawLightningBolt(x1, y1, midX, midY, displace / 1.8, depth - 1, color, lineWidth);
+      drawLightningBolt(midX, midY, x2, y2, displace / 1.8, depth - 1, color, lineWidth);
+
+      // Branching lightning arcs
+      if (Math.random() < 0.28 && depth >= 2) {
+        const branchX = midX + (Math.random() - 0.5) * displace * 1.6;
+        const branchY = midY + (Math.random() - 0.5) * displace * 1.6;
+        drawLightningBolt(midX, midY, branchX, branchY, displace / 2, depth - 1, '#55B7FF', lineWidth * 0.6);
+      }
+    };
+
+    // 60FPS animation loop
     let animationFrameId: number;
 
     const render = () => {
       ctx.clearRect(0, 0, width, height);
 
-      // Smooth interpolation (lerp) for natural organic cursor fluid motion
-      const lerpSpeed = 0.22;
-      smoothPos.current.x += (targetPos.current.x - smoothPos.current.x) * lerpSpeed;
-      smoothPos.current.y += (targetPos.current.y - smoothPos.current.y) * lerpSpeed;
-
-      // Secondary lagging trailing node for kinetic elasticity
-      const trailLerp = 0.12;
-      trailPos.current.x += (smoothPos.current.x - trailPos.current.x) * trailLerp;
-      trailPos.current.y += (smoothPos.current.y - trailPos.current.y) * trailLerp;
-
-      const sx = smoothPos.current.x;
-      const sy = smoothPos.current.y;
-      const hovered = isHoveredRef.current;
-
       const now = performance.now();
-      // Keep last 160ms for smooth cinematic motion trail
-      history.current = history.current.filter((p) => now - p.time < 160);
-      const points = history.current;
+      // Keep last 130ms of trail
+      history.current = history.current.filter((p) => now - p.time < 130);
 
-      // 1. Soft electric-blue radial ambient light
-      if (sx > 0 && sy > 0) {
-        const glowRadius = hovered ? 150 : 110;
-        const radial = ctx.createRadialGradient(sx, sy, 0, sx, sy, glowRadius);
-        radial.addColorStop(0, hovered ? 'rgba(85, 183, 255, 0.14)' : 'rgba(22, 139, 255, 0.08)');
-        radial.addColorStop(0.4, hovered ? 'rgba(22, 139, 255, 0.06)' : 'rgba(22, 139, 255, 0.03)');
-        radial.addColorStop(1, 'rgba(8, 9, 12, 0)');
+      const pts = history.current;
 
-        ctx.fillStyle = radial;
-        ctx.beginPath();
-        ctx.arc(sx, sy, glowRadius, 0, Math.PI * 2);
-        ctx.fill();
-      }
+      // Draw lightning trail connecting mouse movement
+      if (pts.length > 1) {
+        for (let i = 0; i < pts.length - 1; i++) {
+          const p1 = pts[i];
+          const p2 = pts[i + 1];
+          const ageRatio = (now - p1.time) / 130;
+          const alpha = 1 - ageRatio;
 
-      // 2. Fading energy ribbon connecting recent pointer coordinates
-      if (points.length > 2) {
-        ctx.save();
-        ctx.lineCap = 'round';
-        ctx.lineJoin = 'round';
+          // Electric blue outer bolt
+          drawLightningBolt(
+            p1.x,
+            p1.y,
+            p2.x,
+            p2.y,
+            isMouseDown ? 32 : 18,
+            3,
+            `rgba(22, 139, 255, ${alpha * 0.9})`,
+            isMouseDown ? 3.0 : 1.9
+          );
 
-        // Electric outer glow trail
-        for (let i = 0; i < points.length - 1; i++) {
-          const p1 = points[i];
-          const p2 = points[i + 1];
-          const ageRatio = (now - p1.time) / 160;
-          const alpha = (1 - ageRatio) * 0.45;
-          const strokeWidth = (1 - ageRatio) * (hovered ? 2.5 : 1.8);
-
-          ctx.beginPath();
-          ctx.moveTo(p1.x, p1.y);
-          ctx.lineTo(p2.x, p2.y);
-          ctx.strokeStyle = `rgba(22, 139, 255, ${alpha})`;
-          ctx.lineWidth = strokeWidth + 2;
-          ctx.shadowColor = '#168BFF';
-          ctx.shadowBlur = 8;
-          ctx.stroke();
-
-          // Bright inner electric core
-          ctx.beginPath();
-          ctx.moveTo(p1.x, p1.y);
-          ctx.lineTo(p2.x, p2.y);
-          ctx.strokeStyle = `rgba(85, 183, 255, ${alpha * 1.2})`;
-          ctx.lineWidth = Math.max(strokeWidth * 0.6, 0.7);
-          ctx.shadowBlur = 0;
-          ctx.stroke();
+          // Intense core white flash bolt
+          drawLightningBolt(
+            p1.x,
+            p1.y,
+            p2.x,
+            p2.y,
+            isMouseDown ? 16 : 9,
+            2,
+            `rgba(255, 255, 255, ${alpha * 0.98})`,
+            isMouseDown ? 1.5 : 0.95
+          );
         }
-        ctx.restore();
       }
 
-      // 3. Render occasional fine electric streaks
-      if (streaks.current.length > 0) {
-        ctx.save();
-        ctx.shadowColor = '#55B7FF';
-        ctx.shadowBlur = 6;
+      const mx = mousePos.current.x;
+      const my = mousePos.current.y;
 
-        for (let i = streaks.current.length - 1; i >= 0; i--) {
-          const s = streaks.current[i];
-          s.alpha -= s.decay;
+      // Crackling micro-lightning arcs around the cursor tip
+      const arcRadius = isMouseDown ? 38 : isHovered ? 28 : 16;
+      const arcCount = isMouseDown ? 7 : isHovered ? 5 : 3;
 
-          if (s.alpha <= 0) {
-            streaks.current.splice(i, 1);
-            continue;
-          }
+      for (let k = 0; k < arcCount; k++) {
+        const angle = Math.random() * Math.PI * 2;
+        const dist = Math.random() * arcRadius + 6;
+        const targetX = mx + Math.cos(angle) * dist;
+        const targetY = my + Math.sin(angle) * dist;
 
-          ctx.beginPath();
-          ctx.moveTo(s.x, s.y);
-          ctx.quadraticCurveTo(s.midX, s.midY, s.targetX, s.targetY);
-          ctx.strokeStyle = `rgba(85, 183, 255, ${s.alpha})`;
-          ctx.lineWidth = s.width;
-          ctx.stroke();
+        drawLightningBolt(
+          mx,
+          my,
+          targetX,
+          targetY,
+          isMouseDown ? 16 : 10,
+          2,
+          k % 2 === 0 ? '#168BFF' : '#FFFFFF',
+          isMouseDown ? 2.0 : 1.1
+        );
+      }
+
+      // Draw glowing plasma center core
+      ctx.beginPath();
+      ctx.arc(mx, my, isMouseDown ? 5 : 3, 0, Math.PI * 2);
+      ctx.fillStyle = '#FFFFFF';
+      ctx.shadowBlur = 20;
+      ctx.shadowColor = '#168BFF';
+      ctx.fill();
+
+      // Outer pulsing plasma electric field
+      ctx.beginPath();
+      ctx.arc(mx, my, isMouseDown ? 24 : isHovered ? 18 : 11, 0, Math.PI * 2);
+      ctx.strokeStyle = isMouseDown ? 'rgba(22, 139, 255, 0.85)' : 'rgba(85, 183, 255, 0.6)';
+      ctx.lineWidth = isMouseDown ? 1.8 : 1.2;
+      ctx.shadowBlur = 18;
+      ctx.shadowColor = '#168BFF';
+      ctx.stroke();
+
+      // Update and draw flying electric spark particles
+      for (let i = sparks.current.length - 1; i >= 0; i--) {
+        const s = sparks.current[i];
+        s.x += s.vx;
+        s.y += s.vy;
+        s.vx *= 0.93;
+        s.vy *= 0.93;
+        s.life++;
+
+        if (s.life >= s.maxLife) {
+          sparks.current.splice(i, 1);
+          continue;
         }
-        ctx.restore();
-      }
 
-      // 4. Sleek cinematic cursor reticle
-      if (sx > 0 && sy > 0) {
-        ctx.save();
+        const sparkAlpha = 1 - s.life / s.maxLife;
 
-        // Outer smooth reactive ring
-        const ringRadius = hovered ? 24 : 12;
         ctx.beginPath();
-        ctx.arc(sx, sy, ringRadius, 0, Math.PI * 2);
-        ctx.strokeStyle = hovered ? 'rgba(85, 183, 255, 0.7)' : 'rgba(22, 139, 255, 0.4)';
-        ctx.lineWidth = 1;
-        ctx.shadowColor = '#168BFF';
-        ctx.shadowBlur = hovered ? 10 : 4;
-        ctx.stroke();
-
-        // Sharp central focal dot
-        ctx.beginPath();
-        ctx.arc(targetPos.current.x, targetPos.current.y, hovered ? 3 : 2, 0, Math.PI * 2);
-        ctx.fillStyle = '#FFFFFF';
-        ctx.shadowColor = '#55B7FF';
-        ctx.shadowBlur = 6;
+        ctx.arc(s.x, s.y, s.size * sparkAlpha, 0, Math.PI * 2);
+        ctx.fillStyle = s.color;
+        ctx.shadowBlur = 12;
+        ctx.shadowColor = s.color;
+        ctx.globalAlpha = sparkAlpha;
         ctx.fill();
-
-        ctx.restore();
+        ctx.globalAlpha = 1;
       }
 
       animationFrameId = requestAnimationFrame(render);
@@ -271,11 +296,13 @@ export const CustomCursor: React.FC = () => {
     animationFrameId = requestAnimationFrame(render);
 
     return () => {
-      cancelAnimationFrame(animationFrameId);
       window.removeEventListener('resize', handleResize);
-      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('mousemove', onMouseMove);
+      window.removeEventListener('mousedown', onMouseDown);
+      window.removeEventListener('mouseup', onMouseUp);
+      cancelAnimationFrame(animationFrameId);
     };
-  }, []);
+  }, [isMouseDown, isHovered, isTouchDevice]);
 
   if (isTouchDevice) {
     return null;
@@ -283,24 +310,19 @@ export const CustomCursor: React.FC = () => {
 
   return (
     <>
-      {/* Non-blocking canvas for electric-blue energy trail */}
+      {/* Non-blocking canvas for VFX electric lightning discharge */}
       <canvas
         ref={canvasRef}
-        className="pointer-events-none fixed inset-0 z-30 select-none"
-        aria-hidden="true"
+        className="pointer-events-none fixed inset-0 z-50 overflow-hidden"
       />
 
-      {/* Floating cursor contextual label */}
-      {cursorLabel && (
+      {/* Floating electric context badge ("⚡ PLAY", "⚡ VIEW", "⚡ EXPLORE", etc.) */}
+      {cursorText && (
         <div
-          className="pointer-events-none fixed z-40 px-2.5 py-1 rounded bg-cinema-card/90 border border-electric/40 text-[10px] font-mono tracking-widest text-electric-bright uppercase backdrop-blur-md shadow-lg shadow-black/80 transition-opacity duration-150"
-          style={{
-            left: `${targetPos.current.x + 14}px`,
-            top: `${targetPos.current.y - 24}px`,
-            transform: 'translate3d(0, 0, 0)',
-          }}
+          ref={badgeRef}
+          className="pointer-events-none fixed top-0 left-0 z-50 rounded-full px-3 py-1 bg-[#08090C]/90 border border-[#168BFF] text-[#55B7FF] text-[10px] font-mono font-bold tracking-widest uppercase shadow-[0_0_25px_rgba(22,139,255,0.8)] backdrop-blur-md animate-pulse will-change-transform"
         >
-          {cursorLabel}
+          ⚡ {cursorText}
         </div>
       )}
     </>

@@ -71,10 +71,181 @@ export const featuredShowreel = {
 
 /**
  * ============================================================================
- * 🎬 SELECTED PROJECTS (Real Works & Structured Creative Projects)
+ * 🎨 MASTER PORTFOLIO PROJECTS (Real Works, Graphic Designs & Video Edits)
  * ============================================================================
  */
 export const portfolioProjects: Project[] = [
+  // --- REAL GRAPHIC DESIGN PORTFOLIO WORKS ---
+  {
+    id: "gfx-ev-01",
+    title: "Next-Gen EV Commercial Campaign Banner",
+    category: "Graphic Design",
+    subtitle: "Automotive Electric Vehicle Ad Creative",
+    role: "Graphic & Brand Designer",
+    description: "High-impact automotive commercial campaign banner featuring modern lighting highlights, dynamic angle framing, and bold typography hierarchy.",
+    thumbnail: "/graphics/new-gen-ev-creative.jpg",
+    aspectRatio: "1:1",
+    software: ["Adobe Photoshop", "Adobe Illustrator"],
+    featured: true,
+    isGraphic: true,
+    date: "2024"
+  },
+  {
+    id: "gfx-skin-02",
+    title: "Skin Care Brand Social Media Ad",
+    category: "Graphic Design",
+    subtitle: "Botanical Organic Cosmetic Social Campaign",
+    role: "Visual Designer & Art Director",
+    description: "Elegant product composition with natural lighting, soft shadow falloff, and clean typographic framing tailored for social ad conversion.",
+    thumbnail: "/graphics/skincare-campaign-ad.jpg",
+    aspectRatio: "1:1",
+    software: ["Adobe Photoshop", "Figma"],
+    featured: true,
+    isGraphic: true,
+    date: "2024"
+  },
+  {
+    id: "gfx-ad1-03",
+    title: "Commercial Product Promotional Banner",
+    category: "Graphic Design",
+    subtitle: "Product Marketing & Campaign Creative",
+    role: "Commercial Graphic Designer",
+    description: "Dynamic commercial advertisement with vibrant color grading, high-contrast focal highlights, and structured call-to-action layout.",
+    thumbnail: "/graphics/commercial-ad-01.jpg",
+    aspectRatio: "1:1",
+    software: ["Adobe Photoshop", "Adobe Illustrator"],
+    featured: false,
+    isGraphic: true,
+    date: "2024"
+  },
+  {
+    id: "gfx-ad3-04",
+    title: "Special Offer Product Campaign Ad",
+    category: "Graphic Design",
+    subtitle: "E-Commerce Promotional Graphic",
+    role: "Promotional Creative Designer",
+    description: "High-conversion digital advertisement engineered with attention-grabbing headline typography and dimensional product shadows.",
+    thumbnail: "/graphics/commercial-ad-03.jpg",
+    aspectRatio: "1:1",
+    software: ["Adobe Photoshop", "Canva"],
+    featured: false,
+    isGraphic: true,
+    date: "2024"
+  },
+  {
+    id: "gfx-ad4-05",
+    title: "Brand Identity Social Media Creative",
+    category: "Graphic Design",
+    subtitle: "Digital Marketing Campaign Asset",
+    role: "Visual Designer",
+    description: "Multi-layered promotional artwork with modern editorial aesthetics, layered textures, and bold visual contrast.",
+    thumbnail: "/graphics/commercial-ad-04.jpg",
+    aspectRatio: "1:1",
+    software: ["Adobe Photoshop", "Figma"],
+    featured: false,
+    isGraphic: true,
+    date: "2024"
+  },
+  {
+    id: "gfx-coder-06",
+    title: "Coder Life High-CTR Visual Banner",
+    category: "Graphic Design",
+    subtitle: "Tech Creator YouTube Banner & Creative",
+    role: "Thumbnail & Banner Designer",
+    description: "Tech-themed editorial landscape graphic featuring neon ambient rim lighting, custom vector code elements, and focal contrast.",
+    thumbnail: "/graphics/coder-life-banner.jpg",
+    aspectRatio: "16:9",
+    software: ["Adobe Photoshop", "Adobe Illustrator"],
+    featured: true,
+    isGraphic: true,
+    date: "2024"
+  },
+  {
+    id: "gfx-ps-07",
+    title: "Photoshop Surreal Digital Art Composition",
+    category: "Graphic Design",
+    subtitle: "Digital Key Art & Photo Manipulation",
+    role: "Photoshop Compositor & Visual Artist",
+    description: "Multi-layered digital matte manipulation combining practical elements with atmospheric volumetric lighting and color harmonies.",
+    thumbnail: "/graphics/photoshop-visual-art.jpg",
+    aspectRatio: "9:16",
+    software: ["Adobe Photoshop"],
+    featured: false,
+    isGraphic: true,
+    date: "2024"
+  },
+  {
+    id: "gfx-ccn-08",
+    title: "Creative Key Art & Poster Design",
+    category: "Graphic Design",
+    subtitle: "Vertical Storytelling & Editorial Art",
+    role: "Art Director & Graphic Artist",
+    description: "Vertical key art poster exploring surreal color palettes, subject depth extraction, and cinematic texture grading.",
+    thumbnail: "/graphics/creative-composition-ccn.jpg",
+    aspectRatio: "9:16",
+    software: ["Adobe Photoshop", "Adobe Firefly"],
+    featured: false,
+    isGraphic: true,
+    date: "2024"
+  },
+  {
+    id: "gfx-thu-09",
+    title: "Vertical Visual Storytelling Poster",
+    category: "Graphic Design",
+    subtitle: "Mobile-First Poster & Social Creative",
+    role: "Graphic Designer",
+    description: "Mobile poster artwork formatted with high vertical visual flow, focal subject rim lights, and bold graphic presence.",
+    thumbnail: "/graphics/story-thumbnail-thu.jpg",
+    aspectRatio: "9:16",
+    software: ["Adobe Photoshop", "Lightroom"],
+    featured: false,
+    isGraphic: true,
+    date: "2024"
+  },
+  {
+    id: "gfx-dog-10",
+    title: "Character Visual Art & Pet Brand Design",
+    category: "Graphic Design",
+    subtitle: "Character Key Art & Visual Framing",
+    role: "Graphic Designer & Illustrator",
+    description: "Subject detail enhancement with fur texture cleanup, rim lighting passes, and cinematic portrait background depth.",
+    thumbnail: "/graphics/visual-character-dog.jpg",
+    aspectRatio: "9:16",
+    software: ["Adobe Photoshop", "Adobe Illustrator"],
+    featured: false,
+    isGraphic: true,
+    date: "2024"
+  },
+  {
+    id: "gfx-bottle-11",
+    title: "Kids Water Bottle Product Branding Mockup",
+    category: "Graphic Design",
+    subtitle: "Packaging Design & 3D Product Mockup",
+    role: "Packaging & Brand Designer",
+    description: "Product branding and label artwork rendered on realistic 3D bottle surfaces with studio reflections and materials.",
+    thumbnail: "/graphics/kids-bottle-mockup.jpg",
+    aspectRatio: "1:1",
+    software: ["Adobe Photoshop", "Adobe Illustrator", "Blender"],
+    featured: false,
+    isGraphic: true,
+    date: "2024"
+  },
+  {
+    id: "gfx-web-12",
+    title: "Corporate Web Header & Promotional Banner",
+    category: "Graphic Design",
+    subtitle: "Digital Marketing Header Graphic",
+    role: "UI Graphic Designer",
+    description: "Clean horizontal promotional banner with brand visual consistency, typography alignment, and responsive layout balance.",
+    thumbnail: "/graphics/promotional-web-banner.jpg",
+    aspectRatio: "banner",
+    software: ["Figma", "Adobe Illustrator"],
+    featured: false,
+    isGraphic: true,
+    date: "2024"
+  },
+
+  // --- REAL VIDEO EDITING, VFX & MOTION WORKS ---
   {
     id: "anshu-reel-cinematic-01",
     title: "Cinematic Visual Reel & Narrative",
@@ -280,20 +451,6 @@ export const portfolioProjects: Project[] = [
     software: ["Adobe Premiere Pro", "After Effects"],
     featured: false,
     duration: "0:45",
-    date: "2024",
-    aspectRatio: "16:9",
-    externalWatchUrl: "https://sites.google.com/view/kushwahaanshu"
-  },
-  {
-    id: "anshu-graphic-design-14",
-    title: "Cinematic Posters & Creator Brand Identity",
-    category: "Graphic Design",
-    subtitle: "Thumbnails, Editorial Art & Brand Kits",
-    role: "Graphic & Visual Designer",
-    description: "High-CTR YouTube thumbnail concepts, digital matte key art, kinetic typography layouts, and brand identity systems engineered for visual punch.",
-    thumbnail: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-    software: ["Adobe Photoshop", "Adobe Illustrator", "Figma", "Canva"],
-    featured: false,
     date: "2024",
     aspectRatio: "16:9",
     externalWatchUrl: "https://sites.google.com/view/kushwahaanshu"

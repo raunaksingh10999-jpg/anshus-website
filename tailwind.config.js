@@ -42,9 +42,9 @@ export default {
         }
       },
       fontFamily: {
-        sans: ['Space Grotesk', 'Inter', 'system-ui', '-apple-system', 'sans-serif'],
-        display: ['Space Grotesk', 'Syne', 'sans-serif'],
-        mono: ['JetBrains Mono', 'monospace'],
+        display: ['Space Grotesk', 'sans-serif'],
+        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        mono: ['IBM Plex Mono', 'monospace'],
       },
       animation: {
         'pulse-glow': 'pulseGlow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
