@@ -4,6 +4,8 @@ import { personalInfo, timelineMilestones } from '../data/portfolio';
 
 export const AboutSection: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'bio' | 'journey' | 'ai'>('bio');
+  const [imgSrc, setImgSrc] = useState(personalInfo.avatarUrl);
+  const [imgLoaded, setImgLoaded] = useState(false);
 
   return (
     <section id="about" className="relative py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
@@ -27,12 +29,22 @@ export const AboutSection: React.FC = () => {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
         {/* Left Column: Portrait & Creator Profile Card */}
         <div className="lg:col-span-5 flex flex-col items-center">
-          <div className="relative w-full max-w-md aspect-[4/5] rounded-3xl overflow-hidden border border-white/15 bg-dark-900 shadow-2xl group">
+          <div className="relative w-full max-w-md aspect-[4/5] rounded-3xl overflow-hidden border border-accent-cyan/25 hover:border-accent-cyan/60 bg-dark-900 shadow-[0_0_35px_rgba(0,240,255,0.12)] group transition-all duration-500">
+            {/* Ambient inner glow */}
+            <div className="absolute inset-0 bg-gradient-to-br from-accent-cyan/10 via-transparent to-accent-violet/10 pointer-events-none z-10" />
+
             {/* Portrait Image */}
             <img
-              src={personalInfo.avatarUrl}
+              src={imgSrc}
               alt={personalInfo.name}
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              onLoad={() => setImgLoaded(true)}
+              onError={() => {
+                // Graceful fallback to creative portrait placeholder if local image file is not yet placed
+                setImgSrc("https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80");
+              }}
+              className={`w-full h-full object-cover transition-all duration-700 group-hover:scale-105 ${
+                imgLoaded ? 'opacity-100' : 'opacity-80'
+              }`}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-dark-950 via-dark-950/20 to-transparent opacity-85" />
 

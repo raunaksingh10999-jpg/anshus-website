@@ -25,12 +25,36 @@ export interface Project {
   featured?: boolean;
   duration?: string;
   date?: string;
+  aspectRatio?: '9:16' | '16:9' | '1:1';
   beforeAfter?: {
     beforeImg: string;
     afterImg: string;
     beforeLabel?: string;
     afterLabel?: string;
   };
+}
+
+export interface GraphicItem {
+  id: string;
+  title: string;
+  category: 'YouTube Thumbnails' | 'Posters & Art' | 'Photoshop VFX' | 'Brand Designs' | 'UI/UX';
+  description: string;
+  imageUrl: string;
+  aspectRatio?: '16:9' | '9:16' | '1:1' | '4:5';
+  software: string[];
+  tags: string[];
+}
+
+export interface PricingPackage {
+  id: string;
+  name: string;
+  price: string;
+  billingPeriod?: string;
+  popular?: boolean;
+  description: string;
+  features: string[];
+  ctaText: string;
+  category: string;
 }
 
 export interface SoftwareTool {

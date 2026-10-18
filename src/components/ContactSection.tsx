@@ -8,7 +8,7 @@ export const ContactSection: React.FC = () => {
     name: '',
     email: '',
     projectType: 'VFX & Motion Graphics',
-    budgetRange: '$500 - $1,500',
+    budgetRange: '₹5,000 - ₹15,000',
     description: '',
   });
   const [status, setStatus] = useState<'idle' | 'submitted'>('idle');
@@ -22,10 +22,10 @@ export const ContactSection: React.FC = () => {
   ];
 
   const budgetRanges = [
-    'Under $500',
-    '$500 - $1,500',
-    '$1,500 - $3,000',
-    '$3,000+'
+    'Under ₹5,000',
+    '₹5,000 - ₹15,000',
+    '₹15,000 - ₹30,000',
+    '₹30,000+'
   ];
 
   const copyEmail = () => {

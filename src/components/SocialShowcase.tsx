@@ -147,7 +147,7 @@ export const SocialShowcase: React.FC = () => {
                 <div className="relative aspect-[9/16] w-full overflow-hidden bg-black">
                   {playingVideoId === item.id ? (
                     <iframe
-                      src={`https://www.youtube.com/embed/${item.embedId || 'dQw4w9WgXcQ'}?autoplay=1&rel=0`}
+                      src={`https://www.youtube.com/embed/${item.embedId || 'dQw4w9WgXcQ'}?autoplay=1&rel=0&modestbranding=1&playsinline=1`}
                       title={item.title}
                       className="w-full h-full border-0"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -155,11 +155,16 @@ export const SocialShowcase: React.FC = () => {
                     />
                   ) : (
                     <>
+                      {/* Ambient blur layer to fill any letterbox gracefully */}
+                      <div
+                        className="absolute inset-0 bg-cover bg-center filter blur-xl opacity-30 scale-110 pointer-events-none"
+                        style={{ backgroundImage: `url(${item.thumbnailUrl})` }}
+                      />
                       <img
                         src={item.thumbnailUrl}
                         alt={item.title}
                         loading="lazy"
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        className="relative z-10 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-85 group-hover:opacity-75 transition-opacity" />
 

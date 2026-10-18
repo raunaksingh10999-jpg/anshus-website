@@ -1,4 +1,4 @@
-import { PersonalInfo, SoftwareTool, Project, SocialMediaItem, CreativeExperiment, TimelineMilestone } from '../types';
+import { PersonalInfo, SoftwareTool, Project, SocialMediaItem, CreativeExperiment, TimelineMilestone, GraphicItem, PricingPackage } from '../types';
 
 /**
  * ============================================================================
@@ -34,8 +34,8 @@ export const personalInfo: PersonalInfo = {
   totalViews: "2M+",
   satisfactionRate: "100%",
   
-  // Clean creative portrait
-  avatarUrl: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80",
+  // Clean creative portrait with local primary path
+  avatarUrl: "/profile/anshu-profile.jpg",
   
   instagramUrl: "https://instagram.com",
   youtubeUrl: "https://youtube.com",
@@ -181,6 +181,7 @@ export const portfolioProjects: Project[] = [
     featured: true,
     duration: "0:30",
     date: "2024",
+    aspectRatio: "9:16",
     publicationLink: "https://sites.google.com/view/kushwahaanshu",
     beforeAfter: {
       beforeImg: "https://images.unsplash.com/photo-1477959858617-67f30bc75b82?auto=format&fit=crop&w=1000&q=80",
@@ -202,6 +203,7 @@ export const portfolioProjects: Project[] = [
     featured: true,
     duration: "0:25",
     date: "2024",
+    aspectRatio: "9:16",
     publicationLink: "https://sites.google.com/view/kushwahaanshu"
   },
   {
@@ -217,6 +219,7 @@ export const portfolioProjects: Project[] = [
     featured: true,
     duration: "0:45",
     date: "2024",
+    aspectRatio: "16:9",
     publicationLink: "https://sites.google.com/view/kushwahaanshu"
   },
   {
@@ -232,6 +235,7 @@ export const portfolioProjects: Project[] = [
     featured: false,
     duration: "0:28",
     date: "2024",
+    aspectRatio: "9:16",
     publicationLink: "https://sites.google.com/view/kushwahaanshu"
   },
   {
@@ -247,6 +251,7 @@ export const portfolioProjects: Project[] = [
     featured: false,
     duration: "0:35",
     date: "2024",
+    aspectRatio: "16:9",
     publicationLink: "https://sites.google.com/view/kushwahaanshu"
   },
   {
@@ -262,6 +267,7 @@ export const portfolioProjects: Project[] = [
     featured: false,
     duration: "0:20",
     date: "2024",
+    aspectRatio: "9:16",
     publicationLink: "https://sites.google.com/view/kushwahaanshu"
   },
   {
@@ -277,6 +283,7 @@ export const portfolioProjects: Project[] = [
     featured: false,
     duration: "0:22",
     date: "2024",
+    aspectRatio: "9:16",
     publicationLink: "https://sites.google.com/view/kushwahaanshu"
   }
 ];
@@ -418,3 +425,139 @@ export const timelineMilestones: TimelineMilestone[] = [
     description: "Mastering user interface design, user journey mapping, and visual communication hierarchies in Figma."
   }
 ];
+
+/**
+ * ============================================================================
+ * 🎨 GRAPHICS & CREATIVE DESIGN GALLERY (Photoshop, VFX Compositions, Thumbnails)
+ * ============================================================================
+ */
+export const graphicsWork: GraphicItem[] = [
+  {
+    id: "gfx-thumb-01",
+    title: "High-CTR Cinematic YouTube Thumbnail",
+    category: "YouTube Thumbnails",
+    description: "Designed for high click-through rate with dynamic facial contrast, focal luminance hierarchy, and 3D typography punch.",
+    imageUrl: "/graphics/thumbnail-01.jpg",
+    aspectRatio: "16:9",
+    software: ["Adobe Photoshop", "Adobe Firefly"],
+    tags: ["CTR Optimization", "Color Grading", "Visual Hierarchy"]
+  },
+  {
+    id: "gfx-poster-02",
+    title: "Cinematic Sci-Fi Film Poster & Visual Key Art",
+    category: "Posters & Art",
+    description: "Multi-layered digital matte painting, atmospheric volumetric fog, particle debris compositing, and anamorphic film title typography.",
+    imageUrl: "/graphics/poster-01.jpg",
+    aspectRatio: "4:5",
+    software: ["Adobe Photoshop", "After Effects", "Blender"],
+    tags: ["Key Art", "Matte Painting", "Compositing"]
+  },
+  {
+    id: "gfx-vfx-03",
+    title: "Surreal Cyberpunk Environmental Manipulation",
+    category: "Photoshop VFX",
+    description: "Seamless photo manipulation fusing practical architectural photography with glowing holographic signs, cybernetic textures, and rain reflections.",
+    imageUrl: "/graphics/vfx-manipulation-01.jpg",
+    aspectRatio: "16:9",
+    software: ["Adobe Photoshop", "Lightroom"],
+    tags: ["Photoshop VFX", "Lighting Passes", "Atmosphere"]
+  },
+  {
+    id: "gfx-thumb-04",
+    title: "Viral Retention Gaming & Tech Thumbnail",
+    category: "YouTube Thumbnails",
+    description: "Engineered with bold rim lighting, subject edge cleanup, custom vector glow accents, and mobile-optimized focal clarity.",
+    imageUrl: "/graphics/thumbnail-02.jpg",
+    aspectRatio: "16:9",
+    software: ["Adobe Photoshop", "Adobe Illustrator"],
+    tags: ["YouTube CTR", "Rim Lighting", "Typography"]
+  },
+  {
+    id: "gfx-brand-05",
+    title: "Modern Creator Visual Brand Identity & Social Kit",
+    category: "Brand Designs",
+    description: "Cohesive brand visual system with motion-ready badges, typography rules, social banner mockups, and digital presentation cards.",
+    imageUrl: "/graphics/brand-kit-01.jpg",
+    aspectRatio: "1:1",
+    software: ["Figma", "Adobe Illustrator", "Photoshop"],
+    tags: ["Brand Identity", "Vector Graphics", "Social Kit"]
+  },
+  {
+    id: "gfx-poster-06",
+    title: "Dynamic Motion Graphic Poster & Typography Pass",
+    category: "Posters & Art",
+    description: "Kinetic typography layout with stylized distortion effects, chromatic aberration, and modern editorial grid alignment.",
+    imageUrl: "/graphics/poster-02.jpg",
+    aspectRatio: "4:5",
+    software: ["Adobe Photoshop", "Adobe Illustrator"],
+    tags: ["Editorial Design", "Kinetic Typography", "Visual Art"]
+  }
+];
+
+/**
+ * ============================================================================
+ * 💰 SERVICE PACKAGES & PRICING (Indian Rupees ₹)
+ * ============================================================================
+ */
+export const pricingPackages: PricingPackage[] = [
+  {
+    id: "pkg-reel",
+    name: "Short-Form Retention Edit",
+    price: "₹1,499",
+    billingPeriod: "per reel / short",
+    popular: false,
+    category: "Instagram Reels & YouTube Shorts",
+    description: "Engineered specifically to maximize viewer retention and stop the scroll on Instagram and YouTube algorithms.",
+    features: [
+      "Up to 60-second vertical cut (9:16)",
+      "High-energy hook & frame-accurate cuts",
+      "Dynamic kinetic captions & emoji callouts",
+      "Sound design, impact SFX & trend sync",
+      "Color grading & visual punch",
+      "2 revisions included",
+      "24–48 hours turnaround"
+    ],
+    ctaText: "Book Reel Edit"
+  },
+  {
+    id: "pkg-youtube",
+    name: "YouTube Narrative Master",
+    price: "₹4,999",
+    billingPeriod: "per video (up to 12 mins)",
+    popular: true,
+    category: "Long-Form Video Editing",
+    description: "Comprehensive timeline editing for podcasts, tech reviews, cinematic vlogs, and narrative YouTube content.",
+    features: [
+      "Full pacing & multi-cam narrative edit",
+      "Custom B-roll sequencing & motion zooms",
+      "Kinetic lower thirds & title graphics",
+      "Studio audio cleanup & background score mixing",
+      "Cinematic color grade pass (S-Log/Rec.709)",
+      "High-CTR Thumbnail Design included",
+      "3 revisions included",
+      "48–72 hours turnaround"
+    ],
+    ctaText: "Start YouTube Project"
+  },
+  {
+    id: "pkg-vfx",
+    name: "Cinematic VFX & Motion Pass",
+    price: "₹9,999",
+    billingPeriod: "per project / sequence",
+    popular: false,
+    category: "VFX & Motion Graphics",
+    description: "High-end visual effects compositing, 3D tracking, commercial motion graphics, and advanced post-production.",
+    features: [
+      "Motion tracking & clean plate replacement",
+      "Generative AI video synthesis passes",
+      "Custom 2D/3D kinetic title sequences",
+      "Particle systems, day-for-night, & relighting",
+      "Advanced node-based DaVinci color grading",
+      "Full high-bitrate broadcast & 4K master delivery",
+      "Priority revisions & direct consultation",
+      "3–5 days turnaround"
+    ],
+    ctaText: "Book VFX Project"
+  }
+];
+

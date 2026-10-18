@@ -6,12 +6,15 @@ import { MarqueeTicker } from './components/MarqueeTicker';
 import { PortfolioShowcase } from './components/PortfolioShowcase';
 import { BeforeAfterSlider } from './components/BeforeAfterSlider';
 import { SocialShowcase } from './components/SocialShowcase';
+import { GraphicsGallery } from './components/GraphicsGallery';
 import { SkillsSection } from './components/SkillsSection';
 import { ExperimentalFrames } from './components/ExperimentalFrames';
 import { AboutSection } from './components/AboutSection';
+import { PricingPackages } from './components/PricingPackages';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 import { VideoModal } from './components/VideoModal';
+import { CinematicVFXBackground } from './components/CinematicVFXBackground';
 import { Project } from './types';
 
 export function App() {
@@ -19,6 +22,9 @@ export function App() {
 
   return (
     <div className="relative min-h-screen bg-dark-950 text-neutral-100 font-sans selection:bg-accent-cyan selection:text-black">
+      {/* Global Cinematic Floating VFX Animation Background */}
+      <CinematicVFXBackground />
+
       {/* Film grain subtle overlay */}
       <div className="film-grain fixed inset-0 pointer-events-none z-30" />
 
@@ -29,7 +35,7 @@ export function App() {
       <Navbar />
 
       {/* Main Page Layout */}
-      <main>
+      <main className="relative z-10">
         {/* Full-screen Hero Section */}
         <Hero />
 
@@ -45,6 +51,9 @@ export function App() {
         {/* Instagram Reels & YouTube Shorts Showcase */}
         <SocialShowcase />
 
+        {/* Creative Graphics & Visual Art Gallery (from Google Sites) */}
+        <GraphicsGallery />
+
         {/* Tools Behind The Vision (Software & Skills) */}
         <SkillsSection />
 
@@ -53,6 +62,9 @@ export function App() {
 
         {/* Behind The Frames (About & Journey Timeline) */}
         <AboutSection />
+
+        {/* Transparent Service Packages & Pricing (INR ₹) */}
+        <PricingPackages />
 
         {/* Contact & Client Inquiry Section */}
         <ContactSection />

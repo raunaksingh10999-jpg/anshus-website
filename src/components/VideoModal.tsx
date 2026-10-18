@@ -41,6 +41,8 @@ export const VideoModal: React.FC<VideoModalProps> = ({ project, onClose }) => {
   };
 
   const embedUrl = getYouTubeEmbedUrl(project.videoUrl);
+  const isVertical = project.aspectRatio === '9:16' || project.category === 'Instagram Reels' || project.category === 'YouTube Shorts';
+  const isSquare = project.aspectRatio === '1:1';
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 lg:p-8 bg-black/85 backdrop-blur-xl animate-fadeIn">
@@ -51,14 +53,21 @@ export const VideoModal: React.FC<VideoModalProps> = ({ project, onClose }) => {
         aria-label="Close modal backdrop"
       />
 
-      <div className="relative z-10 w-full max-w-5xl rounded-2xl bg-dark-900 border border-white/10 shadow-2xl overflow-hidden flex flex-col max-h-[92vh]">
+      <div
+        className={`relative z-10 w-full rounded-2xl bg-dark-900 border border-white/10 shadow-2xl overflow-hidden flex flex-col max-h-[92vh] transition-all duration-300 ${
+          isVertical ? 'max-w-md' : isSquare ? 'max-w-xl' : 'max-w-5xl'
+        }`}
+      >
         {/* Top bar with project category, title and close button */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-white/10 bg-dark-950/70">
           <div className="flex items-center gap-3">
             <span className="px-2.5 py-1 rounded-full text-[10px] font-mono uppercase tracking-wider bg-accent-cyan/15 text-accent-cyan border border-accent-cyan/30">
               {project.category}
             </span>
-            <h3 className="font-display font-bold text-base sm:text-lg text-white truncate max-w-md sm:max-w-xl">
+            <span className="px-2 py-0.5 rounded text-[9px] font-mono uppercase bg-white/5 text-neutral-400 border border-white/10">
+              {isVertical ? '9:16 Reel' : isSquare ? '1:1 Square' : '16:9 HD'}
+            </span>
+            <h3 className="font-display font-bold text-base sm:text-lg text-white truncate max-w-[200px] sm:max-w-xs">
               {project.title}
             </h3>
           </div>
@@ -73,7 +82,11 @@ export const VideoModal: React.FC<VideoModalProps> = ({ project, onClose }) => {
         </div>
 
         {/* Modal Media Body */}
-        <div className="relative w-full aspect-video bg-black flex items-center justify-center overflow-hidden">
+        <div
+          className={`relative w-full bg-black flex items-center justify-center overflow-hidden ${
+            isVertical ? 'aspect-[9/16] max-h-[66vh] mx-auto' : isSquare ? 'aspect-square max-h-[66vh] mx-auto' : 'aspect-video'
+          }`}
+        >
           {showBeforeAfter && project.beforeAfter ? (
             /* Interactive Before/After toggle inside modal */
             <div

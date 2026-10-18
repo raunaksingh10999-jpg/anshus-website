@@ -69,51 +69,68 @@ export const PortfolioShowcase: React.FC<PortfolioShowcaseProps> = ({ onSelectPr
         })}
       </div>
 
-      {/* Projects Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-        {filteredProjects.map((project) => (
-          <div
-            key={project.id}
-            data-cursor-text="PLAY"
-            onClick={() => onSelectProject(project)}
-            className="group relative rounded-2xl bg-dark-900/70 border border-white/10 hover:border-accent-cyan/50 overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_15px_35px_-10px_rgba(0,240,255,0.2)] cursor-pointer flex flex-col"
-          >
-            {/* Thumbnail media with zoom & play overlay */}
-            <div className="relative aspect-video w-full overflow-hidden bg-dark-950">
-              <img
-                src={project.thumbnail}
-                alt={project.title}
-                loading="lazy"
-                className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-dark-950 via-dark-950/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity" />
+      {/* Projects Grid with Responsive Masonry Flow */}
+      <div className="columns-1 md:columns-2 lg:columns-3 gap-6 sm:gap-8 space-y-6 sm:space-y-8">
+        {filteredProjects.map((project) => {
+          const isVertical = project.aspectRatio === '9:16' || project.category === 'Instagram Reels' || project.category === 'YouTube Shorts';
+          const isSquare = project.aspectRatio === '1:1';
 
-              {/* Category & Duration Badges */}
-              <div className="absolute top-3 left-3 flex items-center gap-2">
-                <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono uppercase tracking-wider bg-black/75 text-accent-cyan border border-accent-cyan/30 backdrop-blur-md">
-                  {project.category}
-                </span>
-                {project.beforeAfter && (
-                  <span className="px-2 py-0.5 rounded-full text-[10px] font-mono uppercase tracking-wider bg-accent-violet/30 text-white border border-accent-violet/40 backdrop-blur-md flex items-center gap-1">
-                    <Sliders className="w-2.5 h-2.5 text-accent-violet" />
-                    <span>RAW/VFX</span>
+          return (
+            <div
+              key={project.id}
+              data-cursor-text="PLAY"
+              onClick={() => onSelectProject(project)}
+              className="break-inside-avoid group relative rounded-2xl bg-dark-900/70 border border-white/10 hover:border-accent-cyan/50 overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_15px_35px_-10px_rgba(0,240,255,0.2)] cursor-pointer flex flex-col"
+            >
+              {/* Thumbnail media with zoom & play overlay */}
+              <div
+                className={`relative w-full overflow-hidden bg-dark-950 flex items-center justify-center ${
+                  isVertical ? 'aspect-[9/16] max-h-[480px]' : isSquare ? 'aspect-square' : 'aspect-video'
+                }`}
+              >
+                {/* Ambient glow backdrop from thumbnail */}
+                <div
+                  className="absolute inset-0 bg-cover bg-center filter blur-xl opacity-25 scale-110 pointer-events-none"
+                  style={{ backgroundImage: `url(${project.thumbnail})` }}
+                />
+
+                <img
+                  src={project.thumbnail}
+                  alt={project.title}
+                  loading="lazy"
+                  className="relative z-10 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                />
+                <div className="absolute inset-0 z-20 bg-gradient-to-t from-dark-950 via-dark-950/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity" />
+
+                {/* Category & Aspect Ratio Badges */}
+                <div className="absolute top-3 left-3 z-30 flex flex-wrap items-center gap-1.5">
+                  <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono uppercase tracking-wider bg-black/75 text-accent-cyan border border-accent-cyan/30 backdrop-blur-md">
+                    {project.category}
+                  </span>
+                  <span className="px-2 py-0.5 rounded-full text-[9px] font-mono uppercase tracking-wider bg-white/10 text-neutral-300 border border-white/10 backdrop-blur-md">
+                    {isVertical ? '9:16 Reel' : isSquare ? '1:1' : '16:9'}
+                  </span>
+                  {project.beforeAfter && (
+                    <span className="px-2 py-0.5 rounded-full text-[10px] font-mono uppercase tracking-wider bg-accent-violet/30 text-white border border-accent-violet/40 backdrop-blur-md flex items-center gap-1">
+                      <Sliders className="w-2.5 h-2.5 text-accent-violet" />
+                      <span>RAW/VFX</span>
+                    </span>
+                  )}
+                </div>
+
+                {project.duration && (
+                  <span className="absolute top-3 right-3 z-30 px-2 py-0.5 rounded-md text-[10px] font-mono bg-black/80 text-neutral-300 backdrop-blur-md">
+                    {project.duration}
                   </span>
                 )}
-              </div>
 
-              {project.duration && (
-                <span className="absolute top-3 right-3 px-2 py-0.5 rounded-md text-[10px] font-mono bg-black/80 text-neutral-300 backdrop-blur-md">
-                  {project.duration}
-                </span>
-              )}
-
-              {/* Centered Play Button Overlay */}
-              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <div className="w-14 h-14 rounded-full bg-accent-cyan/90 group-hover:bg-white text-black flex items-center justify-center shadow-[0_0_25px_rgba(0,240,255,0.6)] transform scale-90 group-hover:scale-110 transition-all duration-300">
-                  <Play className="w-6 h-6 fill-black ml-0.5" />
+                {/* Centered Play Button Overlay */}
+                <div className="absolute inset-0 z-30 flex items-center justify-center pointer-events-none">
+                  <div className="w-14 h-14 rounded-full bg-accent-cyan/90 group-hover:bg-white text-black flex items-center justify-center shadow-[0_0_25px_rgba(0,240,255,0.6)] transform scale-90 group-hover:scale-110 transition-all duration-300">
+                    <Play className="w-6 h-6 fill-black ml-0.5" />
+                  </div>
                 </div>
               </div>
-            </div>
 
             {/* Project Content Info */}
             <div className="p-6 flex-1 flex flex-col justify-between">
@@ -154,8 +171,9 @@ export const PortfolioShowcase: React.FC<PortfolioShowcaseProps> = ({ onSelectPr
               </div>
             </div>
           </div>
-        ))}
-      </div>
+        );
+      })}
+    </div>
 
       {filteredProjects.length === 0 && (
         <div className="text-center py-20 text-neutral-500 font-mono text-sm">
