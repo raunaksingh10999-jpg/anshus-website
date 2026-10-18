@@ -11,7 +11,7 @@ export const FloatingRobot: React.FC = () => {
   const [isHovered, setIsHovered] = useState(false);
   const [bobOffset, setBobOffset] = useState(0);
   const lastScrollY = useRef(0);
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const animTime = useRef(0);
 
   // Smooth floating sine-wave hover idle physics
