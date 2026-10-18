@@ -41,7 +41,7 @@ export const VideoModal: React.FC<VideoModalProps> = ({ project, onClose }) => {
   };
 
   const embedUrl = getYouTubeEmbedUrl(project.videoUrl);
-  const isVertical = project.aspectRatio === '9:16' || project.category === 'Instagram Reels' || project.category === 'YouTube Shorts';
+  const isVertical = project.aspectRatio === '9:16';
   const isSquare = project.aspectRatio === '1:1';
 
   return (
@@ -84,7 +84,7 @@ export const VideoModal: React.FC<VideoModalProps> = ({ project, onClose }) => {
         {/* Modal Media Body */}
         <div
           className={`relative w-full bg-black flex items-center justify-center overflow-hidden ${
-            isVertical ? 'aspect-[9/16] max-h-[66vh] mx-auto' : isSquare ? 'aspect-square max-h-[66vh] mx-auto' : 'aspect-video'
+            isVertical ? 'aspect-[9/16] max-h-[78vh] mx-auto' : isSquare ? 'aspect-square max-h-[70vh] mx-auto' : 'aspect-video w-full'
           }`}
         >
           {showBeforeAfter && project.beforeAfter ? (

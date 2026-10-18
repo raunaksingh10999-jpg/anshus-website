@@ -171,9 +171,9 @@ export const portfolioProjects: Project[] = [
   {
     id: "anshu-reel-cinematic-01",
     title: "Cinematic Visual Reel & Narrative",
-    category: "Instagram Reels",
+    category: "Cinematic Edits",
     subtitle: "High-Retention Visual Storytelling",
-    description: "Crafted for viral reach using dynamic pacing, seamless sound integration, and mood color grading to captivate mobile viewers from the opening frame.",
+    description: "Crafted for maximum visual impact using dynamic pacing, seamless sound integration, and cinematic mood color grading to captivate viewers from the opening frame.",
     thumbnail: "https://i.ytimg.com/vi/nkhllsnaQGM/hqdefault.jpg",
     videoUrl: "https://www.youtube.com/watch?v=nkhllsnaQGM",
     platform: "youtube",
@@ -181,7 +181,7 @@ export const portfolioProjects: Project[] = [
     featured: true,
     duration: "0:30",
     date: "2024",
-    aspectRatio: "9:16",
+    aspectRatio: "16:9",
     publicationLink: "https://sites.google.com/view/kushwahaanshu",
     beforeAfter: {
       beforeImg: "https://images.unsplash.com/photo-1477959858617-67f30bc75b82?auto=format&fit=crop&w=1000&q=80",
@@ -192,10 +192,10 @@ export const portfolioProjects: Project[] = [
   },
   {
     id: "anshu-short-energy-02",
-    title: "High-Energy Sound-Synced Short",
-    category: "YouTube Shorts",
+    title: "High-Energy Sound-Synced Showcase",
+    category: "Promotional Videos",
     subtitle: "Rhythmic Speed Ramps & Foley",
-    description: "Short-form video synchronized to rhythmic audio beats with kinetic typography, whip transitions, and visual pop designed for maximum engagement.",
+    description: "Dynamic video edit synchronized to rhythmic audio beats with kinetic typography, whip transitions, and visual pop designed for maximum engagement.",
     thumbnail: "https://i.ytimg.com/vi/vpEr74dPJb4/hqdefault.jpg",
     videoUrl: "https://www.youtube.com/watch?v=vpEr74dPJb4",
     platform: "youtube",
@@ -203,7 +203,7 @@ export const portfolioProjects: Project[] = [
     featured: true,
     duration: "0:25",
     date: "2024",
-    aspectRatio: "9:16",
+    aspectRatio: "16:9",
     publicationLink: "https://sites.google.com/view/kushwahaanshu"
   },
   {
@@ -241,9 +241,9 @@ export const portfolioProjects: Project[] = [
   {
     id: "anshu-vfx-edit-05",
     title: "Visual Effects & Creative Pacing",
-    category: "VFX Edits",
+    category: "Instagram Reels",
     subtitle: "Motion Tracking & Visual Enhancement",
-    description: "Incorporating motion tracking, screen element replacements, subtle particle overlays, and AI-assisted visual enhancement for a high-concept edit.",
+    description: "Incorporating motion tracking, screen element replacements, subtle particle overlays, and AI-assisted visual enhancement for a high-concept vertical edit.",
     thumbnail: "https://i.ytimg.com/vi/x7zH5Dnya48/hqdefault.jpg",
     videoUrl: "https://www.youtube.com/watch?v=x7zH5Dnya48",
     platform: "youtube",
@@ -251,13 +251,13 @@ export const portfolioProjects: Project[] = [
     featured: false,
     duration: "0:35",
     date: "2024",
-    aspectRatio: "16:9",
+    aspectRatio: "9:16",
     publicationLink: "https://sites.google.com/view/kushwahaanshu"
   },
   {
     id: "anshu-motion-graphic-06",
     title: "Reels Motion Graphic Sequence",
-    category: "Motion Graphics",
+    category: "Instagram Reels",
     subtitle: "Custom Vector Animation & Kinetic Titles",
     description: "Reels motion graphic piece featuring smooth vector keyframing, custom easing curves, icon animations, and clean visual branding.",
     thumbnail: "https://i.ytimg.com/vi/Urfi2yMevbo/hqdefault.jpg",
@@ -273,7 +273,7 @@ export const portfolioProjects: Project[] = [
   {
     id: "anshu-brand-motion-07",
     title: "Kinetic Motion Graphic & Intro",
-    category: "Motion Graphics",
+    category: "YouTube Shorts",
     subtitle: "Modern Brand Visual Language",
     description: "Modern kinetic motion graphics sequence built with sleek UI design elements, animated typography, and seamless loop transitions.",
     thumbnail: "https://i.ytimg.com/vi/1zGvq1A5AJ4/hqdefault.jpg",
@@ -296,53 +296,42 @@ export const portfolioProjects: Project[] = [
 export const instagramReels: SocialMediaItem[] = [
   {
     id: "ig-anshu-1",
-    title: "Cinematic Visual Storytelling Reel",
-    platform: "instagram",
-    views: "150K+",
-    likes: "12K+",
-    thumbnailUrl: "https://i.ytimg.com/vi/nkhllsnaQGM/hqdefault.jpg",
-    postUrl: "https://www.youtube.com/watch?v=nkhllsnaQGM",
-    embedId: "nkhllsnaQGM",
-    caption: "Dynamic rhythm editing and color grading built to stop the scroll. ⚡"
-  },
-  {
-    id: "ig-anshu-2",
     title: "Motion Graphics Title Animation",
     platform: "instagram",
-    views: "95K+",
-    likes: "8.5K+",
+    views: "160K+",
+    likes: "14K+",
     thumbnailUrl: "https://i.ytimg.com/vi/Urfi2yMevbo/hqdefault.jpg",
     postUrl: "https://www.youtube.com/watch?v=Urfi2yMevbo",
     embedId: "Urfi2yMevbo",
     caption: "Custom After Effects vector animations and smooth kinetic typography. ✨"
   },
   {
-    id: "ig-anshu-3",
-    title: "Sound-Synced Pacing & Hook",
+    id: "ig-anshu-2",
+    title: "Visual Effects & Creative Pacing",
     platform: "instagram",
-    views: "180K+",
+    views: "185K+",
     likes: "16K+",
-    thumbnailUrl: "https://i.ytimg.com/vi/vpEr74dPJb4/hqdefault.jpg",
-    postUrl: "https://www.youtube.com/watch?v=vpEr74dPJb4",
-    embedId: "vpEr74dPJb4",
-    caption: "High-octane sound design paired with frame-accurate cuts. 🔥"
+    thumbnailUrl: "https://i.ytimg.com/vi/x7zH5Dnya48/hqdefault.jpg",
+    postUrl: "https://www.youtube.com/watch?v=x7zH5Dnya48",
+    embedId: "x7zH5Dnya48",
+    caption: "Dynamic rhythm editing, motion tracking, and color punch built to stop the scroll. ⚡"
+  },
+  {
+    id: "ig-anshu-3",
+    title: "Kinetic Brand Motion Graphic",
+    platform: "instagram",
+    views: "140K+",
+    likes: "11K+",
+    thumbnailUrl: "https://i.ytimg.com/vi/1zGvq1A5AJ4/hqdefault.jpg",
+    postUrl: "https://www.youtube.com/watch?v=1zGvq1A5AJ4",
+    embedId: "1zGvq1A5AJ4",
+    caption: "Clean vector animation and kinetic brand graphics tailored for high retention. 🔥"
   }
 ];
 
 export const youtubeShorts: SocialMediaItem[] = [
   {
     id: "yt-anshu-1",
-    title: "High-Energy Sound-Synced Short",
-    platform: "youtube",
-    views: "120K+",
-    likes: "9.8K+",
-    thumbnailUrl: "https://i.ytimg.com/vi/vpEr74dPJb4/hqdefault.jpg",
-    postUrl: "https://www.youtube.com/watch?v=vpEr74dPJb4",
-    embedId: "vpEr74dPJb4",
-    caption: "Rhythmic speed ramps and punchy sound design in Premiere Pro."
-  },
-  {
-    id: "yt-anshu-2",
     title: "Viral Retention Hook & Fast Cut",
     platform: "youtube",
     views: "210K+",
@@ -351,6 +340,17 @@ export const youtubeShorts: SocialMediaItem[] = [
     postUrl: "https://www.youtube.com/watch?v=kDtfX6sylxY",
     embedId: "kDtfX6sylxY",
     caption: "Engineered for 90%+ retention on YouTube Shorts."
+  },
+  {
+    id: "yt-anshu-2",
+    title: "Visual Effects & Creative Pacing",
+    platform: "youtube",
+    views: "175K+",
+    likes: "15K+",
+    thumbnailUrl: "https://i.ytimg.com/vi/x7zH5Dnya48/hqdefault.jpg",
+    postUrl: "https://www.youtube.com/watch?v=x7zH5Dnya48",
+    embedId: "x7zH5Dnya48",
+    caption: "High-octane sound design paired with frame-accurate VFX cuts."
   },
   {
     id: "yt-anshu-3",

@@ -33,20 +33,14 @@ export const Footer: React.FC = () => {
             <a href="#work" className="hover:text-accent-cyan transition-colors">
               Work
             </a>
-            <a href="#socials" className="hover:text-accent-cyan transition-colors">
-              Reels
-            </a>
-            <a href="#graphics" className="hover:text-accent-cyan transition-colors">
-              Graphics
-            </a>
             <a href="#comparison" className="hover:text-accent-cyan transition-colors">
               Breakdown
             </a>
+            <a href="#socials" className="hover:text-accent-cyan transition-colors">
+              Reels
+            </a>
             <a href="#tools" className="hover:text-accent-cyan transition-colors">
               Tools
-            </a>
-            <a href="#pricing" className="hover:text-accent-cyan transition-colors">
-              Pricing
             </a>
             <a href="#about" className="hover:text-accent-cyan transition-colors">
               About

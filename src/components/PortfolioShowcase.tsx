@@ -8,22 +8,24 @@ interface PortfolioShowcaseProps {
 }
 
 export const PortfolioShowcase: React.FC<PortfolioShowcaseProps> = ({ onSelectProject }) => {
-  const [selectedCategory, setSelectedCategory] = useState<ProjectCategory>('All');
+  const [selectedCategory, setSelectedCategory] = useState<string>('All');
 
-  const categories: ProjectCategory[] = [
+  const categories: string[] = [
     'All',
-    'VFX Edits',
-    'Cinematic Edits',
+    'Cinematic (16:9)',
+    'Vertical (9:16)',
     'Instagram Reels',
     'YouTube Shorts',
     'Motion Graphics',
-    'Color Grading',
-    'Transitions',
     'Promotional Videos'
   ];
 
   const filteredProjects = selectedCategory === 'All'
     ? portfolioProjects
+    : selectedCategory === 'Cinematic (16:9)'
+    ? portfolioProjects.filter((p) => p.aspectRatio === '16:9')
+    : selectedCategory === 'Vertical (9:16)'
+    ? portfolioProjects.filter((p) => p.aspectRatio === '9:16')
     : portfolioProjects.filter((p) => p.category === selectedCategory);
 
   return (
@@ -72,7 +74,7 @@ export const PortfolioShowcase: React.FC<PortfolioShowcaseProps> = ({ onSelectPr
       {/* Projects Grid with Responsive Masonry Flow */}
       <div className="columns-1 md:columns-2 lg:columns-3 gap-6 sm:gap-8 space-y-6 sm:space-y-8">
         {filteredProjects.map((project) => {
-          const isVertical = project.aspectRatio === '9:16' || project.category === 'Instagram Reels' || project.category === 'YouTube Shorts';
+          const isVertical = project.aspectRatio === '9:16';
           const isSquare = project.aspectRatio === '1:1';
 
           return (
@@ -108,7 +110,7 @@ export const PortfolioShowcase: React.FC<PortfolioShowcaseProps> = ({ onSelectPr
                     {project.category}
                   </span>
                   <span className="px-2 py-0.5 rounded-full text-[9px] font-mono uppercase tracking-wider bg-white/10 text-neutral-300 border border-white/10 backdrop-blur-md">
-                    {isVertical ? '9:16 Reel' : isSquare ? '1:1' : '16:9'}
+                    {isVertical ? '9:16 Reel' : isSquare ? '1:1' : '16:9 Widescreen'}
                   </span>
                   {project.beforeAfter && (
                     <span className="px-2 py-0.5 rounded-full text-[10px] font-mono uppercase tracking-wider bg-accent-violet/30 text-white border border-accent-violet/40 backdrop-blur-md flex items-center gap-1">
