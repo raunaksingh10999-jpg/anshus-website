@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ArrowUpRight, Film, Radio } from 'lucide-react';
+import { Menu, X, ArrowUpRight } from 'lucide-react';
 import { personalInfo } from '../data/portfolio';
 
 export const Navbar: React.FC = () => {
@@ -11,15 +11,15 @@ export const Navbar: React.FC = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 40);
 
-      const sections = ['hero', 'work', 'comparison', 'socials', 'tools', 'about', 'contact'];
-      const scrollPosition = window.scrollY + 200;
+      const sections = ['hero', 'showreel', 'work', 'services', 'about', 'workflow', 'skills', 'contact'];
+      const scrollPos = window.scrollY + 200;
 
       for (const sectionId of sections) {
         const el = document.getElementById(sectionId);
         if (el) {
           const top = el.offsetTop;
           const height = el.offsetHeight;
-          if (scrollPosition >= top && scrollPosition < top + height) {
+          if (scrollPos >= top && scrollPos < top + height) {
             setActiveSection(sectionId);
             break;
           }
@@ -32,71 +32,75 @@ export const Navbar: React.FC = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Work', href: '#work' },
-    { name: 'Breakdown', href: '#comparison' },
-    { name: 'Reels', href: '#socials' },
-    { name: 'Tools', href: '#tools' },
-    { name: 'About', href: '#about' },
+    { name: 'HOME', href: '#hero', sectionId: 'hero' },
+    { name: 'WORK', href: '#work', sectionId: 'work' },
+    { name: 'SERVICES', href: '#services', sectionId: 'services' },
+    { name: 'ABOUT', href: '#about', sectionId: 'about' },
+    { name: 'CONTACT', href: '#contact', sectionId: 'contact' },
   ];
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
         isScrolled
-          ? 'bg-dark-950/85 backdrop-blur-xl border-b border-white/10 py-3.5 shadow-2xl shadow-black/50'
-          : 'bg-transparent py-5'
+          ? 'bg-cinema-bg/90 backdrop-blur-xl border-b border-cinema-border py-4 shadow-2xl shadow-black/60'
+          : 'bg-transparent py-6'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Creator Brand Logo */}
         <a
           href="#hero"
-          className="group flex items-center gap-2.5 text-neutral-100 focus:outline-none"
+          className="group flex items-center gap-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-electric rounded"
+          aria-label="Anshu Kushwaha - Return to top"
         >
-          <div className="relative flex items-center justify-center w-9 h-9 rounded-lg bg-gradient-to-br from-accent-cyan/20 to-accent-violet/20 border border-accent-cyan/40 group-hover:border-accent-cyan transition-colors">
-            <Film className="w-4 h-4 text-accent-cyan group-hover:rotate-12 transition-transform duration-300" />
-            <div className="absolute inset-0 rounded-lg bg-accent-cyan/10 blur-sm group-hover:bg-accent-cyan/20 transition-colors" />
+          <div className="relative flex items-center justify-center w-8 h-8 rounded bg-cinema-card border border-cinema-border group-hover:border-electric transition-colors duration-300">
+            <span className="font-mono text-xs font-bold text-electric">AK</span>
+            <div className="absolute inset-0 rounded bg-electric/10 blur-sm opacity-0 group-hover:opacity-100 transition-opacity" />
           </div>
           <div className="flex flex-col">
-            <span className="font-display font-bold text-sm tracking-widest text-white group-hover:text-accent-cyan transition-colors">
-              {personalInfo.brandTagline}
+            <span className="font-display font-bold text-sm tracking-widest text-text-primary group-hover:text-electric-bright transition-colors uppercase">
+              {personalInfo.name}
             </span>
-            <span className="text-[10px] tracking-wider text-neutral-400 font-mono -mt-0.5">
-              VFX & MOTION
+            <span className="text-[10px] font-mono tracking-widest text-text-secondary uppercase">
+              VIDEO EDITOR / MOTION DESIGNER
             </span>
           </div>
         </a>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden md:flex items-center gap-1 bg-dark-900/60 p-1.5 rounded-full border border-white/5 backdrop-blur-md">
+        <nav
+          className="hidden md:flex items-center gap-1 px-3 py-1.5 rounded-full bg-cinema-card/70 border border-cinema-border backdrop-blur-md"
+          aria-label="Main navigation"
+        >
           {navLinks.map((link) => {
-            const isActive = activeSection === link.href.replace('#', '');
+            const isActive = activeSection === link.sectionId;
             return (
               <a
                 key={link.name}
                 href={link.href}
-                className={`relative px-4 py-1.5 text-xs font-medium tracking-wider uppercase transition-colors rounded-full ${
+                className={`relative px-4 py-1.5 text-xs font-mono tracking-widest uppercase transition-all duration-200 rounded-full focus:outline-none focus-visible:ring-1 focus-visible:ring-electric ${
                   isActive
-                    ? 'text-white bg-white/10'
-                    : 'text-neutral-400 hover:text-white hover:bg-white/5'
+                    ? 'text-white bg-electric/15 text-electric-bright font-semibold'
+                    : 'text-text-secondary hover:text-text-primary hover:bg-white/5'
                 }`}
               >
                 {link.name}
                 {isActive && (
-                  <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-accent-cyan shadow-[0_0_8px_#00F0FF]" />
+                  <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-electric-bright shadow-[0_0_8px_#55B7FF]" />
                 )}
               </a>
             );
           })}
         </nav>
 
-        {/* Right Action: Availability Status + Contact CTA */}
+        {/* Right Action: Availability Status & Let's Talk CTA */}
         <div className="hidden lg:flex items-center gap-4">
-          {personalInfo.availableForProjects && (
-            <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-[11px] font-mono text-emerald-400">
+          {personalInfo.availableForCommissions && (
+            <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-electric/10 border border-electric/25 text-[11px] font-mono text-electric-bright">
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-electric-bright opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-electric"></span>
               </span>
               <span>AVAILABLE</span>
             </div>
@@ -104,10 +108,10 @@ export const Navbar: React.FC = () => {
 
           <a
             href="#contact"
-            className="group relative inline-flex items-center gap-2 px-5 py-2 rounded-full text-xs font-semibold uppercase tracking-wider text-black bg-gradient-to-r from-accent-cyan to-accent-violet hover:from-white hover:to-accent-cyan transition-all duration-300 shadow-[0_0_20px_rgba(0,240,255,0.25)] hover:shadow-[0_0_25px_rgba(0,240,255,0.5)] transform hover:-translate-y-0.5"
+            className="group relative inline-flex items-center gap-2 px-5 py-2 rounded-full text-xs font-mono font-semibold uppercase tracking-wider text-white bg-cinema-card border border-cinema-border hover:border-electric hover:shadow-electric-button transition-all duration-300 transform hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-electric"
           >
-            <span>Let's Talk</span>
-            <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            <span>LET'S CREATE</span>
+            <ArrowUpRight className="w-3.5 h-3.5 text-electric-bright group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </a>
         </div>
 
@@ -115,13 +119,13 @@ export const Navbar: React.FC = () => {
         <div className="flex md:hidden items-center gap-3">
           <a
             href="#contact"
-            className="px-3 py-1.5 text-xs font-semibold text-black bg-accent-cyan rounded-full uppercase tracking-wider"
+            className="px-3 py-1.5 text-xs font-mono font-semibold text-white bg-electric rounded-full uppercase tracking-wider"
           >
-            Let's Talk
+            CONTACT
           </a>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 rounded-lg bg-dark-900 border border-white/10 text-neutral-300 hover:text-white focus:outline-none"
+            className="p-2 rounded bg-cinema-card border border-cinema-border text-text-secondary hover:text-white focus:outline-none focus:ring-1 focus:ring-electric"
             aria-label="Toggle navigation menu"
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -131,24 +135,24 @@ export const Navbar: React.FC = () => {
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-dark-950/95 border-b border-white/10 backdrop-blur-2xl px-6 py-6 space-y-4">
+        <div className="md:hidden bg-cinema-bg/95 border-b border-cinema-border backdrop-blur-2xl px-6 py-6 space-y-4 animate-fadeIn">
           <div className="flex flex-col space-y-2">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="py-2.5 text-sm font-medium tracking-wider uppercase text-neutral-300 hover:text-accent-cyan border-b border-white/5 flex items-center justify-between"
+                className="py-2.5 text-sm font-mono tracking-widest uppercase text-text-secondary hover:text-electric-bright border-b border-cinema-border/50 flex items-center justify-between"
               >
                 <span>{link.name}</span>
-                <ArrowUpRight className="w-4 h-4 text-neutral-500" />
+                <ArrowUpRight className="w-4 h-4 text-neutral-600" />
               </a>
             ))}
           </div>
 
-          {personalInfo.availableForProjects && (
-            <div className="flex items-center gap-2 pt-2 text-xs font-mono text-emerald-400">
-              <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+          {personalInfo.availableForCommissions && (
+            <div className="flex items-center gap-2 pt-2 text-xs font-mono text-electric-bright">
+              <span className="h-2 w-2 rounded-full bg-electric animate-pulse" />
               <span>{personalInfo.availabilityText}</span>
             </div>
           )}

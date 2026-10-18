@@ -8,55 +8,62 @@ export default {
   theme: {
     extend: {
       colors: {
+        cinema: {
+          bg: '#08090C',
+          secondary: '#101319',
+          card: '#151922',
+          border: '#1F2430',
+          cardHover: '#1A1F2C',
+        },
+        text: {
+          primary: '#F5F7FA',
+          secondary: '#A2AAB8',
+          muted: '#687385',
+        },
+        electric: {
+          DEFAULT: '#168BFF',
+          bright: '#55B7FF',
+          dim: '#0D569F',
+          glow: 'rgba(22, 139, 255, 0.35)',
+          surface: 'rgba(22, 139, 255, 0.08)',
+        },
         dark: {
-          950: '#040406',
-          900: '#08090D',
-          850: '#0E0F16',
-          800: '#141620',
-          750: '#1B1E2B',
-          700: '#232738',
+          950: '#08090C',
+          900: '#101319',
+          850: '#151922',
+          800: '#1A1F2C',
+          750: '#23293A',
+          700: '#2D354A',
         },
         accent: {
-          cyan: '#00F0FF',
-          violet: '#8B5CF6',
-          purple: '#A855F7',
-          amber: '#FFB800',
-          emerald: '#10B981',
+          cyan: '#168BFF',
+          bright: '#55B7FF',
+          violet: '#55B7FF',
         }
       },
       fontFamily: {
         sans: ['Space Grotesk', 'Inter', 'system-ui', '-apple-system', 'sans-serif'],
-        display: ['Syne', 'Space Grotesk', 'sans-serif'],
+        display: ['Space Grotesk', 'Syne', 'sans-serif'],
         mono: ['JetBrains Mono', 'monospace'],
       },
       animation: {
-        'pulse-glow': 'pulseGlow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-        'marquee': 'marquee 35s linear infinite',
-        'marquee-reverse': 'marqueeReverse 35s linear infinite',
-        'float': 'float 6s ease-in-out infinite',
+        'pulse-glow': 'pulseGlow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'subtle-float': 'subtleFloat 6s ease-in-out infinite',
       },
       keyframes: {
         pulseGlow: {
-          '0%, 100%': { opacity: '0.4', transform: 'scale(1)' },
-          '50%': { opacity: '0.8', transform: 'scale(1.05)' },
+          '0%, 100%': { opacity: '0.3', transform: 'scale(1)' },
+          '50%': { opacity: '0.6', transform: 'scale(1.03)' },
         },
-        marquee: {
-          '0%': { transform: 'translateX(0%)' },
-          '100%': { transform: 'translateX(-50%)' },
-        },
-        marqueeReverse: {
-          '0%': { transform: 'translateX(-50%)' },
-          '100%': { transform: 'translateX(0%)' },
-        },
-        float: {
+        subtleFloat: {
           '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-10px)' },
+          '50%': { transform: 'translateY(-6px)' },
         }
       },
       boxShadow: {
-        'glow-cyan': '0 0 25px -5px rgba(0, 240, 255, 0.3)',
-        'glow-violet': '0 0 25px -5px rgba(139, 92, 246, 0.3)',
-        'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.37)',
+        'electric-glow': '0 0 30px -5px rgba(22, 139, 255, 0.35)',
+        'electric-card': '0 10px 30px -10px rgba(0, 0, 0, 0.7), 0 0 1px 1px rgba(22, 139, 255, 0.15)',
+        'electric-button': '0 0 25px rgba(22, 139, 255, 0.45)',
       }
     },
   },
