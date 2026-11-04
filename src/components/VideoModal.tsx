@@ -31,12 +31,12 @@ export const VideoModal: React.FC<VideoModalProps> = ({ project, onClose }) => {
 
   if (!project) return null;
 
-  // Extract YouTube ID if valid
+  // Extract YouTube ID if valid with controls and muted autoplay to prevent audio blast
   const getYouTubeEmbedUrl = (url?: string) => {
     if (!url) return null;
     const ytMatch = url.match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|shorts\/))([\w-]{11})/);
     if (ytMatch && ytMatch[1]) {
-      return `https://www.youtube.com/embed/${ytMatch[1]}?autoplay=1&rel=0&modestbranding=1`;
+      return `https://www.youtube.com/embed/${ytMatch[1]}?autoplay=1&mute=1&controls=1&rel=0&modestbranding=1`;
     }
     return null;
   };

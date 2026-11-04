@@ -33,6 +33,7 @@ export const Navbar: React.FC = () => {
 
   const navLinks = [
     { name: 'HOME', href: '#hero', sectionId: 'hero' },
+    { name: 'SHOWREEL', href: '#showreel', sectionId: 'showreel' },
     { name: 'WORK', href: '#work', sectionId: 'work' },
     { name: 'SERVICES', href: '#services', sectionId: 'services' },
     { name: 'ABOUT', href: '#about', sectionId: 'about' },
@@ -43,26 +44,26 @@ export const Navbar: React.FC = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
         isScrolled
-          ? 'bg-cinema-bg/90 backdrop-blur-xl border-b border-cinema-border py-4 shadow-2xl shadow-black/60'
-          : 'bg-transparent py-6'
+          ? 'bg-cinema-bg/92 backdrop-blur-xl border-b border-cinema-border py-3.5 shadow-2xl shadow-black/70'
+          : 'bg-transparent py-5 sm:py-6'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-        {/* Creator Brand Logo */}
+        {/* Creator Brand Logo & Monogram */}
         <a
           href="#hero"
           className="group flex items-center gap-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-electric rounded"
           aria-label="Anshu Kushwaha - Return to top"
         >
-          <div className="relative flex items-center justify-center w-8 h-8 rounded bg-cinema-card border border-cinema-border group-hover:border-electric transition-colors duration-300">
+          <div className="relative flex items-center justify-center w-8 h-8 rounded-lg bg-cinema-card border border-cinema-border group-hover:border-electric transition-colors duration-300">
             <span className="font-mono text-xs font-bold text-electric">AK</span>
-            <div className="absolute inset-0 rounded bg-electric/10 blur-sm opacity-0 group-hover:opacity-100 transition-opacity" />
+            <div className="absolute inset-0 rounded-lg bg-electric/15 blur-sm opacity-0 group-hover:opacity-100 transition-opacity" />
           </div>
-          <div className="flex flex-col">
-            <span className="font-display font-bold text-sm tracking-widest text-text-primary group-hover:text-electric-bright transition-colors uppercase">
+          <div className="flex flex-col text-left">
+            <span className="font-display font-bold text-sm tracking-wider text-text-primary group-hover:text-electric-bright transition-colors uppercase">
               {personalInfo.name}
             </span>
-            <span className="text-[10px] font-mono tracking-widest text-text-secondary uppercase">
+            <span className="text-[10px] font-mono tracking-wider text-text-secondary uppercase">
               VIDEO EDITOR / MOTION DESIGNER
             </span>
           </div>
@@ -70,7 +71,7 @@ export const Navbar: React.FC = () => {
 
         {/* Desktop Navigation Links */}
         <nav
-          className="hidden md:flex items-center gap-1 px-3 py-1.5 rounded-full bg-cinema-card/70 border border-cinema-border backdrop-blur-md"
+          className="hidden md:flex items-center gap-1 px-3 py-1.5 rounded-full bg-cinema-card/75 border border-cinema-border backdrop-blur-md"
           aria-label="Main navigation"
         >
           {navLinks.map((link) => {
@@ -79,10 +80,10 @@ export const Navbar: React.FC = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className={`relative px-4 py-1.5 text-xs font-mono tracking-widest uppercase transition-all duration-200 rounded-full focus:outline-none focus-visible:ring-1 focus-visible:ring-electric ${
+                className={`relative px-3.5 py-1 text-xs font-mono tracking-wider uppercase transition-all duration-200 rounded-full focus:outline-none focus-visible:ring-1 focus-visible:ring-electric ${
                   isActive
                     ? 'text-white bg-electric/15 text-electric-bright font-semibold'
-                    : 'text-text-secondary hover:text-text-primary hover:bg-white/5'
+                    : 'text-text-secondary hover:text-text-primary hover:bg-white/5 font-normal'
                 }`}
               >
                 {link.name}
@@ -108,24 +109,24 @@ export const Navbar: React.FC = () => {
 
           <a
             href="#contact"
-            className="group relative inline-flex items-center gap-2 px-5 py-2 rounded-full text-xs font-mono font-semibold uppercase tracking-wider text-white bg-cinema-card border border-cinema-border hover:border-electric hover:shadow-electric-button transition-all duration-300 transform hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-electric"
+            className="group relative inline-flex items-center gap-1.5 px-5 py-2 rounded-full text-xs font-mono font-semibold uppercase tracking-wider text-white bg-cinema-card border border-cinema-border hover:border-electric hover:shadow-electric-button transition-all duration-300 transform hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-electric"
           >
-            <span>LET'S CREATE</span>
+            <span>LET'S TALK</span>
             <ArrowUpRight className="w-3.5 h-3.5 text-electric-bright group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </a>
         </div>
 
-        {/* Mobile Hamburger Button */}
-        <div className="flex md:hidden items-center gap-3">
+        {/* Mobile Hamburger & Quick Contact Button */}
+        <div className="flex md:hidden items-center gap-2.5">
           <a
             href="#contact"
-            className="px-3 py-1.5 text-xs font-mono font-semibold text-white bg-electric rounded-full uppercase tracking-wider"
+            className="px-3.5 py-1.5 text-xs font-mono font-semibold text-white bg-electric rounded-full uppercase tracking-wider"
           >
-            CONTACT
+            TALK
           </a>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 rounded bg-cinema-card border border-cinema-border text-text-secondary hover:text-white focus:outline-none focus:ring-1 focus:ring-electric"
+            className="p-2 rounded-lg bg-cinema-card border border-cinema-border text-text-secondary hover:text-white focus:outline-none focus:ring-1 focus:ring-electric"
             aria-label="Toggle navigation menu"
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -142,10 +143,10 @@ export const Navbar: React.FC = () => {
                 key={link.name}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="py-2.5 text-sm font-mono tracking-widest uppercase text-text-secondary hover:text-electric-bright border-b border-cinema-border/50 flex items-center justify-between"
+                className="py-2.5 text-sm font-mono tracking-wider uppercase text-text-secondary hover:text-electric-bright border-b border-cinema-border/50 flex items-center justify-between"
               >
                 <span>{link.name}</span>
-                <ArrowUpRight className="w-4 h-4 text-neutral-600" />
+                <ArrowUpRight className="w-4 h-4 text-text-muted" />
               </a>
             ))}
           </div>

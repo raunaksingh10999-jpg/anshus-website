@@ -58,20 +58,25 @@ export const ContactSection: React.FC = () => {
       {/* Background ambient lighting */}
       <div className="absolute top-1/2 right-1/4 w-[600px] h-[500px] bg-electric/5 rounded-full blur-[160px] pointer-events-none" />
 
-      {/* Section Header */}
-      <div className="text-center max-w-3xl mx-auto mb-16">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-electric/10 border border-electric/25 text-electric-bright text-xs font-mono tracking-widest uppercase mb-4">
+      {/* Section Header: Strict 3-Level Visual Hierarchy */}
+      <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+        {/* LEVEL 1: Section Eyebrow */}
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-electric/10 border border-electric/25 text-electric-bright text-xs font-mono tracking-widest uppercase mb-4">
           <MessageSquare className="w-3.5 h-3.5 text-electric-bright" />
           <span>CONTACT / INQUIRIES</span>
         </div>
-        <h2 className="font-display font-extrabold text-3xl sm:text-5xl lg:text-6xl text-text-primary uppercase tracking-tight">
-          HAVE A PROJECT <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-text-primary via-white to-electric-bright text-electric-glow">
+
+        {/* LEVEL 2: Section Headline */}
+        <h2 className="font-display font-extrabold text-2xl sm:text-4xl md:text-5xl text-text-primary uppercase tracking-tight leading-[1.15]">
+          <span>HAVE A PROJECT </span>
+          <span className="text-gradient-cyan text-electric-glow">
             IN MIND?
           </span>
         </h2>
-        <p className="mt-4 text-base sm:text-lg text-text-secondary font-sans leading-relaxed">
-          Let's create something worth watching.
+
+        {/* LEVEL 3: Supporting Description */}
+        <p className="mt-4 text-sm sm:text-base text-text-secondary font-sans leading-relaxed max-w-xl mx-auto">
+          Let's collaborate to build cinematic video edits, motion sequences, and high-impact visual stories.
         </p>
       </div>
 

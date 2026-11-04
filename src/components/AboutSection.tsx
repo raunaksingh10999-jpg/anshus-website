@@ -10,18 +10,26 @@ export const AboutSection: React.FC = () => {
       {/* Background glow */}
       <div className="absolute top-1/2 left-10 w-96 h-96 bg-electric/5 rounded-full blur-[150px] pointer-events-none" />
 
-      {/* Section Header */}
-      <div className="text-center max-w-3xl mx-auto mb-16">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-electric/10 border border-electric/25 text-electric-bright text-xs font-mono tracking-widest uppercase mb-4">
+      {/* Section Header: Strict 3-Level Visual Hierarchy */}
+      <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+        {/* LEVEL 1: Section Eyebrow */}
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-electric/10 border border-electric/25 text-electric-bright text-xs font-mono tracking-widest uppercase mb-4">
           <User className="w-3.5 h-3.5 text-electric-bright" />
           <span>ABOUT / BACKGROUND</span>
         </div>
-        <h2 className="font-display font-extrabold text-3xl sm:text-5xl lg:text-6xl text-text-primary uppercase tracking-tight">
-          CREATIVITY MEETS <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-text-primary via-white to-electric-bright text-electric-glow">
+
+        {/* LEVEL 2: Section Headline */}
+        <h2 className="font-display font-extrabold text-2xl sm:text-4xl md:text-5xl text-text-primary uppercase tracking-tight leading-[1.15]">
+          <span>CREATIVITY MEETS </span>
+          <span className="text-gradient-cyan text-electric-glow">
             TECHNOLOGY.
           </span>
         </h2>
+
+        {/* LEVEL 3: Supporting Headline Statement */}
+        <p className="mt-4 text-sm sm:text-base text-text-secondary font-sans leading-relaxed max-w-xl mx-auto">
+          Behind the timelines, storytelling instincts, and technical discipline that drive every visual cut.
+        </p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -99,9 +107,13 @@ export const AboutSection: React.FC = () => {
               <span>THE CREATIVE PROFILE</span>
             </h3>
 
-            {/* Exact Biography requested by user */}
-            <p className="text-base sm:text-lg text-text-primary font-sans leading-relaxed">
-              {personalInfo.bio}
+            {/* Biography with selective tasteful keyword highlights */}
+            <p className="text-base sm:text-lg text-text-secondary font-sans leading-relaxed">
+              I'm <span className="text-white font-semibold">Anshu Kushwaha</span>, a video editor and creative designer focused on{' '}
+              <span className="text-white font-medium">cinematic storytelling</span>,{' '}
+              <span className="text-electric-bright font-medium">motion graphics</span>, and{' '}
+              <span className="text-electric-bright font-medium">AI-powered visual content</span>. Since 2023, I've been developing my creative skills across video editing, graphic design, and AI-assisted production, turning ideas into{' '}
+              <span className="text-gradient-cyan font-semibold text-electric-glow">engaging visual experiences</span>.
             </p>
 
             <div className="mt-6 pt-6 border-t border-cinema-border/70 grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-mono text-text-secondary">

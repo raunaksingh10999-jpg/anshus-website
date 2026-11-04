@@ -26,19 +26,24 @@ export const ServicesSection: React.FC = () => {
       {/* Background ambient lighting */}
       <div className="absolute top-1/2 right-10 w-[500px] h-[500px] bg-electric/5 rounded-full blur-[160px] pointer-events-none" />
 
-      {/* Section Header */}
-      <div className="text-center max-w-3xl mx-auto mb-16">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-electric/10 border border-electric/25 text-electric-bright text-xs font-mono tracking-widest uppercase mb-4">
+      {/* Section Header: Strict 3-Level Visual Hierarchy */}
+      <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+        {/* LEVEL 1: Section Eyebrow */}
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-electric/10 border border-electric/25 text-electric-bright text-xs font-mono tracking-widest uppercase mb-4">
           <Sparkles className="w-3.5 h-3.5 text-electric-bright" />
           <span>SERVICES / CAPABILITIES</span>
         </div>
-        <h2 className="font-display font-extrabold text-3xl sm:text-5xl lg:text-6xl text-text-primary uppercase tracking-tight">
-          BUILT FOR <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-text-primary via-white to-electric-bright text-electric-glow">
+
+        {/* LEVEL 2: Section Headline */}
+        <h2 className="font-display font-extrabold text-2xl sm:text-4xl md:text-5xl text-text-primary uppercase tracking-tight leading-[1.15]">
+          <span>BUILT FOR </span>
+          <span className="text-gradient-cyan text-electric-glow">
             CINEMATIC IMPACT.
           </span>
         </h2>
-        <p className="mt-4 text-sm sm:text-base text-text-secondary font-sans leading-relaxed">
+
+        {/* LEVEL 3: Supporting Description */}
+        <p className="mt-4 text-sm sm:text-base text-text-secondary font-sans leading-relaxed max-w-xl mx-auto">
           Full-cycle creative services from script and visual concepting to final motion finishing and platform-ready master deliveries.
         </p>
       </div>
