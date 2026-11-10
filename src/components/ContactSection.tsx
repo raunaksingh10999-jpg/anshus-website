@@ -54,19 +54,18 @@ export const ContactSection: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="relative py-24 sm:py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-cinema-border/50">
+    <section id="contact" className="relative py-24 sm:py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-white/10">
       {/* Background ambient lighting */}
       <div className="absolute top-1/2 right-1/4 w-[600px] h-[500px] bg-electric/5 rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute bottom-10 left-10 w-[450px] h-[450px] bg-emerald-500/5 rounded-full blur-[160px] pointer-events-none" />
 
-      {/* Section Header: Strict 3-Level Visual Hierarchy */}
+      {/* Section Header */}
       <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-        {/* LEVEL 1: Section Eyebrow */}
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-electric/10 border border-electric/25 text-electric-bright text-xs font-mono tracking-widest uppercase mb-4">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full liquid-glass-pill text-electric-bright text-xs font-mono tracking-widest uppercase mb-4">
           <MessageSquare className="w-3.5 h-3.5 text-electric-bright" />
           <span>CONTACT & INQUIRIES</span>
         </div>
 
-        {/* LEVEL 2: Section Headline */}
         <h2 className="font-display font-extrabold text-2xl sm:text-4xl md:text-5xl text-text-primary uppercase tracking-tight leading-[1.15]">
           <span>LET'S CREATE </span>
           <span className="text-gradient-cyan text-electric-glow">
@@ -74,7 +73,6 @@ export const ContactSection: React.FC = () => {
           </span>
         </h2>
 
-        {/* LEVEL 3: Supporting Description */}
         <p className="mt-4 text-sm sm:text-base text-text-secondary font-sans leading-relaxed max-w-xl mx-auto">
           Have an upcoming commercial, YouTube channel edit, AI concept, or brand campaign? Let's discuss your timeline and vision.
         </p>
@@ -83,7 +81,7 @@ export const ContactSection: React.FC = () => {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 max-w-6xl mx-auto items-start">
         {/* Left Column: Direct Channels */}
         <div className="lg:col-span-5 space-y-5">
-          <div className="p-6 sm:p-7 rounded-2xl bg-cinema-card border border-cinema-border space-y-5">
+          <div className="p-6 sm:p-7 rounded-3xl liquid-glass-card space-y-5">
             <div>
               <h3 className="font-display font-bold text-xl text-white">
                 Direct Channels
@@ -94,9 +92,9 @@ export const ContactSection: React.FC = () => {
             </div>
 
             {/* Email Box */}
-            <div className="p-4 rounded-xl bg-cinema-secondary border border-cinema-border flex items-center justify-between gap-3">
+            <div className="p-4 rounded-2xl liquid-glass flex items-center justify-between gap-3">
               <div className="flex items-center gap-3 min-w-0">
-                <div className="w-10 h-10 rounded-lg bg-electric/10 border border-electric/20 flex items-center justify-center text-electric-bright flex-shrink-0">
+                <div className="w-10 h-10 rounded-xl bg-electric/15 border border-electric/30 flex items-center justify-center text-electric-bright flex-shrink-0">
                   <Mail className="w-5 h-5" />
                 </div>
                 <div className="min-w-0">
@@ -114,7 +112,7 @@ export const ContactSection: React.FC = () => {
 
               <button
                 onClick={copyEmail}
-                className="p-2 rounded-lg bg-cinema-card border border-cinema-border text-text-muted hover:text-electric-bright transition-colors flex-shrink-0"
+                className="p-2.5 rounded-xl liquid-glass-pill text-text-muted hover:text-electric-bright hover:border-electric transition-colors flex-shrink-0 active:scale-95"
                 aria-label="Copy email address"
                 title="Copy email to clipboard"
               >
@@ -123,9 +121,9 @@ export const ContactSection: React.FC = () => {
             </div>
 
             {/* Phone Box */}
-            <div className="p-4 rounded-xl bg-cinema-secondary border border-cinema-border flex items-center justify-between gap-3">
+            <div className="p-4 rounded-2xl liquid-glass flex items-center justify-between gap-3">
               <div className="flex items-center gap-3 min-w-0">
-                <div className="w-10 h-10 rounded-lg bg-electric/10 border border-electric/20 flex items-center justify-center text-electric-bright flex-shrink-0">
+                <div className="w-10 h-10 rounded-xl bg-electric/15 border border-electric/30 flex items-center justify-center text-electric-bright flex-shrink-0">
                   <Phone className="w-5 h-5" />
                 </div>
                 <div className="min-w-0">
@@ -143,7 +141,7 @@ export const ContactSection: React.FC = () => {
 
               <button
                 onClick={copyPhone}
-                className="p-2 rounded-lg bg-cinema-card border border-cinema-border text-text-muted hover:text-electric-bright transition-colors flex-shrink-0"
+                className="p-2.5 rounded-xl liquid-glass-pill text-text-muted hover:text-electric-bright hover:border-electric transition-colors flex-shrink-0 active:scale-95"
                 aria-label="Copy phone number"
                 title="Copy phone to clipboard"
               >
@@ -152,9 +150,9 @@ export const ContactSection: React.FC = () => {
             </div>
 
             {/* Location Box */}
-            <div className="p-4 rounded-xl bg-cinema-secondary border border-cinema-border flex items-center gap-3">
-              <div className="w-10 h-10 rounded-lg bg-cinema-card border border-cinema-border flex items-center justify-center text-text-muted flex-shrink-0">
-                <MapPin className="w-5 h-5" />
+            <div className="p-4 rounded-2xl liquid-glass flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-text-muted flex-shrink-0">
+                <MapPin className="w-5 h-5 text-electric-bright" />
               </div>
               <div>
                 <span className="text-[10px] font-mono text-text-muted uppercase tracking-wider block">
@@ -172,7 +170,7 @@ export const ContactSection: React.FC = () => {
                 href={personalInfo.linkedInUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl font-mono text-xs text-white bg-cinema-secondary border border-cinema-border hover:border-electric/50 transition-colors"
+                className="inline-flex items-center justify-center gap-2 py-3 px-3 rounded-2xl font-mono text-xs text-white liquid-glass-pill hover:border-electric/50 transition-all duration-300"
               >
                 <Linkedin className="w-4 h-4 text-electric-bright" />
                 <span>LinkedIn</span>
@@ -183,7 +181,7 @@ export const ContactSection: React.FC = () => {
                 href={personalInfo.whatsAppUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl font-mono text-xs text-white bg-cinema-secondary border border-cinema-border hover:border-electric/50 transition-colors"
+                className="inline-flex items-center justify-center gap-2 py-3 px-3 rounded-2xl font-mono text-xs text-white liquid-glass-pill hover:border-emerald-400/50 transition-all duration-300"
               >
                 <Phone className="w-4 h-4 text-emerald-400" />
                 <span>WhatsApp</span>
@@ -197,26 +195,27 @@ export const ContactSection: React.FC = () => {
         <div className="lg:col-span-7">
           <form
             onSubmit={handleSubmit}
-            className="p-6 sm:p-8 rounded-2xl bg-cinema-card border border-cinema-border space-y-5"
+            className="p-6 sm:p-8 rounded-3xl liquid-glass-card space-y-5"
           >
-            <div className="flex items-center justify-between pb-4 border-b border-cinema-border/70">
+            <div className="flex items-center justify-between pb-4 border-b border-white/10">
               <h3 className="font-display font-bold text-xl text-white">
                 Send a Message
               </h3>
-              <span className="text-[11px] font-mono text-text-muted">
+              <span className="text-[11px] font-mono text-emerald-400 flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                 Response within 24h
               </span>
             </div>
 
             {errorMessage && (
-              <div className="p-3 rounded-lg bg-red-500/10 border border-red-500/30 text-xs font-mono text-red-400 flex items-center gap-2 animate-fadeIn">
+              <div className="p-3.5 rounded-2xl bg-red-500/10 border border-red-500/30 text-xs font-mono text-red-400 flex items-center gap-2 animate-fadeIn">
                 <AlertCircle className="w-4 h-4 flex-shrink-0" />
                 <span>{errorMessage}</span>
               </div>
             )}
 
             {submitSuccess && (
-              <div className="p-4 rounded-lg bg-electric/10 border border-electric/40 text-xs font-mono text-electric-bright space-y-1 animate-fadeIn">
+              <div className="p-4 rounded-2xl bg-electric/15 border border-electric/40 text-xs font-mono text-electric-bright space-y-1 animate-fadeIn">
                 <div className="flex items-center gap-2 font-semibold">
                   <Check className="w-4 h-4 text-electric-bright" />
                   <span>Your email client is opening with prefilled details.</span>
@@ -237,7 +236,7 @@ export const ContactSection: React.FC = () => {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="e.g. Rahul Sharma"
-                  className="w-full px-4 py-3 rounded-xl bg-cinema-secondary border border-cinema-border text-white text-sm font-sans placeholder-text-muted focus:outline-none focus:border-electric transition-colors"
+                  className="w-full px-4 py-3 rounded-2xl bg-white/[0.04] border border-white/15 text-white text-sm font-sans placeholder-text-muted focus:outline-none focus:border-electric transition-colors"
                 />
               </div>
 
@@ -250,7 +249,7 @@ export const ContactSection: React.FC = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="name@company.com"
-                  className="w-full px-4 py-3 rounded-xl bg-cinema-secondary border border-cinema-border text-white text-sm font-sans placeholder-text-muted focus:outline-none focus:border-electric transition-colors"
+                  className="w-full px-4 py-3 rounded-2xl bg-white/[0.04] border border-white/15 text-white text-sm font-sans placeholder-text-muted focus:outline-none focus:border-electric transition-colors"
                 />
               </div>
             </div>
@@ -262,7 +261,7 @@ export const ContactSection: React.FC = () => {
               <select
                 value={projectType}
                 onChange={(e) => setProjectType(e.target.value)}
-                className="w-full px-4 py-3 rounded-xl bg-cinema-secondary border border-cinema-border text-white text-sm font-mono focus:outline-none focus:border-electric transition-colors"
+                className="w-full px-4 py-3 rounded-2xl bg-[#0C0E14] border border-white/15 text-white text-sm font-mono focus:outline-none focus:border-electric transition-colors"
               >
                 <option value="Video Editing">Video Editing (Commercial / Brand / YouTube)</option>
                 <option value="Graphic Design">Graphic Design & Thumbnails</option>
@@ -282,14 +281,14 @@ export const ContactSection: React.FC = () => {
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
                 placeholder="Tell me about your footage, goals, timeline deadlines, and references..."
-                className="w-full px-4 py-3 rounded-xl bg-cinema-secondary border border-cinema-border text-white text-sm font-sans placeholder-text-muted focus:outline-none focus:border-electric transition-colors resize-none"
+                className="w-full px-4 py-3 rounded-2xl bg-white/[0.04] border border-white/15 text-white text-sm font-sans placeholder-text-muted focus:outline-none focus:border-electric transition-colors resize-none"
               />
             </div>
 
             <button
               type="submit"
               data-cursor-text="SEND"
-              className="w-full group relative inline-flex items-center justify-center gap-2.5 py-3.5 sm:py-4 rounded-xl font-mono text-xs sm:text-sm font-bold uppercase tracking-wider text-white bg-electric hover:bg-electric-bright transition-all duration-300 shadow-electric-button focus:outline-none focus-visible:ring-2 focus-visible:ring-electric"
+              className="w-full group relative inline-flex items-center justify-center gap-2.5 py-3.5 sm:py-4 rounded-2xl font-mono text-xs sm:text-sm font-bold uppercase tracking-wider text-white liquid-glass-btn-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-electric"
             >
               <Send className="w-4 h-4 text-white group-hover:translate-x-0.5 transition-transform" />
               <span>SEND PROJECT INQUIRY</span>

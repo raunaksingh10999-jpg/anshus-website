@@ -44,7 +44,7 @@ export const VideoModal: React.FC<VideoModalProps> = ({ project, onClose }) => {
   const isSquare = project.aspectRatio === '1:1';
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 md:p-6 bg-black/95 backdrop-blur-2xl animate-fadeIn">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5 md:p-8 bg-black/90 backdrop-blur-3xl animate-fadeIn">
       {/* Backdrop overlay dismiss */}
       <div
         className="absolute inset-0"
@@ -52,18 +52,18 @@ export const VideoModal: React.FC<VideoModalProps> = ({ project, onClose }) => {
         aria-label="Close modal backdrop"
       />
 
-      {/* Floating Close Button */}
+      {/* Floating Apple Liquid Glass Close Button */}
       <button
         onClick={onClose}
-        className="absolute top-4 right-4 sm:top-6 sm:right-6 z-50 p-2.5 rounded-full bg-black/80 hover:bg-electric text-white border border-white/20 hover:border-electric transition-all focus:outline-none backdrop-blur-md shadow-2xl"
+        className="absolute top-4 right-4 sm:top-6 sm:right-6 z-50 p-3 rounded-full liquid-glass-pill hover:bg-electric text-white border border-white/25 hover:border-electric-bright hover:scale-110 active:scale-95 transition-all focus:outline-none shadow-2xl"
         aria-label="Close preview"
       >
-        <X className="w-6 h-6" />
+        <X className="w-5 h-5 sm:w-6 sm:h-6" />
       </button>
 
       {/* Modal Media Container - Pure visual media only, no descriptions or metadata */}
       <div
-        className={`relative z-10 w-full rounded-2xl bg-black border border-cinema-border/60 shadow-2xl overflow-hidden flex items-center justify-center transition-all duration-300 ${
+        className={`relative z-10 w-full rounded-3xl bg-black/95 border border-white/20 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.95)] overflow-hidden flex items-center justify-center transition-all duration-300 ${
           isVertical
             ? 'max-w-sm sm:max-w-md aspect-[9/16]'
             : isSquare
@@ -73,11 +73,11 @@ export const VideoModal: React.FC<VideoModalProps> = ({ project, onClose }) => {
       >
         {isGraphic ? (
           /* Clean full-size image preview only */
-          <div className="relative w-full h-full flex items-center justify-center p-2 sm:p-3 select-none">
+          <div className="relative w-full h-full flex items-center justify-center p-3 sm:p-4 select-none">
             <img
               src={project.thumbnail}
               alt=""
-              className="max-h-full max-w-full object-contain rounded-lg"
+              className="max-h-full max-w-full object-contain rounded-2xl"
             />
           </div>
         ) : embedUrl ? (
@@ -90,11 +90,11 @@ export const VideoModal: React.FC<VideoModalProps> = ({ project, onClose }) => {
             allowFullScreen
           />
         ) : (
-          <div className="relative w-full h-full flex items-center justify-center p-2">
+          <div className="relative w-full h-full flex items-center justify-center p-3">
             <img
               src={project.thumbnail}
               alt=""
-              className="max-h-full max-w-full object-contain rounded-lg"
+              className="max-h-full max-w-full object-contain rounded-2xl"
             />
           </div>
         )}

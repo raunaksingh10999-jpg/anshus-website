@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowUp, Mail, Phone, Linkedin, Instagram, Download, ExternalLink } from 'lucide-react';
+import { ArrowUp, Mail, Phone, Linkedin, Instagram, Download } from 'lucide-react';
 import { personalInfo } from '../data/portfolio';
 
 export const Footer: React.FC = () => {
@@ -10,9 +10,9 @@ export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative border-t border-cinema-border bg-cinema-bg pt-16 pb-12 overflow-hidden">
+    <footer className="relative border-t border-white/10 bg-[#050508] pt-16 pb-12 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-8 pb-12 border-b border-cinema-border/60">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-8 pb-12 border-b border-white/10">
           {/* Brand & Subtitle */}
           <div className="flex flex-col items-center lg:items-start text-center lg:text-left space-y-1.5">
             <span className="font-display font-extrabold text-xl text-text-primary tracking-wider uppercase">
@@ -53,7 +53,7 @@ export const Footer: React.FC = () => {
             <a
               href={personalInfo.resumeUrl}
               download="Anshu-Singh-Kushwaha-CV.pdf"
-              className="p-2.5 rounded-full bg-cinema-card border border-cinema-border text-text-secondary hover:text-white hover:border-electric transition-colors"
+              className="p-3 rounded-full liquid-glass-pill text-text-secondary hover:text-white hover:border-electric transition-all"
               title="Download CV"
               aria-label="Download CV"
             >
@@ -64,7 +64,7 @@ export const Footer: React.FC = () => {
               href={personalInfo.linkedInUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2.5 rounded-full bg-cinema-card border border-cinema-border text-text-secondary hover:text-white hover:border-electric transition-colors"
+              className="p-3 rounded-full liquid-glass-pill text-text-secondary hover:text-white hover:border-electric transition-all"
               title="LinkedIn"
               aria-label="LinkedIn"
             >
@@ -75,7 +75,7 @@ export const Footer: React.FC = () => {
               href={personalInfo.instagramUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2.5 rounded-full bg-cinema-card border border-cinema-border text-text-secondary hover:text-white hover:border-electric transition-colors"
+              className="p-3 rounded-full liquid-glass-pill text-text-secondary hover:text-white hover:border-electric transition-all"
               title="Instagram"
               aria-label="Instagram"
             >
@@ -86,7 +86,7 @@ export const Footer: React.FC = () => {
               href={personalInfo.whatsAppUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2.5 rounded-full bg-cinema-card border border-cinema-border text-text-secondary hover:text-white hover:border-electric transition-colors"
+              className="p-3 rounded-full liquid-glass-pill text-text-secondary hover:text-white hover:border-electric transition-all"
               title="WhatsApp"
               aria-label="WhatsApp"
             >
@@ -95,7 +95,7 @@ export const Footer: React.FC = () => {
 
             <a
               href={`mailto:${personalInfo.email}`}
-              className="p-2.5 rounded-full bg-cinema-card border border-cinema-border text-text-secondary hover:text-electric-bright hover:border-electric transition-colors"
+              className="p-3 rounded-full liquid-glass-pill text-text-secondary hover:text-electric-bright hover:border-electric transition-all"
               title="Email"
               aria-label="Email"
             >
@@ -104,7 +104,7 @@ export const Footer: React.FC = () => {
 
             <button
               onClick={scrollToTop}
-              className="p-2.5 rounded-full bg-cinema-secondary border border-cinema-border text-text-secondary hover:text-white hover:border-electric transition-colors ml-1"
+              className="p-3 rounded-full liquid-glass-pill text-text-secondary hover:text-white hover:border-electric transition-all ml-1 active:scale-95"
               aria-label="Scroll back to top"
               title="Back to top"
             >
@@ -117,7 +117,7 @@ export const Footer: React.FC = () => {
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-text-muted">
           <p>© {currentYear} {personalInfo.name}. All rights reserved.</p>
           <p className="text-text-secondary">
-            Cinematic Portfolio • Designed for Video & Visual Storytelling
+            Apple-Inspired Liquid Glass UI • Designed for Video & Visual Storytelling
           </p>
         </div>
       </div>

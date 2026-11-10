@@ -8,7 +8,7 @@ interface Particle {
   baseAlpha: number;
   speedX: number;
   speedY: number;
-  pulseSpeed: number;
+  colorType: 'blue' | 'lime';
 }
 
 export const CinematicVFXBackground: React.FC = () => {
@@ -37,19 +37,19 @@ export const CinematicVFXBackground: React.FC = () => {
 
     window.addEventListener('resize', handleResize, { passive: true });
 
-    // Subtle restrained cinematic ambient motes
-    const particleCount = width < 768 ? 25 : 45;
-    const particles: Particle[] = Array.from({ length: particleCount }, () => {
-      const baseAlpha = Math.random() * 0.18 + 0.05;
+    // Subtle restrained cinematic ambient motes (electric blue and soft lime green)
+    const particleCount = width < 768 ? 24 : 40;
+    const particles: Particle[] = Array.from({ length: particleCount }, (_, idx) => {
+      const baseAlpha = Math.random() * 0.16 + 0.04;
       return {
         x: Math.random() * width,
         y: Math.random() * height,
         size: Math.random() * 1.5 + 0.6,
         alpha: baseAlpha,
         baseAlpha,
-        speedX: (Math.random() - 0.5) * 0.15,
-        speedY: -(Math.random() * 0.2 + 0.05),
-        pulseSpeed: Math.random() * 0.015 + 0.005,
+        speedX: (Math.random() - 0.5) * 0.12,
+        speedY: -(Math.random() * 0.18 + 0.04),
+        colorType: idx % 4 === 0 ? 'lime' : 'blue',
       };
     });
 
@@ -68,9 +68,9 @@ export const CinematicVFXBackground: React.FC = () => {
       }
 
       ctx.clearRect(0, 0, width, height);
-      time += 0.01;
+      time += 0.008;
 
-      // Soft cinematic dust motes
+      // Draw soft cinematic light dust
       for (let i = 0; i < particles.length; i++) {
         const p = particles[i];
 
@@ -84,9 +84,14 @@ export const CinematicVFXBackground: React.FC = () => {
         if (p.y > height) p.y = 0;
 
         // Subtle alpha breathing
-        const alpha = p.baseAlpha + Math.sin(time + i) * 0.05;
+        const alpha = Math.max(0.02, p.baseAlpha + Math.sin(time * 1.5 + i) * 0.04);
 
-        ctx.fillStyle = `rgba(85, 183, 255, ${Math.max(0.02, alpha)})`;
+        if (p.colorType === 'lime') {
+          ctx.fillStyle = `rgba(52, 211, 153, ${alpha * 0.85})`;
+        } else {
+          ctx.fillStyle = `rgba(85, 183, 255, ${alpha})`;
+        }
+
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
         ctx.fill();
@@ -105,10 +110,31 @@ export const CinematicVFXBackground: React.FC = () => {
   }, []);
 
   return (
-    <canvas
-      ref={canvasRef}
-      className="pointer-events-none fixed inset-0 z-0 select-none opacity-60"
-      aria-hidden="true"
-    />
+    <>
+      {/* Deep cinematic charcoal gradient backdrop */}
+      <div
+        className="pointer-events-none fixed inset-0 z-0 bg-[#050508]"
+        aria-hidden="true"
+      >
+        {/* Soft Electric Blue ambient light orb (left-top) */}
+        <div className="absolute -top-32 -left-32 w-[650px] h-[650px] rounded-full bg-electric/10 blur-[180px] animate-pulse-glow" />
+
+        {/* Soft Lime-Green ambient light orb (right-center) */}
+        <div className="absolute top-1/3 -right-28 w-[550px] h-[550px] rounded-full bg-emerald-500/[0.07] blur-[180px] animate-pulse-glow" style={{ animationDelay: '2.5s' }} />
+
+        {/* Soft Electric Blue ambient glow (bottom-left) */}
+        <div className="absolute bottom-10 left-1/4 w-[500px] h-[500px] rounded-full bg-electric-bright/[0.06] blur-[170px]" />
+
+        {/* Fine subtle film grain texture */}
+        <div className="absolute inset-0 film-grain opacity-40 mix-blend-screen pointer-events-none" />
+      </div>
+
+      {/* Floating Canvas Particles */}
+      <canvas
+        ref={canvasRef}
+        className="pointer-events-none fixed inset-0 z-0 select-none opacity-70"
+        aria-hidden="true"
+      />
+    </>
   );
 };

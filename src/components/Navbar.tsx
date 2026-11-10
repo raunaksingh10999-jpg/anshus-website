@@ -9,10 +9,10 @@ export const Navbar: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 40);
+      setIsScrolled(window.scrollY > 30);
 
       const sections = ['hero', 'video-editing', 'reels-shorts', 'reels-motion-graphic', 'graphic-design', 'about', 'contact'];
-      const scrollPos = window.scrollY + 200;
+      const scrollPos = window.scrollY + 220;
 
       for (const sectionId of sections) {
         const el = document.getElementById(sectionId);
@@ -43,9 +43,9 @@ export const Navbar: React.FC = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-400 ${
         isScrolled
-          ? 'bg-cinema-bg/95 backdrop-blur-xl border-b border-cinema-border py-3 shadow-2xl shadow-black/80'
+          ? 'bg-[#050508]/80 backdrop-blur-2xl border-b border-white/10 py-3 shadow-[0_12px_36px_rgba(0,0,0,0.7)]'
           : 'bg-transparent py-5 sm:py-6'
       }`}
     >
@@ -53,26 +53,26 @@ export const Navbar: React.FC = () => {
         {/* Creator Brand Logo & Monogram */}
         <a
           href="#hero"
-          className="group flex items-center gap-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-electric rounded"
+          className="group flex items-center gap-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-electric rounded-xl p-1"
           aria-label="Anshu Singh Kushwaha - Return to top"
         >
-          <div className="relative flex items-center justify-center w-8 h-8 rounded-lg bg-cinema-card border border-cinema-border group-hover:border-electric transition-colors duration-300">
+          <div className="relative flex items-center justify-center w-9 h-9 rounded-xl liquid-glass border border-white/20 group-hover:border-electric transition-colors duration-300">
             <span className="font-mono text-xs font-bold text-electric">AK</span>
-            <div className="absolute inset-0 rounded-lg bg-electric/15 blur-sm opacity-0 group-hover:opacity-100 transition-opacity" />
+            <div className="absolute inset-0 rounded-xl bg-electric/20 blur-sm opacity-0 group-hover:opacity-100 transition-opacity" />
           </div>
           <div className="flex flex-col text-left">
             <span className="font-display font-bold text-sm tracking-wider text-text-primary group-hover:text-electric-bright transition-colors uppercase">
               {personalInfo.name}
             </span>
             <span className="text-[10px] font-mono tracking-wider text-text-secondary uppercase">
-              VIDEO EDITOR / MOTION DESIGNER
+              VIDEO EDITOR / MOTION / AI
             </span>
           </div>
         </a>
 
-        {/* Desktop Navigation Links */}
+        {/* Desktop Liquid Glass Navigation Capsule */}
         <nav
-          className="hidden xl:flex items-center gap-0.5 px-3 py-1.5 rounded-full bg-cinema-card/75 border border-cinema-border backdrop-blur-md"
+          className="hidden xl:flex items-center gap-1 px-3 py-1.5 rounded-full liquid-glass-pill border border-white/15"
           aria-label="Main navigation"
         >
           {navLinks.map((link) => {
@@ -81,15 +81,15 @@ export const Navbar: React.FC = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className={`relative px-3 py-1 text-xs font-mono tracking-wider uppercase transition-all duration-200 rounded-full focus:outline-none focus-visible:ring-1 focus-visible:ring-electric ${
+                className={`relative px-3.5 py-1 text-xs font-mono tracking-wider uppercase transition-all duration-300 rounded-full focus:outline-none focus-visible:ring-1 focus-visible:ring-electric ${
                   isActive
-                    ? 'text-white bg-electric/15 text-electric-bright font-semibold'
-                    : 'text-text-secondary hover:text-text-primary hover:bg-white/5 font-normal'
+                    ? 'text-white bg-electric/25 border border-electric/40 text-electric-bright font-semibold shadow-[0_0_15px_rgba(22,139,255,0.3)]'
+                    : 'text-text-secondary hover:text-white hover:bg-white/[0.06] font-normal'
                 }`}
               >
                 {link.name}
                 {isActive && (
-                  <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-electric-bright shadow-[0_0_8px_#55B7FF]" />
+                  <span className="absolute bottom-0.5 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-electric-bright shadow-[0_0_8px_#55B7FF]" />
                 )}
               </a>
             );
@@ -101,7 +101,7 @@ export const Navbar: React.FC = () => {
           <a
             href={personalInfo.resumeUrl}
             download="Anshu-Singh-Kushwaha-CV.pdf"
-            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-mono text-text-secondary hover:text-white bg-cinema-card border border-cinema-border hover:border-electric transition-colors"
+            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-mono text-text-secondary hover:text-white liquid-glass-pill hover:border-electric transition-all duration-300"
           >
             <Download className="w-3.5 h-3.5 text-electric-bright" />
             <span>CV</span>
@@ -109,7 +109,7 @@ export const Navbar: React.FC = () => {
 
           <a
             href="#contact"
-            className="group relative inline-flex items-center gap-1.5 px-5 py-2 rounded-full text-xs font-mono font-semibold uppercase tracking-wider text-white bg-electric hover:bg-electric-bright shadow-electric-button transition-all duration-300 transform hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-electric"
+            className="group relative inline-flex items-center gap-1.5 px-5 py-2 rounded-full text-xs font-mono font-bold uppercase tracking-wider text-white liquid-glass-btn-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-electric"
           >
             <span>LET'S TALK</span>
             <ArrowUpRight className="w-3.5 h-3.5 text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -120,13 +120,13 @@ export const Navbar: React.FC = () => {
         <div className="flex xl:hidden items-center gap-2">
           <a
             href="#contact"
-            className="px-3 py-1.5 text-xs font-mono font-semibold text-white bg-electric rounded-full uppercase tracking-wider sm:hidden"
+            className="px-3.5 py-1.5 text-xs font-mono font-bold text-white liquid-glass-btn-primary rounded-full uppercase tracking-wider sm:hidden"
           >
             TALK
           </a>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 rounded-lg bg-cinema-card border border-cinema-border text-text-secondary hover:text-white focus:outline-none focus:ring-1 focus:ring-electric"
+            className="p-2.5 rounded-xl liquid-glass-pill text-text-secondary hover:text-white focus:outline-none focus:ring-1 focus:ring-electric active:scale-95 transition-all"
             aria-label="Toggle navigation menu"
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -134,36 +134,43 @@ export const Navbar: React.FC = () => {
         </div>
       </div>
 
-      {/* Mobile Drawer Menu */}
+      {/* Mobile Drawer Menu with Frosted Liquid Glass */}
       {mobileMenuOpen && (
-        <div className="xl:hidden bg-cinema-bg/95 border-b border-cinema-border backdrop-blur-2xl px-6 py-6 space-y-4 animate-fadeIn">
+        <div className="xl:hidden bg-[#08090C]/95 border-b border-white/10 backdrop-blur-3xl px-6 py-6 space-y-4 animate-fadeIn shadow-2xl">
           <div className="flex flex-col space-y-2">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                onClick={() => setMobileMenuOpen(false)}
-                className="py-2.5 text-sm font-mono tracking-wider uppercase text-text-secondary hover:text-electric-bright border-b border-cinema-border/50 flex items-center justify-between"
-              >
-                <span>{link.name}</span>
-                <ArrowUpRight className="w-4 h-4 text-text-muted" />
-              </a>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = activeSection === link.sectionId;
+              return (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`py-2.5 px-3 rounded-xl text-sm font-mono tracking-wider uppercase transition-all duration-200 flex items-center justify-between ${
+                    isActive
+                      ? 'text-white bg-electric/15 border border-electric/30 font-semibold'
+                      : 'text-text-secondary hover:text-white hover:bg-white/5'
+                  }`}
+                >
+                  <span>{link.name}</span>
+                  <ArrowUpRight className="w-4 h-4 text-text-muted" />
+                </a>
+              );
+            })}
           </div>
 
-          <div className="flex items-center justify-between pt-2">
+          <div className="flex items-center justify-between pt-3 border-t border-white/10">
             <a
               href={personalInfo.resumeUrl}
               download="Anshu-Singh-Kushwaha-CV.pdf"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-cinema-card border border-cinema-border text-xs font-mono text-electric-bright"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl liquid-glass-pill text-xs font-mono text-electric-bright"
             >
               <Download className="w-3.5 h-3.5" />
               <span>Download CV</span>
             </a>
 
-            <div className="flex items-center gap-2 text-xs font-mono text-electric-bright">
-              <span className="h-2 w-2 rounded-full bg-electric animate-pulse" />
-              <span>Available</span>
+            <div className="flex items-center gap-2 text-xs font-mono text-emerald-400">
+              <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+              <span>Available for Hire</span>
             </div>
           </div>
         </div>
