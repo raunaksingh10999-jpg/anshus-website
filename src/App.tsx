@@ -11,7 +11,6 @@ import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 import { VideoModal } from './components/VideoModal';
 import { CinematicVFXBackground } from './components/CinematicVFXBackground';
-import { FloatingRobot } from './components/FloatingRobot';
 import { Project } from './types';
 
 export function App() {
@@ -27,9 +26,6 @@ export function App() {
 
       {/* Signature Electric-Blue Cursor Lightning */}
       <CustomCursor />
-
-      {/* Floating Cybernetic Companion AI Sentinel (Collision-Free Bottom-Corner Positioning) */}
-      <FloatingRobot />
 
       {/* 1. Premium Navigation */}
       <Navbar />
