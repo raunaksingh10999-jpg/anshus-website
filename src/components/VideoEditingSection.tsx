@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { Play, Film, ArrowRight, Clapperboard, Sparkles, Tv, Home, Layers, Video, Smartphone } from 'lucide-react';
+import { Play, Film, Clapperboard, Sparkles, Tv, Home, Layers, Video, Smartphone } from 'lucide-react';
 import { videoProjects } from '../data/portfolio';
 import { Project, VideoCategory } from '../types';
 
@@ -79,7 +79,7 @@ export const VideoEditingSection: React.FC<VideoEditingSectionProps> = ({ onSele
         })}
       </div>
 
-      {/* Video Projects Grid: Consistent 16:9 thumbnails, consistent card heights */}
+      {/* Video Projects Grid: Clean Visual 16:9 Thumbnails, Consistent Alignment */}
       {filteredProjects.length === 0 ? (
         <div className="text-center py-20 rounded-2xl bg-cinema-card border border-cinema-border">
           <Film className="w-10 h-10 text-text-muted mx-auto mb-3" />
@@ -92,99 +92,38 @@ export const VideoEditingSection: React.FC<VideoEditingSectionProps> = ({ onSele
           </button>
         </div>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 items-stretch">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {filteredProjects.map((project) => (
             <article
               key={project.id}
+              title={project.title}
               data-cursor-text="PLAY"
               onClick={() => onSelectProject(project)}
-              className="group relative rounded-2xl bg-cinema-card border border-cinema-border hover:border-electric/50 overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:shadow-electric-card cursor-pointer flex flex-col justify-between"
+              className="group relative aspect-video rounded-2xl bg-cinema-card border border-cinema-border hover:border-electric/50 overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:shadow-electric-card cursor-pointer"
             >
-              {/* 16:9 Widescreen Video Thumbnail Container */}
-              <div className="relative w-full aspect-video overflow-hidden bg-black/85 flex items-center justify-center">
-                {/* Ambient Blurred Backdrop Glow */}
-                <div
-                  className="absolute inset-0 bg-cover bg-center filter blur-xl opacity-25 scale-110 pointer-events-none"
-                  style={{ backgroundImage: `url(${project.thumbnail})` }}
-                />
+              {/* Ambient Blurred Backdrop Glow */}
+              <div
+                className="absolute inset-0 bg-cover bg-center filter blur-xl opacity-25 scale-110 pointer-events-none"
+                style={{ backgroundImage: `url(${project.thumbnail})` }}
+              />
 
-                {/* Main Video Thumbnail */}
-                <img
-                  src={project.thumbnail}
-                  alt={project.title}
-                  loading="lazy"
-                  className="relative z-10 w-full h-full object-cover object-center transition-transform duration-500 ease-out group-hover:scale-105 filter brightness-95 group-hover:brightness-105"
-                />
+              {/* Main Video Thumbnail */}
+              <img
+                src={project.thumbnail}
+                alt={project.title}
+                loading="lazy"
+                className="relative z-10 w-full h-full object-cover object-center transition-transform duration-500 ease-out group-hover:scale-105 filter brightness-95 group-hover:brightness-105"
+              />
 
-                {/* Subtle Contrast Gradient */}
-                <div className="absolute inset-0 z-20 bg-gradient-to-t from-cinema-card/90 via-transparent to-black/35 opacity-70 group-hover:opacity-40 transition-opacity pointer-events-none" />
+              {/* Subtle Contrast Gradient */}
+              <div className="absolute inset-0 z-20 bg-gradient-to-t from-black/60 via-transparent to-black/20 opacity-60 group-hover:opacity-30 transition-opacity pointer-events-none" />
 
-                {/* Top Badges: Category & Duration */}
-                <div className="absolute top-3 left-3 z-30 flex flex-wrap items-center gap-1.5 pointer-events-none">
-                  <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono uppercase tracking-wider bg-black/80 text-electric-bright border border-electric/40 backdrop-blur-md font-semibold">
-                    {project.category}
-                  </span>
-                  {project.clientName && (
-                    <span className="px-2 py-0.5 rounded-full text-[9px] font-mono uppercase bg-electric/20 text-electric-bright border border-electric/30 backdrop-blur-md">
-                      {project.clientName}
-                    </span>
-                  )}
-                </div>
-
-                {project.duration && (
-                  <div className="absolute top-3 right-3 z-30 px-2 py-0.5 rounded-md text-[10px] font-mono font-medium bg-black/85 text-text-primary border border-white/10 backdrop-blur-md pointer-events-none">
-                    {project.duration}
-                  </div>
-                )}
-
-                {/* Centered Circular Play Button with Subtle Cyan Glow */}
-                <div className="absolute inset-0 z-30 flex items-center justify-center pointer-events-none">
-                  <div className="relative flex items-center justify-center">
-                    <div className="absolute inset-0 rounded-full bg-electric/25 blur-md scale-125 group-hover:scale-150 transition-all duration-300" />
-                    <div className="relative w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-cinema-bg/75 group-hover:bg-electric text-white flex items-center justify-center border border-white/20 group-hover:border-electric-bright shadow-[0_0_20px_rgba(22,139,255,0.45)] group-hover:shadow-[0_0_30px_rgba(85,183,255,0.85)] transform scale-95 group-hover:scale-110 transition-all duration-300 backdrop-blur-md">
-                      <Play className="w-5 h-5 sm:w-6 sm:h-6 fill-white text-white ml-0.5 transition-transform group-hover:scale-110" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Project Card Content & Metadata */}
-              <div className="p-5 sm:p-6 flex flex-col justify-between flex-grow">
-                <div>
-                  <div className="text-[11px] font-mono uppercase tracking-wider text-electric-bright font-medium truncate">
-                    {project.subtitle || project.role || 'VIDEO PRODUCTION'}
-                  </div>
-
-                  <h3 className="font-display font-bold text-lg sm:text-xl text-text-primary group-hover:text-electric-bright transition-colors mt-1 leading-snug line-clamp-1">
-                    {project.title}
-                  </h3>
-
-                  <p className="mt-2 text-xs sm:text-sm text-text-secondary line-clamp-2 leading-relaxed font-sans">
-                    {project.description}
-                  </p>
-                </div>
-
-                {/* Bottom Divider: Software Tags & Watch Project Button */}
-                <div className="mt-5 pt-4 border-t border-cinema-border/70 flex items-center justify-between text-xs font-mono">
-                  <div className="flex flex-wrap items-center gap-1.5">
-                    {project.software?.slice(0, 3).map((sw) => (
-                      <span
-                        key={sw}
-                        className="px-2 py-0.5 rounded text-[10px] font-mono text-text-muted bg-cinema-secondary border border-cinema-border"
-                      >
-                        {sw.replace('Adobe ', '')}
-                      </span>
-                    ))}
-                    {project.software && project.software.length > 3 && (
-                      <span className="text-[9px] font-mono text-text-muted">
-                        +{project.software.length - 3}
-                      </span>
-                    )}
-                  </div>
-
-                  <div className="flex items-center gap-1.5 text-xs font-mono font-medium text-electric-bright group-hover:translate-x-1 transition-transform flex-shrink-0 ml-2">
-                    <span>WATCH</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
+              {/* Centered Circular Play Button with Subtle Cyan Glow */}
+              <div className="absolute inset-0 z-30 flex items-center justify-center pointer-events-none">
+                <div className="relative flex items-center justify-center">
+                  <div className="absolute inset-0 rounded-full bg-electric/25 blur-md scale-125 group-hover:scale-150 transition-all duration-300" />
+                  <div className="relative w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-cinema-bg/75 group-hover:bg-electric text-white flex items-center justify-center border border-white/20 group-hover:border-electric-bright shadow-[0_0_20px_rgba(22,139,255,0.45)] group-hover:shadow-[0_0_30px_rgba(85,183,255,0.85)] transform scale-95 group-hover:scale-110 transition-all duration-300 backdrop-blur-md">
+                    <Play className="w-5 h-5 sm:w-6 sm:h-6 fill-white text-white ml-0.5 transition-transform group-hover:scale-110" />
                   </div>
                 </div>
               </div>

@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { Palette, Maximize2, ArrowRight, Sparkles, Image, Layout, Tag, Smartphone, Layers, Eye } from 'lucide-react';
+import { Palette, Maximize2, Sparkles, Image, Layout, Tag, Smartphone, Layers, Eye } from 'lucide-react';
 import { graphicProjects } from '../data/portfolio';
 import { Project, GraphicCategory } from '../types';
 
@@ -79,7 +79,7 @@ export const GraphicDesignSection: React.FC<GraphicDesignSectionProps> = ({ onSe
         })}
       </div>
 
-      {/* Graphic Design Gallery Grid: Native Aspect Ratio Preservation */}
+      {/* Graphic Design Gallery Grid: Clean Visual Cards, Consistent Dimensions & Alignment */}
       {filteredProjects.length === 0 ? (
         <div className="text-center py-20 rounded-2xl bg-cinema-card border border-cinema-border">
           <Palette className="w-10 h-10 text-text-muted mx-auto mb-3" />
@@ -92,99 +92,37 @@ export const GraphicDesignSection: React.FC<GraphicDesignSectionProps> = ({ onSe
           </button>
         </div>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 items-start">
-          {filteredProjects.map((project) => {
-            const isVertical = project.aspectRatio === '9:16';
-            const isSquare = project.aspectRatio === '1:1';
-            const isBanner = project.aspectRatio === 'banner';
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          {filteredProjects.map((project) => (
+            <article
+              key={project.id}
+              title={project.title}
+              data-cursor-text="VIEW"
+              onClick={() => onSelectProject(project)}
+              className="group relative aspect-square rounded-2xl bg-cinema-card border border-cinema-border hover:border-electric/50 overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:shadow-electric-card cursor-pointer flex items-center justify-center p-3 sm:p-4"
+            >
+              {/* Ambient Blurred Backdrop Glow */}
+              <div
+                className="absolute inset-0 bg-cover bg-center filter blur-xl opacity-20 scale-110 pointer-events-none"
+                style={{ backgroundImage: `url(${project.thumbnail})` }}
+              />
 
-            const containerClass = isVertical
-              ? 'aspect-[9/16] max-h-[520px]'
-              : isSquare
-              ? 'aspect-square'
-              : isBanner
-              ? 'aspect-[16/7]'
-              : 'aspect-video';
+              {/* Artwork Image with object-contain so zero artwork is cropped */}
+              <img
+                src={project.thumbnail}
+                alt={project.title}
+                loading="lazy"
+                className="relative z-10 max-h-full max-w-full object-contain rounded-lg transition-transform duration-500 ease-out group-hover:scale-105 filter brightness-95 group-hover:brightness-105"
+              />
 
-            return (
-              <article
-                key={project.id}
-                data-cursor-text="VIEW"
-                onClick={() => onSelectProject(project)}
-                className="group relative rounded-2xl bg-cinema-card border border-cinema-border hover:border-electric/50 overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:shadow-electric-card cursor-pointer flex flex-col justify-between"
-              >
-                {/* Image Container with Native Proportion Preservation */}
-                <div className={`relative w-full ${containerClass} overflow-hidden bg-black/85 flex items-center justify-center p-1 sm:p-2`}>
-                  {/* Ambient Backdrop Glow */}
-                  <div
-                    className="absolute inset-0 bg-cover bg-center filter blur-xl opacity-20 scale-110 pointer-events-none"
-                    style={{ backgroundImage: `url(${project.thumbnail})` }}
-                  />
-
-                  {/* Artwork Image with object-contain so zero artwork is cropped */}
-                  <img
-                    src={project.thumbnail}
-                    alt={project.title}
-                    loading="lazy"
-                    className="relative z-10 max-h-full max-w-full object-contain rounded-lg transition-transform duration-500 ease-out group-hover:scale-105 filter brightness-95 group-hover:brightness-105"
-                  />
-
-                  {/* Top Badges */}
-                  <div className="absolute top-3 left-3 z-30 flex flex-wrap items-center gap-1.5 pointer-events-none">
-                    <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono uppercase tracking-wider bg-black/80 text-electric-bright border border-electric/40 backdrop-blur-md font-semibold">
-                      {project.category}
-                    </span>
-                    <span className="px-2 py-0.5 rounded-full text-[9px] font-mono uppercase bg-white/10 text-text-primary border border-white/15 backdrop-blur-md">
-                      {isVertical ? '9:16 Poster' : isSquare ? '1:1 Square' : isBanner ? 'Web Banner' : '16:9'}
-                    </span>
-                  </div>
-
-                  {/* Center-Aligned View Indicator */}
-                  <div className="absolute inset-0 z-30 flex items-center justify-center pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="w-12 h-12 rounded-full bg-electric text-white flex items-center justify-center shadow-electric-button transform scale-90 group-hover:scale-110 transition-transform">
-                      <Maximize2 className="w-5 h-5 text-white" />
-                    </div>
-                  </div>
+              {/* Center-Aligned View Indicator Overlay on Hover */}
+              <div className="absolute inset-0 z-30 flex items-center justify-center pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/40 backdrop-blur-[2px]">
+                <div className="w-12 h-12 rounded-full bg-electric text-white flex items-center justify-center shadow-electric-button transform scale-90 group-hover:scale-110 transition-transform">
+                  <Maximize2 className="w-5 h-5 text-white" />
                 </div>
-
-                {/* Project Details */}
-                <div className="p-5 sm:p-6 flex flex-col justify-between flex-grow">
-                  <div>
-                    <div className="text-[11px] font-mono uppercase tracking-wider text-electric-bright font-medium truncate">
-                      {project.subtitle || project.role || 'GRAPHIC DESIGN'}
-                    </div>
-
-                    <h3 className="font-display font-bold text-lg sm:text-xl text-text-primary group-hover:text-electric-bright transition-colors mt-1 leading-snug line-clamp-1">
-                      {project.title}
-                    </h3>
-
-                    <p className="mt-2 text-xs sm:text-sm text-text-secondary line-clamp-2 leading-relaxed font-sans">
-                      {project.description}
-                    </p>
-                  </div>
-
-                  {/* Bottom Divider: Software Tags & View Action */}
-                  <div className="mt-5 pt-4 border-t border-cinema-border/70 flex items-center justify-between text-xs font-mono">
-                    <div className="flex flex-wrap items-center gap-1.5">
-                      {project.software?.slice(0, 3).map((sw) => (
-                        <span
-                          key={sw}
-                          className="px-2 py-0.5 rounded text-[10px] font-mono text-text-muted bg-cinema-secondary border border-cinema-border"
-                        >
-                          {sw.replace('Adobe ', '')}
-                        </span>
-                      ))}
-                    </div>
-
-                    <div className="flex items-center gap-1.5 text-xs font-mono font-medium text-electric-bright group-hover:translate-x-1 transition-transform flex-shrink-0 ml-2">
-                      <span>VIEW ART</span>
-                      <ArrowRight className="w-3.5 h-3.5" />
-                    </div>
-                  </div>
-                </div>
-              </article>
-            );
-          })}
+              </div>
+            </article>
+          ))}
         </div>
       )}
     </section>
