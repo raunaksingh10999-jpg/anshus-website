@@ -4,6 +4,7 @@ import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { VideoEditingSection } from './components/VideoEditingSection';
 import { GraphicDesignSection } from './components/GraphicDesignSection';
+import { AboutSection } from './components/AboutSection';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 import { VideoModal } from './components/VideoModal';
@@ -38,7 +39,10 @@ export function App() {
         {/* 3. Graphic Design Portfolio */}
         <GraphicDesignSection onSelectProject={(project) => setSelectedProject(project)} />
 
-        {/* 4. Contact & Inquiries */}
+        {/* 4. About Me (Official Portrait & Introduction) */}
+        <AboutSection />
+
+        {/* 5. Contact & Inquiries */}
         <ContactSection />
       </main>
 

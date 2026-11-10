@@ -35,17 +35,20 @@ export const Hero: React.FC = () => {
 
       {/* Main Hero Container */}
       <div className="relative z-10 max-w-4xl mx-auto text-center flex flex-col items-center">
-        {/* Profile Avatar with Ambient Glow Rim */}
-        <div className="relative mb-6 group">
-          <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-electric via-electric-bright to-electric opacity-50 blur-md group-hover:opacity-80 transition-opacity" />
-          <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden border-2 border-white/20 bg-cinema-card shadow-2xl">
+        {/* Prominent Profile Portrait with Ambient Glow Rim */}
+        <div className="relative mb-8 group">
+          <div className="absolute -inset-1.5 rounded-3xl bg-gradient-to-r from-electric via-electric-bright to-electric opacity-40 blur-xl group-hover:opacity-75 transition-all duration-500" />
+          <div className="relative w-40 h-40 sm:w-48 sm:h-48 md:w-52 md:h-52 rounded-3xl overflow-hidden border-2 border-white/20 group-hover:border-electric bg-black shadow-2xl transition-all duration-500">
             <img
               src={personalInfo.avatarUrl}
               alt={personalInfo.name}
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              className="w-full h-full object-cover object-[center_18%] transition-transform duration-700 ease-out group-hover:scale-105"
             />
           </div>
-          <div className="absolute bottom-0 right-1 w-4 h-4 rounded-full bg-emerald-400 border-2 border-cinema-bg" title="Available for work" />
+          <div className="absolute -bottom-2 -right-1 sm:bottom-1 sm:right-1 flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/95 border border-emerald-400/40 text-[10px] font-mono text-emerald-400 shadow-xl backdrop-blur-md">
+            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+            <span className="font-semibold tracking-wider">AVAILABLE</span>
+          </div>
         </div>
 
         {/* Availability Status Badge */}

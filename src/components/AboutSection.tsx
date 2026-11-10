@@ -44,7 +44,7 @@ export const AboutSection: React.FC = () => {
                 src={personalInfo.avatarUrl}
                 alt={personalInfo.name}
                 onError={() => setImageError(true)}
-                className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105 filter brightness-95 group-hover:brightness-100"
+                className="w-full h-full object-cover object-[center_18%] transition-all duration-700 group-hover:scale-105 filter brightness-95 group-hover:brightness-100"
               />
             ) : (
               <div className="w-full h-full flex flex-col items-center justify-center bg-cinema-card text-center p-8">
@@ -64,7 +64,7 @@ export const AboutSection: React.FC = () => {
                     {personalInfo.name}
                   </h3>
                   <p className="text-[11px] font-mono text-electric-bright">
-                    Video Editor | Graphic Designer | AI Video Creator
+                    Video Editor & Graphic Designer
                   </p>
                 </div>
                 <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-electric/10 border border-electric/20 text-[10px] font-mono text-electric-bright">
@@ -106,13 +106,9 @@ export const AboutSection: React.FC = () => {
               <span>THE CREATIVE APPROACH</span>
             </h3>
 
-            {/* Exact About Me content from prompt */}
+            {/* Exact About Me content from Google Sites */}
             <p className="text-base sm:text-lg text-text-primary font-sans leading-relaxed">
-              I'm a creative professional passionate about{' '}
-              <span className="text-white font-semibold">video editing</span>,{' '}
-              <span className="text-white font-semibold">graphic design</span>,{' '}
-              <span className="text-electric-bright font-medium">motion graphics</span>, and{' '}
-              <span className="text-electric-bright font-medium">AI-powered visual storytelling</span>. I enjoy transforming ideas into engaging digital experiences through creative visuals and modern editing techniques.
+              I’m Anshu Kushwaha, a passionate <span className="text-white font-semibold">Video Editor & Graphic Designer</span> who loves creating engaging and creative visuals. I have worked on YouTube videos, podcasts, intros, and Instagram reels, helping creators and brands share their stories in a better way. My focus is always on making content that connects with people and leaves a lasting impression.
             </p>
 
             {/* Key Creative Pillars */}
