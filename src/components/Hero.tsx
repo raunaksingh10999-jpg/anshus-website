@@ -54,9 +54,9 @@ export const Hero: React.FC = () => {
           <span className="text-electric-bright font-medium">AVAILABLE FOR COMMISSIONS</span>
         </div>
 
-        {/* Main Heading: ANSHU SINGH KUSHWAHA */}
+        {/* Main Heading: ANSHU KUSHWAHA */}
         <h1 className="font-display font-extrabold text-3xl sm:text-5xl md:text-6xl lg:text-[4rem] tracking-tight leading-[1.12] text-text-primary uppercase max-w-4xl select-none">
-          <span>ANSHU SINGH </span>
+          <span>ANSHU </span>
           <span className="text-gradient-cyan text-electric-glow">
             KUSHWAHA
           </span>
@@ -64,7 +64,7 @@ export const Hero: React.FC = () => {
 
         {/* Professional Title */}
         <div className="mt-3 sm:mt-4 text-xs sm:text-sm font-mono tracking-wider uppercase text-electric-bright font-semibold">
-          VIDEO EDITOR | GRAPHIC DESIGNER | AI VIDEO CREATOR
+          VIDEO EDITOR & GRAPHIC DESIGNER
         </div>
 
         {/* Introduction */}

@@ -2,11 +2,8 @@ import React, { useState } from 'react';
 import { CustomCursor } from './components/CustomCursor';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
-import { ShowreelSection } from './components/ShowreelSection';
 import { VideoEditingSection } from './components/VideoEditingSection';
 import { GraphicDesignSection } from './components/GraphicDesignSection';
-import { AboutSection } from './components/AboutSection';
-import { SkillsSection } from './components/SkillsSection';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 import { VideoModal } from './components/VideoModal';
@@ -24,40 +21,31 @@ export function App() {
       {/* Subtle film grain texture overlay */}
       <div className="film-grain fixed inset-0 pointer-events-none z-20" />
 
-      {/* Signature Electric-Blue Cursor Lightning */}
+      {/* Signature Electric-Blue Cursor */}
       <CustomCursor />
 
-      {/* 1. Premium Navigation */}
+      {/* Navigation Bar */}
       <Navbar />
 
-      {/* Main Content Flow: Completely Separated Video Editing and Graphic Design */}
+      {/* Main Content Flow: Strictly Original Google Sites Portfolio Sections */}
       <main className="relative z-10">
-        {/* 2. Hero Section */}
+        {/* 1. Hero & Bio (Anshu Kushwaha) */}
         <Hero />
 
-        {/* 3. My Showreel */}
-        <ShowreelSection />
-
-        {/* 4. Dedicated Video Editing Portfolio (Separate Section) */}
+        {/* 2. Video Portfolio (Video Editing, Reels & Shorts, Reels Motion Graphic) */}
         <VideoEditingSection onSelectProject={(project) => setSelectedProject(project)} />
 
-        {/* 5. Dedicated Graphic Design Portfolio (Separate Section) */}
+        {/* 3. Graphic Design Portfolio */}
         <GraphicDesignSection onSelectProject={(project) => setSelectedProject(project)} />
 
-        {/* 6. About Me */}
-        <AboutSection />
-
-        {/* 7. Software & Skills */}
-        <SkillsSection />
-
-        {/* 8. Contact Section */}
+        {/* 4. Contact & Inquiries */}
         <ContactSection />
       </main>
 
-      {/* 9. Footer */}
+      {/* 5. Minimal Footer */}
       <Footer />
 
-      {/* Full-Screen Video & Project Modal */}
+      {/* Full-Screen Edge-to-Edge Media Modal */}
       <VideoModal
         project={selectedProject}
         onClose={() => setSelectedProject(null)}

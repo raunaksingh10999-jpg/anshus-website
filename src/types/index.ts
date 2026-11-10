@@ -38,6 +38,7 @@ export interface Project {
   clientName?: string;
   externalWatchUrl?: string;
   isGraphic?: boolean;
+  section?: 'Video Editing' | 'Reels and Shorts' | 'Reels Motion Graphic' | 'Graphic';
 }
 
 export interface ServiceItem {

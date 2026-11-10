@@ -7,14 +7,14 @@ import { PersonalInfo, Project, ServiceItem, WorkflowStep, ToolItem } from '../t
  */
 
 export const personalInfo: PersonalInfo = {
-  name: "ANSHU SINGH KUSHWAHA",
-  brandTagline: "ANSHU SINGH KUSHWAHA",
-  eyebrow: "VIDEO EDITOR | GRAPHIC DESIGNER | AI VIDEO CREATOR",
-  headline: "ANSHU SINGH KUSHWAHA",
-  supportingDescription: "I create engaging visual experiences through video editing, motion graphics, graphic design, and AI-powered content creation.",
+  name: "ANSHU KUSHWAHA",
+  brandTagline: "Video Editor & Graphic Designer",
+  eyebrow: "VIDEO EDITOR & GRAPHIC DESIGNER",
+  headline: "ANSHU KUSHWAHA",
+  supportingDescription: "I’m Anshu Kushwaha, a passionate Video Editor & Graphic Designer who loves creating engaging and creative visuals. I have worked on YouTube videos, podcasts, intros, and Instagram reels, helping creators and brands share their stories in a better way. My focus is always on making content that connects with people and leaves a lasting impression.",
   
   // Exact About Me content from prompt
-  bio: "I'm a creative professional passionate about video editing, graphic design, motion graphics, and AI-powered visual storytelling. I enjoy transforming ideas into engaging digital experiences through creative visuals and modern editing techniques.",
+  bio: "I’m Anshu Kushwaha, a passionate Video Editor & Graphic Designer who loves creating engaging and creative visuals. I have worked on YouTube videos, podcasts, intros, and Instagram reels, helping creators and brands share their stories in a better way. My focus is always on making content that connects with people and leaves a lasting impression.",
   
   location: "Mumbai, Vasai",
   phone: "+91 84828 23802",
@@ -95,6 +95,7 @@ export const videoProjects: Project[] = [
     "description": "High-conversion promotional video edit featuring kinetic typography, high-impact b-roll sequencing, and modern audio mixing to elevate brand presence.",
     "thumbnail": "https://i.ytimg.com/vi/YbGrJJWTR9A/hqdefault.jpg",
     "videoUrl": "https://www.youtube.com/watch?v=YbGrJJWTR9A",
+    "section": "Video Editing",
     "platform": "youtube",
     "software": [
       "Adobe Premiere Pro",
@@ -116,6 +117,7 @@ export const videoProjects: Project[] = [
     "description": "Smooth architectural pacing, sky replacements, ambient interior soundscapes, and warm cinematic LUT grading tailored for high-end properties.",
     "thumbnail": "https://i.ytimg.com/vi/vpEr74dPJb4/hqdefault.jpg",
     "videoUrl": "https://www.youtube.com/watch?v=vpEr74dPJb4",
+    "section": "Video Editing",
     "platform": "youtube",
     "software": [
       "Adobe Premiere Pro",
@@ -137,6 +139,7 @@ export const videoProjects: Project[] = [
     "description": "Crafted for maximum visual impact using dynamic pacing, seamless sound integration, and cinematic mood color grading to captivate viewers from the opening frame.",
     "thumbnail": "https://i.ytimg.com/vi/nkhllsnaQGM/hqdefault.jpg",
     "videoUrl": "https://www.youtube.com/watch?v=nkhllsnaQGM",
+    "section": "Video Editing",
     "platform": "youtube",
     "software": [
       "Adobe Premiere Pro",
@@ -158,6 +161,7 @@ export const videoProjects: Project[] = [
     "description": "Dynamic brand commercial edit featuring sound-driven visual cuts, smooth camera motions, and premium color finish.",
     "thumbnail": "https://i.ytimg.com/vi/fgpSRnlxDaA/hqdefault.jpg",
     "videoUrl": "https://www.youtube.com/watch?v=fgpSRnlxDaA",
+    "section": "Video Editing",
     "platform": "youtube",
     "software": [
       "Adobe Premiere Pro",
@@ -178,6 +182,7 @@ export const videoProjects: Project[] = [
     "description": "Rich cinematic color tones, rhythmic cross-cutting, and immersive audio staging designed to elevate brand identity.",
     "thumbnail": "https://i.ytimg.com/vi/dhqMcjBOIcE/hqdefault.jpg",
     "videoUrl": "https://www.youtube.com/watch?v=dhqMcjBOIcE",
+    "section": "Video Editing",
     "platform": "youtube",
     "software": [
       "Adobe Premiere Pro",
@@ -198,6 +203,7 @@ export const videoProjects: Project[] = [
     "description": "Appetite-driven food cinematography edit featuring macro speed ramps, sizzle foley effects, and vibrant warm color grade.",
     "thumbnail": "https://i.ytimg.com/vi/79LH9TdOjik/hqdefault.jpg",
     "videoUrl": "https://www.youtube.com/watch?v=79LH9TdOjik",
+    "section": "Video Editing",
     "platform": "youtube",
     "software": [
       "Adobe Premiere Pro",
@@ -218,6 +224,7 @@ export const videoProjects: Project[] = [
     "description": "Fast-paced commercial promotional edit spotlighting product workflow benefits, UI callouts, and clean branded transitions.",
     "thumbnail": "https://i.ytimg.com/vi/BKKLZH-oZ8A/hqdefault.jpg",
     "videoUrl": "https://www.youtube.com/watch?v=BKKLZH-oZ8A",
+    "section": "Video Editing",
     "platform": "youtube",
     "software": [
       "Adobe Premiere Pro",
@@ -238,6 +245,7 @@ export const videoProjects: Project[] = [
     "description": "Atmospheric location b-roll montage with seamless speed ramps, natural sound design, and sun-drenched cinematic grading.",
     "thumbnail": "https://i.ytimg.com/vi/1USQYkzWCIE/hqdefault.jpg",
     "videoUrl": "https://www.youtube.com/watch?v=1USQYkzWCIE",
+    "section": "Video Editing",
     "platform": "youtube",
     "software": [
       "Adobe Premiere Pro",
@@ -258,6 +266,7 @@ export const videoProjects: Project[] = [
     "description": "Carefully paced archival film photo treatments, subtle camera parallax passes, and rhythm-based musical editing paying tribute to legendary compositions.",
     "thumbnail": "https://i.ytimg.com/vi/6hDEdPNHTBY/hqdefault.jpg",
     "videoUrl": "https://www.youtube.com/watch?v=6hDEdPNHTBY",
+    "section": "Video Editing",
     "platform": "youtube",
     "software": [
       "Adobe Premiere Pro",
@@ -279,6 +288,7 @@ export const videoProjects: Project[] = [
     "description": "Reels motion graphic piece featuring smooth vector keyframing, custom easing curves, icon animations, and clean visual branding.",
     "thumbnail": "https://i.ytimg.com/vi/Urfi2yMevbo/hqdefault.jpg",
     "videoUrl": "https://www.youtube.com/watch?v=Urfi2yMevbo",
+    "section": "Reels Motion Graphic",
     "platform": "youtube",
     "software": [
       "Adobe After Effects",
@@ -299,6 +309,7 @@ export const videoProjects: Project[] = [
     "description": "Modern kinetic motion graphics sequence built with sleek UI design elements, animated typography, and seamless loop transitions.",
     "thumbnail": "https://i.ytimg.com/vi/1zGvq1A5AJ4/hqdefault.jpg",
     "videoUrl": "https://www.youtube.com/watch?v=1zGvq1A5AJ4",
+    "section": "Reels Motion Graphic",
     "platform": "youtube",
     "software": [
       "Adobe After Effects",
@@ -320,6 +331,7 @@ export const videoProjects: Project[] = [
     "description": "Fast-paced short-form video structured with a 3-second visual hook, text callouts, sound effects, and retention-maximizing cut frequency.",
     "thumbnail": "https://i.ytimg.com/vi/kDtfX6sylxY/hqdefault.jpg",
     "videoUrl": "https://www.youtube.com/watch?v=kDtfX6sylxY",
+    "section": "Reels and Shorts",
     "platform": "youtube",
     "software": [
       "Adobe Premiere Pro",
@@ -341,6 +353,7 @@ export const videoProjects: Project[] = [
     "description": "Incorporating motion tracking, screen element replacements, subtle particle overlays, and AI-assisted visual enhancement for a high-concept edit.",
     "thumbnail": "https://i.ytimg.com/vi/x7zH5Dnya48/hqdefault.jpg",
     "videoUrl": "https://www.youtube.com/watch?v=x7zH5Dnya48",
+    "section": "Reels and Shorts",
     "platform": "youtube",
     "software": [
       "Adobe After Effects",
@@ -362,6 +375,7 @@ export const videoProjects: Project[] = [
     "description": "High-impact visual effects sequence combining practical human movement with stylized x-ray graphical layers and kinetic sound cues.",
     "thumbnail": "https://i.ytimg.com/vi/fqtB0xPKQnA/hqdefault.jpg",
     "videoUrl": "https://www.youtube.com/watch?v=fqtB0xPKQnA",
+    "section": "Reels and Shorts",
     "platform": "youtube",
     "software": [
       "Adobe After Effects",
@@ -382,6 +396,7 @@ export const videoProjects: Project[] = [
     "description": "Vertical fashion creative cut timed to rhythmic bass pulses with dynamic crop zoom transitions and sleek typography.",
     "thumbnail": "https://i.ytimg.com/vi/9NWuuSMBRMw/hqdefault.jpg",
     "videoUrl": "https://www.youtube.com/watch?v=9NWuuSMBRMw",
+    "section": "Reels and Shorts",
     "platform": "youtube",
     "software": [
       "Adobe Premiere Pro",
@@ -402,6 +417,7 @@ export const videoProjects: Project[] = [
     "description": "High-energy speed transitions matching keyframe velocity curves to sound effects for maximum viewer retention.",
     "thumbnail": "https://i.ytimg.com/vi/oraWo7ywvTQ/hqdefault.jpg",
     "videoUrl": "https://www.youtube.com/watch?v=oraWo7ywvTQ",
+    "section": "Reels and Shorts",
     "platform": "youtube",
     "software": [
       "Adobe Premiere Pro",
@@ -422,6 +438,7 @@ export const videoProjects: Project[] = [
     "description": "Custom animated geometric elements, lower-thirds, and visual graphic swipes designed for mobile screen impact.",
     "thumbnail": "https://i.ytimg.com/vi/I4GnHyw16PQ/hqdefault.jpg",
     "videoUrl": "https://www.youtube.com/watch?v=I4GnHyw16PQ",
+    "section": "Reels and Shorts",
     "platform": "youtube",
     "software": [
       "Adobe After Effects",
@@ -442,6 +459,7 @@ export const videoProjects: Project[] = [
     "description": "Tight micro-story structure using seamless invisible cut techniques and dramatic sound atmosphere.",
     "thumbnail": "https://i.ytimg.com/vi/M38ycyBzlZI/hqdefault.jpg",
     "videoUrl": "https://www.youtube.com/watch?v=M38ycyBzlZI",
+    "section": "Reels and Shorts",
     "platform": "youtube",
     "software": [
       "Adobe Premiere Pro",
@@ -462,6 +480,7 @@ export const videoProjects: Project[] = [
     "description": "Polished social promotional piece designed for high brand recognition with modern split-screens and typography.",
     "thumbnail": "https://i.ytimg.com/vi/JsammWNf74w/hqdefault.jpg",
     "videoUrl": "https://www.youtube.com/watch?v=JsammWNf74w",
+    "section": "Reels and Shorts",
     "platform": "youtube",
     "software": [
       "Adobe Premiere Pro",
@@ -482,6 +501,7 @@ export const videoProjects: Project[] = [
     "description": "Every cut synchronized to sound wave peaks to trigger immediate visual engagement and replayability.",
     "thumbnail": "https://i.ytimg.com/vi/SaQ3a57syuE/hqdefault.jpg",
     "videoUrl": "https://www.youtube.com/watch?v=SaQ3a57syuE",
+    "section": "Reels and Shorts",
     "platform": "youtube",
     "software": [
       "Adobe Premiere Pro",
@@ -502,6 +522,7 @@ export const videoProjects: Project[] = [
     "description": "Designed around a strong pattern-interrupt opening frame, dynamic captions, and fast visual payoff.",
     "thumbnail": "https://i.ytimg.com/vi/PdqU155la7c/hqdefault.jpg",
     "videoUrl": "https://www.youtube.com/watch?v=PdqU155la7c",
+    "section": "Reels and Shorts",
     "platform": "youtube",
     "software": [
       "Adobe Premiere Pro",
@@ -522,6 +543,7 @@ export const videoProjects: Project[] = [
     "description": "Synthesizing dynamic continuous camera movement, cinematic neon lighting passes, and textural consistency using generative video models.",
     "thumbnail": "https://i.ytimg.com/vi/H6lxNEGWYhY/hqdefault.jpg",
     "videoUrl": "https://www.youtube.com/watch?v=H6lxNEGWYhY",
+    "section": "Reels and Shorts",
     "platform": "youtube",
     "software": [
       "Higgsfield AI",
@@ -543,6 +565,7 @@ export const videoProjects: Project[] = [
     "description": "Raw cinematic handheld feel enhanced with match cuts, whip transitions, and modern street aesthetics.",
     "thumbnail": "https://i.ytimg.com/vi/0h1XQYoEH9Q/hqdefault.jpg",
     "videoUrl": "https://www.youtube.com/watch?v=0h1XQYoEH9Q",
+    "section": "Reels and Shorts",
     "platform": "youtube",
     "software": [
       "Adobe Premiere Pro",
@@ -563,6 +586,7 @@ export const videoProjects: Project[] = [
     "description": "Deep shadows, warm golden skin tones, and rich contrast curves designed specifically for OLED smartphone displays.",
     "thumbnail": "https://i.ytimg.com/vi/QYvzYr0hz60/hqdefault.jpg",
     "videoUrl": "https://www.youtube.com/watch?v=QYvzYr0hz60",
+    "section": "Reels and Shorts",
     "platform": "youtube",
     "software": [
       "DaVinci Resolve",
@@ -583,6 +607,7 @@ export const videoProjects: Project[] = [
     "description": "High-octane mobile edits synchronized with workout beats, motion graphics metrics, and dynamic lower-third callouts.",
     "thumbnail": "https://i.ytimg.com/vi/-_gmBLYFNcY/hqdefault.jpg",
     "videoUrl": "https://www.youtube.com/watch?v=-_gmBLYFNcY",
+    "section": "Reels and Shorts",
     "platform": "youtube",
     "software": [
       "Premiere Pro",
@@ -603,6 +628,7 @@ export const videoProjects: Project[] = [
     "description": "Bold kinetic word reveals bouncing precisely with audio transients, creating an engaging audiovisual experience.",
     "thumbnail": "https://i.ytimg.com/vi/3bzU7i2TGXc/hqdefault.jpg",
     "videoUrl": "https://www.youtube.com/watch?v=3bzU7i2TGXc",
+    "section": "Reels and Shorts",
     "platform": "youtube",
     "software": [
       "Adobe After Effects",
@@ -623,6 +649,7 @@ export const videoProjects: Project[] = [
     "description": "Micro-cuts and graphic callouts structured for viral TikTok, YouTube Shorts, and Instagram Reels reach.",
     "thumbnail": "https://i.ytimg.com/vi/jd6wBtD9G1c/hqdefault.jpg",
     "videoUrl": "https://www.youtube.com/watch?v=jd6wBtD9G1c",
+    "section": "Reels Motion Graphic",
     "platform": "youtube",
     "software": [
       "Adobe Premiere Pro",
@@ -643,6 +670,7 @@ export const videoProjects: Project[] = [
     "description": "Layered foley effects, whooshes, and impact risers timed to on-screen micro-actions.",
     "thumbnail": "https://i.ytimg.com/vi/6mkOh9dUnys/hqdefault.jpg",
     "videoUrl": "https://www.youtube.com/watch?v=6mkOh9dUnys",
+    "section": "Reels Motion Graphic",
     "platform": "youtube",
     "software": [
       "Adobe Premiere Pro",
@@ -663,6 +691,7 @@ export const videoProjects: Project[] = [
     "description": "Fluid easing curve animations, animated icons, and impactful title cards.",
     "thumbnail": "https://i.ytimg.com/vi/VSCwu_uF-yg/hqdefault.jpg",
     "videoUrl": "https://www.youtube.com/watch?v=VSCwu_uF-yg",
+    "section": "Reels Motion Graphic",
     "platform": "youtube",
     "software": [
       "Adobe After Effects",
@@ -683,6 +712,7 @@ export const videoProjects: Project[] = [
     "description": "Sleek product reveal with ambient lighting highlights, dynamic zooms, and clean modern typographic overlay.",
     "thumbnail": "https://i.ytimg.com/vi/78wv9KXon3w/hqdefault.jpg",
     "videoUrl": "https://www.youtube.com/watch?v=78wv9KXon3w",
+    "section": "Reels Motion Graphic",
     "platform": "youtube",
     "software": [
       "Adobe Premiere Pro",
@@ -712,6 +742,7 @@ export const graphicProjects: Project[] = [
     ],
     "featured": true,
     "isGraphic": true,
+    "section": "Graphic",
     "date": "2024"
   },
   {
@@ -729,6 +760,7 @@ export const graphicProjects: Project[] = [
     ],
     "featured": true,
     "isGraphic": true,
+    "section": "Graphic",
     "date": "2024"
   },
   {
@@ -746,6 +778,7 @@ export const graphicProjects: Project[] = [
     ],
     "featured": false,
     "isGraphic": true,
+    "section": "Graphic",
     "date": "2024"
   },
   {
@@ -763,6 +796,7 @@ export const graphicProjects: Project[] = [
     ],
     "featured": false,
     "isGraphic": true,
+    "section": "Graphic",
     "date": "2024"
   },
   {
@@ -780,6 +814,7 @@ export const graphicProjects: Project[] = [
     ],
     "featured": false,
     "isGraphic": true,
+    "section": "Graphic",
     "date": "2024"
   },
   {
@@ -798,6 +833,7 @@ export const graphicProjects: Project[] = [
     ],
     "featured": false,
     "isGraphic": true,
+    "section": "Graphic",
     "date": "2024"
   },
   {
@@ -815,6 +851,7 @@ export const graphicProjects: Project[] = [
     ],
     "featured": false,
     "isGraphic": true,
+    "section": "Graphic",
     "date": "2024"
   },
   {
@@ -832,6 +869,7 @@ export const graphicProjects: Project[] = [
     ],
     "featured": false,
     "isGraphic": true,
+    "section": "Graphic",
     "date": "2024"
   },
   {
@@ -849,6 +887,7 @@ export const graphicProjects: Project[] = [
     ],
     "featured": false,
     "isGraphic": true,
+    "section": "Graphic",
     "date": "2024"
   },
   {
@@ -866,6 +905,7 @@ export const graphicProjects: Project[] = [
     ],
     "featured": false,
     "isGraphic": true,
+    "section": "Graphic",
     "date": "2024"
   },
   {
@@ -883,6 +923,7 @@ export const graphicProjects: Project[] = [
     ],
     "featured": false,
     "isGraphic": true,
+    "section": "Graphic",
     "date": "2024"
   },
   {
@@ -900,6 +941,7 @@ export const graphicProjects: Project[] = [
     ],
     "featured": false,
     "isGraphic": true,
+    "section": "Graphic",
     "date": "2024"
   },
   {
@@ -917,6 +959,7 @@ export const graphicProjects: Project[] = [
     ],
     "featured": false,
     "isGraphic": true,
+    "section": "Graphic",
     "date": "2024"
   },
   {
@@ -934,6 +977,7 @@ export const graphicProjects: Project[] = [
     ],
     "featured": false,
     "isGraphic": true,
+    "section": "Graphic",
     "date": "2024"
   },
   {
@@ -951,6 +995,7 @@ export const graphicProjects: Project[] = [
     ],
     "featured": true,
     "isGraphic": true,
+    "section": "Graphic",
     "date": "2024"
   },
   {
@@ -967,6 +1012,7 @@ export const graphicProjects: Project[] = [
     ],
     "featured": true,
     "isGraphic": true,
+    "section": "Graphic",
     "date": "2024"
   },
   {
@@ -984,6 +1030,7 @@ export const graphicProjects: Project[] = [
     ],
     "featured": false,
     "isGraphic": true,
+    "section": "Graphic",
     "date": "2024"
   },
   {
@@ -1001,6 +1048,7 @@ export const graphicProjects: Project[] = [
     ],
     "featured": false,
     "isGraphic": true,
+    "section": "Graphic",
     "date": "2024"
   },
   {
@@ -1018,6 +1066,7 @@ export const graphicProjects: Project[] = [
     ],
     "featured": false,
     "isGraphic": true,
+    "section": "Graphic",
     "date": "2024"
   },
   {
@@ -1035,6 +1084,7 @@ export const graphicProjects: Project[] = [
     ],
     "featured": true,
     "isGraphic": true,
+    "section": "Graphic",
     "date": "2024"
   },
   {
@@ -1052,6 +1102,7 @@ export const graphicProjects: Project[] = [
     ],
     "featured": false,
     "isGraphic": true,
+    "section": "Graphic",
     "date": "2024"
   },
   {
@@ -1069,6 +1120,7 @@ export const graphicProjects: Project[] = [
     ],
     "featured": false,
     "isGraphic": true,
+    "section": "Graphic",
     "date": "2024"
   },
   {
@@ -1086,6 +1138,7 @@ export const graphicProjects: Project[] = [
     ],
     "featured": false,
     "isGraphic": true,
+    "section": "Graphic",
     "date": "2024"
   },
   {
@@ -1103,6 +1156,7 @@ export const graphicProjects: Project[] = [
     ],
     "featured": false,
     "isGraphic": true,
+    "section": "Graphic",
     "date": "2024"
   },
   {
@@ -1120,6 +1174,7 @@ export const graphicProjects: Project[] = [
     ],
     "featured": false,
     "isGraphic": true,
+    "section": "Graphic",
     "date": "2024"
   },
   {
@@ -1137,6 +1192,7 @@ export const graphicProjects: Project[] = [
     ],
     "featured": false,
     "isGraphic": true,
+    "section": "Graphic",
     "date": "2024"
   },
   {
@@ -1154,6 +1210,7 @@ export const graphicProjects: Project[] = [
     ],
     "featured": true,
     "isGraphic": true,
+    "section": "Graphic",
     "date": "2024"
   },
   {
@@ -1171,6 +1228,7 @@ export const graphicProjects: Project[] = [
     ],
     "featured": true,
     "isGraphic": true,
+    "section": "Graphic",
     "date": "2023"
   }
 ];

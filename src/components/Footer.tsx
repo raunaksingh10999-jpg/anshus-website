@@ -28,20 +28,17 @@ export const Footer: React.FC = () => {
             <a href="#hero" className="hover:text-electric-bright transition-colors">
               HOME
             </a>
-            <a href="#showreel" className="hover:text-electric-bright transition-colors">
-              SHOWREEL
-            </a>
             <a href="#video-editing" className="hover:text-electric-bright transition-colors">
               VIDEO EDITING
             </a>
+            <a href="#reels-shorts" className="hover:text-electric-bright transition-colors">
+              REELS & SHORTS
+            </a>
+            <a href="#reels-motion-graphic" className="hover:text-electric-bright transition-colors">
+              MOTION GRAPHICS
+            </a>
             <a href="#graphic-design" className="hover:text-electric-bright transition-colors">
               GRAPHIC DESIGN
-            </a>
-            <a href="#about" className="hover:text-electric-bright transition-colors">
-              ABOUT
-            </a>
-            <a href="#skills" className="hover:text-electric-bright transition-colors">
-              SKILLS
             </a>
             <a href="#contact" className="hover:text-electric-bright transition-colors">
               CONTACT
