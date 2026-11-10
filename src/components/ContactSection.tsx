@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, Copy, Check, MessageSquare, ArrowUpRight, AlertCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Copy, Check, MessageSquare, ArrowUpRight, AlertCircle, Linkedin, Instagram } from 'lucide-react';
 import { personalInfo } from '../data/portfolio';
 
 export const ContactSection: React.FC = () => {
@@ -54,7 +54,7 @@ export const ContactSection: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="relative py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <section id="contact" className="relative py-24 sm:py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-cinema-border/50">
       {/* Background ambient lighting */}
       <div className="absolute top-1/2 right-1/4 w-[600px] h-[500px] bg-electric/5 rounded-full blur-[160px] pointer-events-none" />
 
@@ -63,33 +63,33 @@ export const ContactSection: React.FC = () => {
         {/* LEVEL 1: Section Eyebrow */}
         <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-electric/10 border border-electric/25 text-electric-bright text-xs font-mono tracking-widest uppercase mb-4">
           <MessageSquare className="w-3.5 h-3.5 text-electric-bright" />
-          <span>CONTACT / INQUIRIES</span>
+          <span>CONTACT & INQUIRIES</span>
         </div>
 
         {/* LEVEL 2: Section Headline */}
         <h2 className="font-display font-extrabold text-2xl sm:text-4xl md:text-5xl text-text-primary uppercase tracking-tight leading-[1.15]">
-          <span>HAVE A PROJECT </span>
+          <span>LET'S CREATE </span>
           <span className="text-gradient-cyan text-electric-glow">
-            IN MIND?
+            SOMETHING GREAT
           </span>
         </h2>
 
         {/* LEVEL 3: Supporting Description */}
         <p className="mt-4 text-sm sm:text-base text-text-secondary font-sans leading-relaxed max-w-xl mx-auto">
-          Let's collaborate to build cinematic video edits, motion sequences, and high-impact visual stories.
+          Have an upcoming commercial, YouTube channel edit, AI concept, or brand campaign? Let's discuss your timeline and vision.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 max-w-6xl mx-auto items-start">
-        {/* Left Column: Direct Contact Information */}
-        <div className="lg:col-span-5 space-y-6">
-          <div className="p-7 rounded-2xl bg-cinema-card border border-cinema-border space-y-6">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 max-w-6xl mx-auto items-start">
+        {/* Left Column: Direct Channels */}
+        <div className="lg:col-span-5 space-y-5">
+          <div className="p-6 sm:p-7 rounded-2xl bg-cinema-card border border-cinema-border space-y-5">
             <div>
               <h3 className="font-display font-bold text-xl text-white">
                 Direct Channels
               </h3>
               <p className="text-xs sm:text-sm text-text-secondary mt-1 font-sans leading-relaxed">
-                Reach out directly via email, phone, or WhatsApp for commercial edits, AI concepts, or motion commissions.
+                Reach out directly via email, phone, WhatsApp, or LinkedIn for inquiries and commissions.
               </p>
             </div>
 
@@ -114,7 +114,7 @@ export const ContactSection: React.FC = () => {
 
               <button
                 onClick={copyEmail}
-                className="p-2 rounded bg-cinema-card border border-cinema-border text-text-muted hover:text-electric-bright transition-colors flex-shrink-0"
+                className="p-2 rounded-lg bg-cinema-card border border-cinema-border text-text-muted hover:text-electric-bright transition-colors flex-shrink-0"
                 aria-label="Copy email address"
                 title="Copy email to clipboard"
               >
@@ -130,7 +130,7 @@ export const ContactSection: React.FC = () => {
                 </div>
                 <div className="min-w-0">
                   <span className="text-[10px] font-mono text-text-muted uppercase tracking-wider block">
-                    Phone / Call
+                    Phone / WhatsApp
                   </span>
                   <a
                     href={`tel:${personalInfo.phone.replace(/\s+/g, '')}`}
@@ -143,7 +143,7 @@ export const ContactSection: React.FC = () => {
 
               <button
                 onClick={copyPhone}
-                className="p-2 rounded bg-cinema-card border border-cinema-border text-text-muted hover:text-electric-bright transition-colors flex-shrink-0"
+                className="p-2 rounded-lg bg-cinema-card border border-cinema-border text-text-muted hover:text-electric-bright transition-colors flex-shrink-0"
                 aria-label="Copy phone number"
                 title="Copy phone to clipboard"
               >
@@ -166,35 +166,48 @@ export const ContactSection: React.FC = () => {
               </div>
             </div>
 
-            {/* Quick WhatsApp Action */}
-            <a
-              href={personalInfo.whatsAppUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl font-mono text-xs font-semibold uppercase tracking-wider text-white bg-cinema-secondary border border-cinema-border hover:border-electric/50 hover:bg-electric/10 transition-colors"
-            >
-              <span>Chat on WhatsApp</span>
-              <ArrowUpRight className="w-4 h-4 text-electric-bright" />
-            </a>
+            {/* Social Channels Row */}
+            <div className="pt-2 grid grid-cols-2 gap-3">
+              <a
+                href={personalInfo.linkedInUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl font-mono text-xs text-white bg-cinema-secondary border border-cinema-border hover:border-electric/50 transition-colors"
+              >
+                <Linkedin className="w-4 h-4 text-electric-bright" />
+                <span>LinkedIn</span>
+                <ArrowUpRight className="w-3 h-3 text-text-muted" />
+              </a>
+
+              <a
+                href={personalInfo.whatsAppUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl font-mono text-xs text-white bg-cinema-secondary border border-cinema-border hover:border-electric/50 transition-colors"
+              >
+                <Phone className="w-4 h-4 text-emerald-400" />
+                <span>WhatsApp</span>
+                <ArrowUpRight className="w-3 h-3 text-text-muted" />
+              </a>
+            </div>
           </div>
         </div>
 
-        {/* Right Column: Validated Contact Form with Real Feedback */}
+        {/* Right Column: Contact Form */}
         <div className="lg:col-span-7">
           <form
             onSubmit={handleSubmit}
-            className="p-7 sm:p-9 rounded-2xl bg-cinema-card border border-cinema-border space-y-6"
+            className="p-6 sm:p-8 rounded-2xl bg-cinema-card border border-cinema-border space-y-5"
           >
             <div className="flex items-center justify-between pb-4 border-b border-cinema-border/70">
               <h3 className="font-display font-bold text-xl text-white">
                 Send a Message
               </h3>
               <span className="text-[11px] font-mono text-text-muted">
-                Direct response within 24h
+                Response within 24h
               </span>
             </div>
 
-            {/* Error banner */}
             {errorMessage && (
               <div className="p-3 rounded-lg bg-red-500/10 border border-red-500/30 text-xs font-mono text-red-400 flex items-center gap-2 animate-fadeIn">
                 <AlertCircle className="w-4 h-4 flex-shrink-0" />
@@ -202,7 +215,6 @@ export const ContactSection: React.FC = () => {
               </div>
             )}
 
-            {/* Success banner */}
             {submitSuccess && (
               <div className="p-4 rounded-lg bg-electric/10 border border-electric/40 text-xs font-mono text-electric-bright space-y-1 animate-fadeIn">
                 <div className="flex items-center gap-2 font-semibold">
@@ -210,12 +222,12 @@ export const ContactSection: React.FC = () => {
                   <span>Your email client is opening with prefilled details.</span>
                 </div>
                 <p className="text-text-secondary text-[11px]">
-                  If your mail application didn't open automatically, you can write directly to <code className="text-white">{personalInfo.email}</code>.
+                  You can also write directly to <code className="text-white">{personalInfo.email}</code>.
                 </p>
               </div>
             )}
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label className="block text-xs font-mono text-text-secondary uppercase tracking-wider mb-2">
                   Your Name *
@@ -252,24 +264,24 @@ export const ContactSection: React.FC = () => {
                 onChange={(e) => setProjectType(e.target.value)}
                 className="w-full px-4 py-3 rounded-xl bg-cinema-secondary border border-cinema-border text-white text-sm font-mono focus:outline-none focus:border-electric transition-colors"
               >
-                <option value="Video Editing">Video Editing (YouTube / Commercial / Podcast)</option>
-                <option value="AI Video Creation">AI Video Creation & Concepting</option>
-                <option value="Motion Graphics & VFX">Motion Graphics & Visual Effects</option>
-                <option value="Social Media Reels">Social Media Reels (9:16 Retention Cuts)</option>
+                <option value="Video Editing">Video Editing (Commercial / Brand / YouTube)</option>
                 <option value="Graphic Design">Graphic Design & Thumbnails</option>
-                <option value="Other Creative Collaboration">Other Creative Collaboration</option>
+                <option value="AI Video Creation">AI Video Creation & Concepting</option>
+                <option value="Motion Graphics">Motion Graphics & Visual Effects</option>
+                <option value="Social Media Reels">Social Media Reels (9:16 Retention)</option>
+                <option value="Other Collaboration">Other Creative Collaboration</option>
               </select>
             </div>
 
             <div>
               <label className="block text-xs font-mono text-text-secondary uppercase tracking-wider mb-2">
-                Project Description *
+                Project Overview *
               </label>
               <textarea
                 rows={4}
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
-                placeholder="Tell me about your footage, creative references, timeline deadlines, and goals..."
+                placeholder="Tell me about your footage, goals, timeline deadlines, and references..."
                 className="w-full px-4 py-3 rounded-xl bg-cinema-secondary border border-cinema-border text-white text-sm font-sans placeholder-text-muted focus:outline-none focus:border-electric transition-colors resize-none"
               />
             </div>
@@ -277,9 +289,9 @@ export const ContactSection: React.FC = () => {
             <button
               type="submit"
               data-cursor-text="SEND"
-              className="w-full group relative inline-flex items-center justify-center gap-3 py-4 rounded-xl font-mono text-xs sm:text-sm font-bold uppercase tracking-widest text-white bg-electric hover:bg-electric-bright transition-all duration-300 shadow-electric-button focus:outline-none focus-visible:ring-2 focus-visible:ring-electric"
+              className="w-full group relative inline-flex items-center justify-center gap-2.5 py-3.5 sm:py-4 rounded-xl font-mono text-xs sm:text-sm font-bold uppercase tracking-wider text-white bg-electric hover:bg-electric-bright transition-all duration-300 shadow-electric-button focus:outline-none focus-visible:ring-2 focus-visible:ring-electric"
             >
-              <Send className="w-4 h-4 text-white group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform" />
+              <Send className="w-4 h-4 text-white group-hover:translate-x-0.5 transition-transform" />
               <span>SEND PROJECT INQUIRY</span>
             </button>
           </form>

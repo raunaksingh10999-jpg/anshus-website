@@ -62,12 +62,11 @@ export const FloatingRobot: React.FC = () => {
       const sections = [
         { id: 'hero', name: 'FRAME 01 // INTRO' },
         { id: 'showreel', name: 'FRAME 02 // SHOWREEL' },
-        { id: 'work', name: 'FRAME 03 // SELECTED WORKS' },
-        { id: 'services', name: 'FRAME 04 // SERVICES' },
+        { id: 'video-editing', name: 'FRAME 03 // VIDEO EDITING' },
+        { id: 'graphic-design', name: 'FRAME 04 // GRAPHIC DESIGN' },
         { id: 'about', name: 'FRAME 05 // ABOUT ME' },
-        { id: 'workflow', name: 'FRAME 06 // WORKFLOW' },
-        { id: 'skills', name: 'FRAME 07 // SOFTWARE PIPELINE' },
-        { id: 'contact', name: 'FRAME 08 // CLIENT INQUIRY' }
+        { id: 'skills', name: 'FRAME 06 // SOFTWARE & SKILLS' },
+        { id: 'contact', name: 'FRAME 07 // CLIENT INQUIRY' }
       ];
 
       const checkPoint = curY + window.innerHeight * 0.4;

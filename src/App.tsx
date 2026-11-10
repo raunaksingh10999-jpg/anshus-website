@@ -3,10 +3,9 @@ import { CustomCursor } from './components/CustomCursor';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { ShowreelSection } from './components/ShowreelSection';
-import { PortfolioShowcase } from './components/PortfolioShowcase';
-import { ServicesSection } from './components/ServicesSection';
+import { VideoEditingSection } from './components/VideoEditingSection';
+import { GraphicDesignSection } from './components/GraphicDesignSection';
 import { AboutSection } from './components/AboutSection';
-import { WorkflowSection } from './components/WorkflowSection';
 import { SkillsSection } from './components/SkillsSection';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
@@ -35,34 +34,31 @@ export function App() {
       {/* 1. Premium Navigation */}
       <Navbar />
 
-      {/* Main Content Flow in Exact Specified Order */}
+      {/* Main Content Flow: Completely Separated Video Editing and Graphic Design */}
       <main className="relative z-10">
         {/* 2. Hero Section */}
         <Hero />
 
-        {/* 3. Featured Showreel (Directly after Hero) */}
+        {/* 3. My Showreel */}
         <ShowreelSection />
 
-        {/* 4. Premium Selected-Project Grid */}
-        <PortfolioShowcase onSelectProject={(project) => setSelectedProject(project)} />
+        {/* 4. Dedicated Video Editing Portfolio (Separate Section) */}
+        <VideoEditingSection onSelectProject={(project) => setSelectedProject(project)} />
 
-        {/* 5. Services */}
-        <ServicesSection />
+        {/* 5. Dedicated Graphic Design Portfolio (Separate Section) */}
+        <GraphicDesignSection onSelectProject={(project) => setSelectedProject(project)} />
 
         {/* 6. About Me */}
         <AboutSection />
 
-        {/* 7. Creative Workflow */}
-        <WorkflowSection />
-
-        {/* 8. Tools and Skills */}
+        {/* 7. Software & Skills */}
         <SkillsSection />
 
-        {/* 9. Contact Section */}
+        {/* 8. Contact Section */}
         <ContactSection />
       </main>
 
-      {/* 10. Footer */}
+      {/* 9. Footer */}
       <Footer />
 
       {/* Full-Screen Video & Project Modal */}

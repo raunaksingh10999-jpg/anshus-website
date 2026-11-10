@@ -2,25 +2,28 @@ import { PersonalInfo, Project, ServiceItem, WorkflowStep, ToolItem } from '../t
 
 /**
  * ============================================================================
- * 🎬 MASTER PORTFOLIO CONFIGURATION - ANSHU KUSHWAHA
+ * 🎬 MASTER PORTFOLIO CONFIGURATION - ANSHU SINGH KUSHWAHA
  * ============================================================================
  */
 
 export const personalInfo: PersonalInfo = {
-  name: "Anshu Kushwaha",
-  brandTagline: "ANSHU KUSHWAHA",
-  eyebrow: "VIDEO EDITOR / AI CREATOR / MOTION DESIGNER",
-  headline: "I TURN IDEAS INTO CINEMATIC EXPERIENCES.",
-  supportingDescription: "Crafting cinematic edits, AI-powered visuals, and motion-driven stories that make brands stand out.",
+  name: "ANSHU SINGH KUSHWAHA",
+  brandTagline: "ANSHU SINGH KUSHWAHA",
+  eyebrow: "VIDEO EDITOR | GRAPHIC DESIGNER | AI VIDEO CREATOR",
+  headline: "ANSHU SINGH KUSHWAHA",
+  supportingDescription: "I create engaging visual experiences through video editing, motion graphics, graphic design, and AI-powered content creation.",
   
-  // Exact biography from brief
-  bio: "I'm Anshu Kushwaha, a video editor and creative designer focused on cinematic storytelling, motion graphics, and AI-powered visual content. Since 2023, I've been developing my creative skills across video editing, graphic design, and AI-assisted production, turning ideas into engaging visual experiences.",
+  // Exact About Me content from prompt
+  bio: "I'm a creative professional passionate about video editing, graphic design, motion graphics, and AI-powered visual storytelling. I enjoy transforming ideas into engaging digital experiences through creative visuals and modern editing techniques.",
   
   location: "Mumbai, Vasai",
   phone: "+91 84828 23802",
   email: "singhanshukushwaha@gmail.com",
   portfolioWebsiteUrl: "https://sites.google.com/view/kushwahaanshu",
   whatsAppUrl: "https://wa.me/918482823802",
+  linkedInUrl: "https://www.linkedin.com/in/anshu-kushwaha-307963292",
+  instagramUrl: "https://www.instagram.com/anshu_kushwaha_official",
+  resumeUrl: "/cv/anshu-kushwaha-cv.pdf",
   
   availableForCommissions: true,
   availabilityText: "AVAILABLE FOR SELECT PROJECTS",
@@ -55,12 +58,12 @@ export const personalInfo: PersonalInfo = {
 
 /**
  * ============================================================================
- * 🎥 FEATURED SHOWREEL
+ * 🎥 MY SHOWREEL
  * ============================================================================
  */
 export const featuredShowreel = {
-  sectionLabel: "SHOWREEL / SELECTED FRAMES",
-  headline: "EVERY FRAME HAS A PURPOSE.",
+  sectionLabel: "SHOWREEL",
+  headline: "MY SHOWREEL",
   title: "Cinematic Visual Reel & Narrative",
   aspectRatio: "16:9",
   posterUrl: "https://i.ytimg.com/vi/nkhllsnaQGM/hqdefault.jpg",
@@ -71,202 +74,56 @@ export const featuredShowreel = {
 
 /**
  * ============================================================================
- * 🎨 MASTER PORTFOLIO PROJECTS (Real Works, Graphic Designs & Video Edits)
+ * 🎬 VIDEO EDITING PORTFOLIO PROJECTS
+ * Categories:
+ * - Commercial Ads
+ * - Real Estate Videos
+ * - Brand Promotional Videos
+ * - AI Generated Videos
+ * - Motion Graphics
+ * - Social Media Reels
+ * - Documentary Videos
  * ============================================================================
  */
-export const portfolioProjects: Project[] = [
-  // --- REAL GRAPHIC DESIGN PORTFOLIO WORKS ---
+export const videoProjects: Project[] = [
   {
-    id: "gfx-ev-01",
-    title: "Next-Gen EV Commercial Campaign Banner",
-    category: "Graphic Design",
-    subtitle: "Automotive Electric Vehicle Ad Creative",
-    role: "Graphic & Brand Designer",
-    description: "High-impact automotive commercial campaign banner featuring modern lighting highlights, dynamic angle framing, and bold typography hierarchy.",
-    thumbnail: "/graphics/new-gen-ev-creative.jpg",
-    aspectRatio: "1:1",
-    software: ["Adobe Photoshop", "Adobe Illustrator"],
-    featured: true,
-    isGraphic: true,
-    date: "2024"
-  },
-  {
-    id: "gfx-skin-02",
-    title: "Skin Care Brand Social Media Ad",
-    category: "Graphic Design",
-    subtitle: "Botanical Organic Cosmetic Social Campaign",
-    role: "Visual Designer & Art Director",
-    description: "Elegant product composition with natural lighting, soft shadow falloff, and clean typographic framing tailored for social ad conversion.",
-    thumbnail: "/graphics/skincare-campaign-ad.jpg",
-    aspectRatio: "1:1",
-    software: ["Adobe Photoshop", "Figma"],
-    featured: true,
-    isGraphic: true,
-    date: "2024"
-  },
-  {
-    id: "gfx-ad1-03",
-    title: "Commercial Product Promotional Banner",
-    category: "Graphic Design",
-    subtitle: "Product Marketing & Campaign Creative",
-    role: "Commercial Graphic Designer",
-    description: "Dynamic commercial advertisement with vibrant color grading, high-contrast focal highlights, and structured call-to-action layout.",
-    thumbnail: "/graphics/commercial-ad-01.jpg",
-    aspectRatio: "1:1",
-    software: ["Adobe Photoshop", "Adobe Illustrator"],
-    featured: false,
-    isGraphic: true,
-    date: "2024"
-  },
-  {
-    id: "gfx-ad3-04",
-    title: "Special Offer Product Campaign Ad",
-    category: "Graphic Design",
-    subtitle: "E-Commerce Promotional Graphic",
-    role: "Promotional Creative Designer",
-    description: "High-conversion digital advertisement engineered with attention-grabbing headline typography and dimensional product shadows.",
-    thumbnail: "/graphics/commercial-ad-03.jpg",
-    aspectRatio: "1:1",
-    software: ["Adobe Photoshop", "Canva"],
-    featured: false,
-    isGraphic: true,
-    date: "2024"
-  },
-  {
-    id: "gfx-ad4-05",
-    title: "Brand Identity Social Media Creative",
-    category: "Graphic Design",
-    subtitle: "Digital Marketing Campaign Asset",
-    role: "Visual Designer",
-    description: "Multi-layered promotional artwork with modern editorial aesthetics, layered textures, and bold visual contrast.",
-    thumbnail: "/graphics/commercial-ad-04.jpg",
-    aspectRatio: "1:1",
-    software: ["Adobe Photoshop", "Figma"],
-    featured: false,
-    isGraphic: true,
-    date: "2024"
-  },
-  {
-    id: "gfx-coder-06",
-    title: "Coder Life High-CTR Visual Banner",
-    category: "Graphic Design",
-    subtitle: "Tech Creator YouTube Banner & Creative",
-    role: "Thumbnail & Banner Designer",
-    description: "Tech-themed editorial landscape graphic featuring neon ambient rim lighting, custom vector code elements, and focal contrast.",
-    thumbnail: "/graphics/coder-life-banner.jpg",
-    aspectRatio: "16:9",
-    software: ["Adobe Photoshop", "Adobe Illustrator"],
-    featured: true,
-    isGraphic: true,
-    date: "2024"
-  },
-  {
-    id: "gfx-ps-07",
-    title: "Photoshop Surreal Digital Art Composition",
-    category: "Graphic Design",
-    subtitle: "Digital Key Art & Photo Manipulation",
-    role: "Photoshop Compositor & Visual Artist",
-    description: "Multi-layered digital matte manipulation combining practical elements with atmospheric volumetric lighting and color harmonies.",
-    thumbnail: "/graphics/photoshop-visual-art.jpg",
-    aspectRatio: "9:16",
-    software: ["Adobe Photoshop"],
-    featured: false,
-    isGraphic: true,
-    date: "2024"
-  },
-  {
-    id: "gfx-ccn-08",
-    title: "Creative Key Art & Poster Design",
-    category: "Graphic Design",
-    subtitle: "Vertical Storytelling & Editorial Art",
-    role: "Art Director & Graphic Artist",
-    description: "Vertical key art poster exploring surreal color palettes, subject depth extraction, and cinematic texture grading.",
-    thumbnail: "/graphics/creative-composition-ccn.jpg",
-    aspectRatio: "9:16",
-    software: ["Adobe Photoshop", "Adobe Firefly"],
-    featured: false,
-    isGraphic: true,
-    date: "2024"
-  },
-  {
-    id: "gfx-thu-09",
-    title: "Vertical Visual Storytelling Poster",
-    category: "Graphic Design",
-    subtitle: "Mobile-First Poster & Social Creative",
-    role: "Graphic Designer",
-    description: "Mobile poster artwork formatted with high vertical visual flow, focal subject rim lights, and bold graphic presence.",
-    thumbnail: "/graphics/story-thumbnail-thu.jpg",
-    aspectRatio: "9:16",
-    software: ["Adobe Photoshop", "Lightroom"],
-    featured: false,
-    isGraphic: true,
-    date: "2024"
-  },
-  {
-    id: "gfx-dog-10",
-    title: "Character Visual Art & Pet Brand Design",
-    category: "Graphic Design",
-    subtitle: "Character Key Art & Visual Framing",
-    role: "Graphic Designer & Illustrator",
-    description: "Subject detail enhancement with fur texture cleanup, rim lighting passes, and cinematic portrait background depth.",
-    thumbnail: "/graphics/visual-character-dog.jpg",
-    aspectRatio: "9:16",
-    software: ["Adobe Photoshop", "Adobe Illustrator"],
-    featured: false,
-    isGraphic: true,
-    date: "2024"
-  },
-  {
-    id: "gfx-bottle-11",
-    title: "Kids Water Bottle Product Branding Mockup",
-    category: "Graphic Design",
-    subtitle: "Packaging Design & 3D Product Mockup",
-    role: "Packaging & Brand Designer",
-    description: "Product branding and label artwork rendered on realistic 3D bottle surfaces with studio reflections and materials.",
-    thumbnail: "/graphics/kids-bottle-mockup.jpg",
-    aspectRatio: "1:1",
-    software: ["Adobe Photoshop", "Adobe Illustrator", "Blender"],
-    featured: false,
-    isGraphic: true,
-    date: "2024"
-  },
-  {
-    id: "gfx-web-12",
-    title: "Corporate Web Header & Promotional Banner",
-    category: "Graphic Design",
-    subtitle: "Digital Marketing Header Graphic",
-    role: "UI Graphic Designer",
-    description: "Clean horizontal promotional banner with brand visual consistency, typography alignment, and responsive layout balance.",
-    thumbnail: "/graphics/promotional-web-banner.jpg",
-    aspectRatio: "banner",
-    software: ["Figma", "Adobe Illustrator"],
-    featured: false,
-    isGraphic: true,
-    date: "2024"
-  },
-
-  // --- REAL VIDEO EDITING, VFX & MOTION WORKS ---
-  {
-    id: "anshu-reel-cinematic-01",
-    title: "Cinematic Visual Reel & Narrative",
-    category: "Cinematic Video Editing",
-    subtitle: "High-Retention Visual Storytelling",
-    role: "Lead Video Editor & Colorist",
-    description: "Crafted for maximum visual impact using dynamic pacing, seamless sound integration, and cinematic mood color grading to captivate viewers from the opening frame.",
-    thumbnail: "https://i.ytimg.com/vi/nkhllsnaQGM/hqdefault.jpg",
-    videoUrl: "https://www.youtube.com/watch?v=nkhllsnaQGM",
+    id: "vid-comm-01",
+    title: "Dynamic Promotional Brand Commercial",
+    category: "Commercial Ads",
+    subtitle: "Commercial Brand Social Showcase",
+    role: "Lead Commercial Video Editor",
+    description: "High-conversion promotional video edit featuring kinetic typography, high-impact b-roll sequencing, and modern audio mixing to elevate brand presence.",
+    thumbnail: "https://i.ytimg.com/vi/YbGrJJWTR9A/hqdefault.jpg",
+    videoUrl: "https://www.youtube.com/watch?v=YbGrJJWTR9A",
     platform: "youtube",
-    software: ["Adobe Premiere Pro", "After Effects", "Photoshop"],
+    software: ["Adobe Premiere Pro", "Photoshop", "After Effects"],
     featured: true,
-    duration: "0:30",
+    duration: "0:45",
     date: "2024",
     aspectRatio: "16:9",
-    externalWatchUrl: "https://www.youtube.com/watch?v=nkhllsnaQGM"
+    externalWatchUrl: "https://www.youtube.com/watch?v=YbGrJJWTR9A"
   },
   {
-    id: "anshu-short-energy-02",
-    title: "High-Energy Sound-Synced Showcase",
-    category: "Brand and Promotional Videos",
+    id: "vid-realestate-02",
+    title: "Luxury Real Estate Architectural Reel",
+    category: "Real Estate Videos",
+    subtitle: "Property Walkthrough & Architectural Pacing",
+    role: "Video Editor & Colorist",
+    description: "Smooth architectural pacing, sky replacements, ambient interior soundscapes, and warm cinematic LUT grading tailored for high-end properties.",
+    thumbnail: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+    videoUrl: "https://www.youtube.com/watch?v=vpEr74dPJb4",
+    platform: "youtube",
+    software: ["Adobe Premiere Pro", "After Effects", "DaVinci Resolve"],
+    featured: true,
+    duration: "0:45",
+    date: "2024",
+    aspectRatio: "16:9",
+    externalWatchUrl: "https://sites.google.com/view/kushwahaanshu"
+  },
+  {
+    id: "vid-brand-03",
+    title: "High-Energy Sound-Synced Brand Showcase",
+    category: "Brand Promotional Videos",
     subtitle: "Rhythmic Speed Ramps & Foley",
     role: "Video Editor & Sound Designer",
     description: "Dynamic video edit synchronized to rhythmic audio beats with kinetic typography, whip transitions, and visual pop designed for high viewer retention.",
@@ -281,59 +138,42 @@ export const portfolioProjects: Project[] = [
     externalWatchUrl: "https://www.youtube.com/watch?v=vpEr74dPJb4"
   },
   {
-    id: "anshu-promo-commercial-03",
-    title: "Dynamic Promotional Brand Video",
-    category: "Brand and Promotional Videos",
-    subtitle: "Commercial Brand Social Showcase",
-    role: "Commercial Video Editor",
-    description: "Promotional video edit featuring clean typography, high-impact b-roll sequencing, and modern audio mixing to elevate brand presence.",
-    thumbnail: "https://i.ytimg.com/vi/YbGrJJWTR9A/hqdefault.jpg",
-    videoUrl: "https://www.youtube.com/watch?v=YbGrJJWTR9A",
+    id: "vid-cinematic-04",
+    title: "Cinematic Visual Reel & Narrative",
+    category: "Brand Promotional Videos",
+    subtitle: "High-Retention Visual Storytelling",
+    role: "Lead Video Editor & Colorist",
+    description: "Crafted for maximum visual impact using dynamic pacing, seamless sound integration, and cinematic mood color grading to captivate viewers from the opening frame.",
+    thumbnail: "https://i.ytimg.com/vi/nkhllsnaQGM/hqdefault.jpg",
+    videoUrl: "https://www.youtube.com/watch?v=nkhllsnaQGM",
     platform: "youtube",
-    software: ["Adobe Premiere Pro", "Photoshop", "Adobe Firefly"],
+    software: ["Adobe Premiere Pro", "After Effects", "Photoshop"],
     featured: true,
-    duration: "0:45",
+    duration: "0:30",
     date: "2024",
     aspectRatio: "16:9",
-    externalWatchUrl: "https://www.youtube.com/watch?v=YbGrJJWTR9A"
+    externalWatchUrl: "https://www.youtube.com/watch?v=nkhllsnaQGM"
   },
   {
-    id: "anshu-short-viral-04",
-    title: "Viral Retention Hook & Fast Cut",
-    category: "Social Media Reels",
-    subtitle: "Hook Optimization & Motion Typography",
-    role: "Short-Form Retention Editor",
-    description: "Fast-paced YouTube Short structured with a 3-second visual hook, text callouts, sound effects, and retention-maximizing cut frequency.",
-    thumbnail: "https://i.ytimg.com/vi/kDtfX6sylxY/hqdefault.jpg",
-    videoUrl: "https://www.youtube.com/watch?v=kDtfX6sylxY",
+    id: "vid-ai-05",
+    title: "Generative Scene Synthesis & Camera Moves",
+    category: "AI Generated Videos",
+    subtitle: "Continuous Spatial Movement & Prompt Direction",
+    role: "AI Prompt & Visual Concept Artist",
+    description: "Synthesizing dynamic continuous camera movement, cinematic lighting passes, and textural consistency using generative video models and After Effects finishing.",
+    thumbnail: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+    videoUrl: "https://www.youtube.com/watch?v=Urfi2yMevbo",
     platform: "youtube",
-    software: ["Adobe Premiere Pro", "Illustrator", "After Effects"],
-    featured: false,
-    duration: "0:28",
+    software: ["Higgsfield AI", "Midjourney", "Adobe Firefly", "After Effects"],
+    featured: true,
+    duration: "0:30",
     date: "2024",
-    aspectRatio: "9:16",
-    externalWatchUrl: "https://www.youtube.com/watch?v=kDtfX6sylxY"
+    aspectRatio: "16:9",
+    externalWatchUrl: "https://sites.google.com/view/kushwahaanshu"
   },
   {
-    id: "anshu-vfx-edit-05",
-    title: "Visual Effects & Creative Pacing",
-    category: "Visual Effects",
-    subtitle: "Motion Tracking & Particle Enhancement",
-    role: "VFX & Compositing Artist",
-    description: "Incorporating motion tracking, screen element replacements, subtle particle overlays, and AI-assisted visual enhancement for a high-concept edit.",
-    thumbnail: "https://i.ytimg.com/vi/x7zH5Dnya48/hqdefault.jpg",
-    videoUrl: "https://www.youtube.com/watch?v=x7zH5Dnya48",
-    platform: "youtube",
-    software: ["Adobe After Effects", "Photoshop", "Higgsfield AI"],
-    featured: false,
-    duration: "0:35",
-    date: "2024",
-    aspectRatio: "9:16",
-    externalWatchUrl: "https://www.youtube.com/watch?v=x7zH5Dnya48"
-  },
-  {
-    id: "anshu-motion-graphic-06",
-    title: "Reels Motion Graphic Sequence",
+    id: "vid-motion-06",
+    title: "Reels Motion Graphic Sequence & Title",
     category: "Motion Graphics",
     subtitle: "Custom Vector Animation & Kinetic Titles",
     role: "Motion Graphics Designer",
@@ -345,12 +185,12 @@ export const portfolioProjects: Project[] = [
     featured: false,
     duration: "0:20",
     date: "2024",
-    aspectRatio: "9:16",
+    aspectRatio: "16:9",
     externalWatchUrl: "https://www.youtube.com/watch?v=Urfi2yMevbo"
   },
   {
-    id: "anshu-brand-motion-07",
-    title: "Kinetic Motion Graphic & Intro",
+    id: "vid-motion-07",
+    title: "Kinetic Motion Graphic & Brand Identity",
     category: "Motion Graphics",
     subtitle: "Modern Brand Visual Language",
     role: "Motion Designer",
@@ -362,33 +202,20 @@ export const portfolioProjects: Project[] = [
     featured: false,
     duration: "0:22",
     date: "2024",
-    aspectRatio: "9:16",
+    aspectRatio: "16:9",
     externalWatchUrl: "https://www.youtube.com/watch?v=1zGvq1A5AJ4"
   },
   {
-    id: "anshu-ai-higgsfield-08",
-    title: "Generative Scene Synthesis & Camera Moves",
-    category: "AI Video Creation",
-    subtitle: "Continuous Spatial Movement & Prompt Direction",
-    role: "AI Prompt & Visual Concept Artist",
-    description: "Synthesizing dynamic continuous camera movement, cinematic lighting passes, and textural consistency using generative video models and After Effects finishing.",
-    thumbnail: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-    software: ["Higgsfield AI", "ChatGPT", "Adobe Firefly", "After Effects"],
-    featured: true,
-    duration: "0:30",
-    date: "2024",
-    aspectRatio: "16:9",
-    externalWatchUrl: "https://sites.google.com/view/kushwahaanshu"
-  },
-  {
-    id: "anshu-client-rentok-09",
-    title: "RentOk Promotional Commercial Edits",
+    id: "vid-client-08",
+    title: "RentOk Product Feature Showcase",
     clientName: "RentOk",
-    category: "Brand and Promotional Videos",
+    category: "Commercial Ads",
     subtitle: "Product Feature Showcase & Social Cutdowns",
     role: "Video Editor & Motion Designer",
     description: "Fast-turnaround commercial promotional cuts spotlighting product workflow benefits, UI callouts, and clean branded transitions.",
     thumbnail: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+    videoUrl: "https://www.youtube.com/watch?v=YbGrJJWTR9A",
+    platform: "youtube",
     software: ["Adobe Premiere Pro", "After Effects", "Photoshop"],
     featured: false,
     date: "2024",
@@ -396,22 +223,41 @@ export const portfolioProjects: Project[] = [
     externalWatchUrl: "https://sites.google.com/view/kushwahaanshu"
   },
   {
-    id: "anshu-client-freedoctor-10",
-    title: "FreeDoctor.world Awareness Campaign",
-    clientName: "FreeDoctor.world",
-    category: "Motion Graphics",
-    subtitle: "Healthcare Outreach & Kinetic Explainer",
-    role: "Motion Graphics & Visual Storyteller",
-    description: "Clear typography-led animated sequences designed to simplify complex healthcare information into accessible visual stories for digital audiences.",
-    thumbnail: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80",
-    software: ["After Effects", "Illustrator", "Premiere Pro"],
+    id: "vid-reels-09",
+    title: "Viral Retention Hook & Fast Cut",
+    category: "Social Media Reels",
+    subtitle: "Hook Optimization & Motion Typography",
+    role: "Short-Form Retention Editor",
+    description: "Fast-paced short-form video structured with a 3-second visual hook, text callouts, sound effects, and retention-maximizing cut frequency.",
+    thumbnail: "https://i.ytimg.com/vi/kDtfX6sylxY/hqdefault.jpg",
+    videoUrl: "https://www.youtube.com/watch?v=kDtfX6sylxY",
+    platform: "youtube",
+    software: ["Adobe Premiere Pro", "Illustrator", "After Effects"],
     featured: false,
+    duration: "0:28",
     date: "2024",
     aspectRatio: "16:9",
-    externalWatchUrl: "https://sites.google.com/view/kushwahaanshu"
+    externalWatchUrl: "https://www.youtube.com/watch?v=kDtfX6sylxY"
   },
   {
-    id: "anshu-client-fitpaisa-11",
+    id: "vid-reels-10",
+    title: "Visual Effects & Creative Pacing",
+    category: "Social Media Reels",
+    subtitle: "Motion Tracking & Particle Enhancement",
+    role: "VFX & Compositing Artist",
+    description: "Incorporating motion tracking, screen element replacements, subtle particle overlays, and AI-assisted visual enhancement for a high-concept edit.",
+    thumbnail: "https://i.ytimg.com/vi/x7zH5Dnya48/hqdefault.jpg",
+    videoUrl: "https://www.youtube.com/watch?v=x7zH5Dnya48",
+    platform: "youtube",
+    software: ["Adobe After Effects", "Photoshop", "Higgsfield AI"],
+    featured: false,
+    duration: "0:35",
+    date: "2024",
+    aspectRatio: "16:9",
+    externalWatchUrl: "https://www.youtube.com/watch?v=x7zH5Dnya48"
+  },
+  {
+    id: "vid-reels-11",
     title: "Fitpaisa High-Energy Social Reels",
     clientName: "Fitpaisa",
     category: "Social Media Reels",
@@ -419,39 +265,26 @@ export const portfolioProjects: Project[] = [
     role: "Short-Form Editor",
     description: "High-octane mobile edits synchronized with workout beats, motion graphics metrics, and dynamic lower-third callouts.",
     thumbnail: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=80",
+    videoUrl: "https://www.youtube.com/watch?v=vpEr74dPJb4",
     software: ["Premiere Pro", "After Effects"],
     featured: false,
     duration: "0:30",
     date: "2024",
-    aspectRatio: "9:16",
-    externalWatchUrl: "https://sites.google.com/view/kushwahaanshu"
-  },
-  {
-    id: "anshu-client-burman-12",
-    title: "R.D. Burman Documentary Visual Sequences",
-    category: "Cinematic Video Editing",
-    subtitle: "Archival Restoration & Musical Rhythm Edits",
-    role: "Documentary Visual Editor",
-    description: "Carefully paced archival film photo treatments, subtle camera parallax passes, and rhythm-based musical editing paying tribute to legendary compositions.",
-    thumbnail: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1200&q=80",
-    software: ["Adobe Premiere Pro", "Photoshop", "After Effects"],
-    featured: false,
-    date: "2023",
     aspectRatio: "16:9",
     externalWatchUrl: "https://sites.google.com/view/kushwahaanshu"
   },
   {
-    id: "anshu-client-realestate-13",
-    title: "Luxury Real Estate Cinematic Reel",
-    category: "Brand and Promotional Videos",
-    subtitle: "Property Walkthrough & Architectural Pacing",
-    role: "Video Editor & Colorist",
-    description: "Smooth architectural pacing, sky replacements, ambient interior soundscapes, and warm cinematic LUT grading tailored for high-end properties.",
-    thumbnail: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
-    software: ["Adobe Premiere Pro", "After Effects"],
+    id: "vid-doc-12",
+    title: "R.D. Burman Documentary Visual Sequences",
+    category: "Documentary Videos",
+    subtitle: "Archival Restoration & Musical Rhythm Edits",
+    role: "Documentary Visual Editor",
+    description: "Carefully paced archival film photo treatments, subtle camera parallax passes, and rhythm-based musical editing paying tribute to legendary compositions.",
+    thumbnail: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1200&q=80",
+    videoUrl: "https://www.youtube.com/watch?v=nkhllsnaQGM",
+    software: ["Adobe Premiere Pro", "Photoshop", "After Effects"],
     featured: false,
-    duration: "0:45",
-    date: "2024",
+    date: "2023",
     aspectRatio: "16:9",
     externalWatchUrl: "https://sites.google.com/view/kushwahaanshu"
   }
@@ -459,14 +292,266 @@ export const portfolioProjects: Project[] = [
 
 /**
  * ============================================================================
- * ⚡ SERVICES (Cinematic, Typography-Led Layout)
+ * 🎨 GRAPHIC DESIGN PORTFOLIO PROJECTS
+ * Categories:
+ * - Social Media Creatives
+ * - Advertising Posters
+ * - Marketing Banners
+ * - Brand Designs
+ * - YouTube Thumbnails
+ * - Promotional Creatives
+ * - Typography Designs
+ * ============================================================================
+ */
+export const graphicProjects: Project[] = [
+  {
+    id: "gfx-ev-01",
+    title: "Next-Gen EV Commercial Campaign Banner",
+    category: "YouTube Thumbnails",
+    subtitle: "Automotive Electric Vehicle Ad Creative",
+    role: "Graphic & Brand Designer",
+    description: "High-impact automotive commercial campaign banner featuring modern lighting highlights, dynamic angle framing, and bold typography hierarchy.",
+    thumbnail: "/graphics/new-gen-ev-creative.jpg",
+    aspectRatio: "1:1",
+    software: ["Adobe Photoshop", "Adobe Illustrator"],
+    featured: true,
+    isGraphic: true,
+    date: "2024"
+  },
+  {
+    id: "gfx-skin-02",
+    title: "Skin Care Brand Social Media Ad",
+    category: "Social Media Creatives",
+    subtitle: "Botanical Organic Cosmetic Social Campaign",
+    role: "Visual Designer & Art Director",
+    description: "Elegant product composition with natural lighting, soft shadow falloff, and clean typographic framing tailored for social ad conversion.",
+    thumbnail: "/graphics/skincare-campaign-ad.jpg",
+    aspectRatio: "1:1",
+    software: ["Adobe Photoshop", "Figma"],
+    featured: true,
+    isGraphic: true,
+    date: "2024"
+  },
+  {
+    id: "gfx-ad1-03",
+    title: "Commercial Product Promotional Banner",
+    category: "Promotional Creatives",
+    subtitle: "Product Marketing & Campaign Creative",
+    role: "Commercial Graphic Designer",
+    description: "Dynamic commercial advertisement with vibrant color grading, high-contrast focal highlights, and structured call-to-action layout.",
+    thumbnail: "/graphics/commercial-ad-01.jpg",
+    aspectRatio: "1:1",
+    software: ["Adobe Photoshop", "Adobe Illustrator"],
+    featured: false,
+    isGraphic: true,
+    date: "2024"
+  },
+  {
+    id: "gfx-ad3-04",
+    title: "Special Offer Product Campaign Ad",
+    category: "Promotional Creatives",
+    subtitle: "E-Commerce Promotional Graphic",
+    role: "Promotional Creative Designer",
+    description: "High-conversion digital advertisement engineered with attention-grabbing headline typography and dimensional product shadows.",
+    thumbnail: "/graphics/commercial-ad-03.jpg",
+    aspectRatio: "1:1",
+    software: ["Adobe Photoshop", "Canva"],
+    featured: false,
+    isGraphic: true,
+    date: "2024"
+  },
+  {
+    id: "gfx-ad4-05",
+    title: "Brand Identity Social Media Creative",
+    category: "Social Media Creatives",
+    subtitle: "Digital Marketing Campaign Asset",
+    role: "Visual Designer",
+    description: "Multi-layered promotional artwork with modern editorial aesthetics, layered textures, and bold visual contrast.",
+    thumbnail: "/graphics/commercial-ad-04.jpg",
+    aspectRatio: "1:1",
+    software: ["Adobe Photoshop", "Figma"],
+    featured: false,
+    isGraphic: true,
+    date: "2024"
+  },
+  {
+    id: "gfx-coder-06",
+    title: "Coder Life High-CTR Visual Banner",
+    category: "Marketing Banners",
+    subtitle: "Tech Creator YouTube Banner & Creative",
+    role: "Thumbnail & Banner Designer",
+    description: "Tech-themed editorial landscape graphic featuring neon ambient rim lighting, custom vector code elements, and focal contrast.",
+    thumbnail: "/graphics/coder-life-banner.jpg",
+    aspectRatio: "16:9",
+    software: ["Adobe Photoshop", "Adobe Illustrator"],
+    featured: true,
+    isGraphic: true,
+    date: "2024"
+  },
+  {
+    id: "gfx-ps-07",
+    title: "Photoshop Surreal Digital Art Composition",
+    category: "Typography Designs",
+    subtitle: "Digital Key Art & Photo Manipulation",
+    role: "Photoshop Compositor & Visual Artist",
+    description: "Multi-layered digital matte manipulation combining practical elements with atmospheric volumetric lighting and color harmonies.",
+    thumbnail: "/graphics/photoshop-visual-art.jpg",
+    aspectRatio: "9:16",
+    software: ["Adobe Photoshop"],
+    featured: false,
+    isGraphic: true,
+    date: "2024"
+  },
+  {
+    id: "gfx-ccn-08",
+    title: "Creative Key Art & Poster Design",
+    category: "Advertising Posters",
+    subtitle: "Vertical Storytelling & Editorial Art",
+    role: "Art Director & Graphic Artist",
+    description: "Vertical key art poster exploring surreal color palettes, subject depth extraction, and cinematic texture grading.",
+    thumbnail: "/graphics/creative-composition-ccn.jpg",
+    aspectRatio: "9:16",
+    software: ["Adobe Photoshop", "Adobe Firefly"],
+    featured: false,
+    isGraphic: true,
+    date: "2024"
+  },
+  {
+    id: "gfx-thu-09",
+    title: "Vertical Visual Storytelling Poster",
+    category: "Advertising Posters",
+    subtitle: "Mobile-First Poster & Social Creative",
+    role: "Graphic Designer",
+    description: "Mobile poster artwork formatted with high vertical visual flow, focal subject rim lights, and bold graphic presence.",
+    thumbnail: "/graphics/story-thumbnail-thu.jpg",
+    aspectRatio: "9:16",
+    software: ["Adobe Photoshop", "Lightroom"],
+    featured: false,
+    isGraphic: true,
+    date: "2024"
+  },
+  {
+    id: "gfx-dog-10",
+    title: "Character Visual Art & Pet Brand Design",
+    category: "Advertising Posters",
+    subtitle: "Character Key Art & Visual Framing",
+    role: "Graphic Designer & Illustrator",
+    description: "Subject detail enhancement with fur texture cleanup, rim lighting passes, and cinematic portrait background depth.",
+    thumbnail: "/graphics/visual-character-dog.jpg",
+    aspectRatio: "9:16",
+    software: ["Adobe Photoshop", "Adobe Illustrator"],
+    featured: false,
+    isGraphic: true,
+    date: "2024"
+  },
+  {
+    id: "gfx-bottle-11",
+    title: "Kids Water Bottle Product Branding Mockup",
+    category: "Brand Designs",
+    subtitle: "Packaging Design & 3D Product Mockup",
+    role: "Packaging & Brand Designer",
+    description: "Product branding and label artwork rendered on realistic 3D bottle surfaces with studio reflections and materials.",
+    thumbnail: "/graphics/kids-bottle-mockup.jpg",
+    aspectRatio: "1:1",
+    software: ["Adobe Photoshop", "Adobe Illustrator", "Blender"],
+    featured: false,
+    isGraphic: true,
+    date: "2024"
+  },
+  {
+    id: "gfx-web-12",
+    title: "Corporate Web Header & Promotional Banner",
+    category: "Marketing Banners",
+    subtitle: "Digital Marketing Header Graphic",
+    role: "UI Graphic Designer",
+    description: "Clean horizontal promotional banner with brand visual consistency, typography alignment, and responsive layout balance.",
+    thumbnail: "/graphics/promotional-web-banner.jpg",
+    aspectRatio: "banner",
+    software: ["Figma", "Adobe Illustrator"],
+    featured: false,
+    isGraphic: true,
+    date: "2024"
+  }
+];
+
+export const portfolioProjects: Project[] = [...videoProjects, ...graphicProjects];
+
+/**
+ * ============================================================================
+ * 🛠️ SOFTWARE & SKILLS LIST
+ * - Adobe Premiere Pro
+ * - Adobe After Effects
+ * - Adobe Photoshop
+ * - Adobe Illustrator
+ * - AI Video Creation
+ * - Motion Graphics
+ * - Video Editing
+ * - Graphic Design
+ * ============================================================================
+ */
+export const skillsList: ToolItem[] = [
+  {
+    name: "Adobe Premiere Pro",
+    category: "EDITING AND MOTION",
+    description: "Industry-standard non-linear editing, multi-cam timeline assembly, audio beat-sync, color grading, and delivery exports.",
+    iconName: "Film"
+  },
+  {
+    name: "Adobe After Effects",
+    category: "EDITING AND MOTION",
+    description: "Motion graphics compositing, 3D camera tracking, kinetic typography, visual effects cleanup, and custom easing curves.",
+    iconName: "Sparkles"
+  },
+  {
+    name: "Adobe Photoshop",
+    category: "DESIGN",
+    description: "Advanced image manipulation, digital painting, color harmonization, subject extraction, and high-CTR thumbnail composition.",
+    iconName: "Image"
+  },
+  {
+    name: "Adobe Illustrator",
+    category: "DESIGN",
+    description: "Precision vector illustration, custom branding assets, iconography, scalable layout architecture, and typographic hierarchy.",
+    iconName: "PenTool"
+  },
+  {
+    name: "AI Video Creation",
+    category: "AI AND CREATIVE TOOLS",
+    description: "Generative AI scene synthesis, prompt direction in Higgsfield AI, cinematic lighting passes, and AI-assisted visual enhancement.",
+    iconName: "Cpu"
+  },
+  {
+    name: "Motion Graphics",
+    category: "EDITING AND MOTION",
+    description: "Dynamic kinetic title sequences, animated explainer elements, sleek UI animations, and seamless social loop transitions.",
+    iconName: "Layers"
+  },
+  {
+    name: "Video Editing",
+    category: "EDITING AND MOTION",
+    description: "Narrative structure, rhythmic speed ramps, foley sound design integration, dialogue clean-up, and pacing optimization.",
+    iconName: "Film"
+  },
+  {
+    name: "Graphic Design",
+    category: "DESIGN",
+    description: "Social media marketing creatives, campaign posters, packaging mockups, promotional banners, and visual identity systems.",
+    iconName: "Layout"
+  }
+];
+
+export const toolsData = skillsList;
+
+/**
+ * ============================================================================
+ * ⚡ SERVICES (Full-Cycle Creative Capabilities)
  * ============================================================================
  */
 export const servicesList: ServiceItem[] = [
   {
     id: "service-video-editing",
     title: "VIDEO EDITING",
-    shortDesc: "YouTube videos, podcasts, short-form videos, promotional content, and social media edits.",
+    shortDesc: "Commercial ads, real estate walkthroughs, promotional brand cuts, and retention-engineered social media edits.",
     capabilities: [
       "Narrative pacing & story structure",
       "Dynamic sound design & audio clean-up",
@@ -478,11 +563,11 @@ export const servicesList: ServiceItem[] = [
   {
     id: "service-ai-video",
     title: "AI VIDEO CREATION",
-    shortDesc: "AI-assisted visual concepts, generated scenes, cinematic sequences, and creative experimentation.",
+    shortDesc: "AI-assisted visual concepts, generated scenes, continuous camera moves, and cutting-edge creative workflows.",
     capabilities: [
       "Generative scene synthesis with Higgsfield AI",
       "Prompt-engineered camera motion passes",
-      "Magnific AI detail injection & 4K upscaling",
+      "High-res detail injection & upscaling",
       "Adobe Firefly custom asset generation"
     ],
     iconName: "Cpu"
@@ -490,7 +575,7 @@ export const servicesList: ServiceItem[] = [
   {
     id: "service-motion-graphics",
     title: "MOTION GRAPHICS & VFX",
-    shortDesc: "Animated typography, visual effects, transitions, and motion-driven storytelling.",
+    shortDesc: "Animated typography, visual effects, transitions, lower-thirds, and motion-driven storytelling.",
     capabilities: [
       "Kinetic typography & title sequences",
       "3D camera tracking & plate compositing",
@@ -500,21 +585,9 @@ export const servicesList: ServiceItem[] = [
     iconName: "Sparkles"
   },
   {
-    id: "service-social-media",
-    title: "SOCIAL MEDIA CONTENT",
-    shortDesc: "Instagram Reels, promotional campaigns, and engaging short-form videos.",
-    capabilities: [
-      "Hook-optimized 3-second openers",
-      "Retention-maximizing rhythm & cut frequency",
-      "Trend-aligned pacing & sound syncing",
-      "Mobile-first 9:16 layout engineering"
-    ],
-    iconName: "Smartphone"
-  },
-  {
     id: "service-graphic-design",
     title: "GRAPHIC DESIGN",
-    shortDesc: "Promotional creatives, campaign graphics, and supporting visual assets.",
+    shortDesc: "High-conversion social creatives, advertising posters, marketing banners, and visual identities.",
     capabilities: [
       "High-CTR YouTube thumbnail design",
       "Digital key art & promotional posters",
@@ -527,7 +600,7 @@ export const servicesList: ServiceItem[] = [
 
 /**
  * ============================================================================
- * 🧭 CREATIVE WORKFLOW (Four-Step Creative Process)
+ * 🧭 CREATIVE WORKFLOW
  * ============================================================================
  */
 export const workflowSteps: WorkflowStep[] = [
@@ -552,103 +625,7 @@ export const workflowSteps: WorkflowStep[] = [
   {
     step: "04",
     title: "DELIVER",
-    description: "Polish the final video and prepare platform-ready exports.",
-    details: "Refine client feedback, master audio dynamics, and export pristine ProRes, 4K master, or platform-optimized deliverables."
-  }
-];
-
-/**
- * ============================================================================
- * 🛠️ TOOLS AND SKILLS (From CV, Grouped Appropriately)
- * ============================================================================
- */
-export const toolsData: ToolItem[] = [
-  // EDITING AND MOTION
-  {
-    name: "Adobe Premiere Pro",
-    category: "EDITING AND MOTION",
-    description: "Multi-track dynamic editing for YouTube, podcasts, commercials, pacing, sound sync, and client delivery.",
-    accentColor: "#168BFF",
-    iconName: "Film"
-  },
-  {
-    name: "Adobe After Effects",
-    category: "EDITING AND MOTION",
-    description: "Motion graphics, visual effects, motion tracking, title animation, and cinematic transition design.",
-    accentColor: "#55B7FF",
-    iconName: "Sparkles"
-  },
-  // DESIGN
-  {
-    name: "Adobe Photoshop",
-    category: "DESIGN",
-    description: "High-CTR YouTube thumbnail engineering, visual key art manipulation, and digital matte painting.",
-    accentColor: "#168BFF",
-    iconName: "Image"
-  },
-  {
-    name: "Adobe Illustrator",
-    category: "DESIGN",
-    description: "Vector illustration, brand badge design, custom iconography, and vector motion graphic assets.",
-    accentColor: "#55B7FF",
-    iconName: "PenTool"
-  },
-  {
-    name: "Canva",
-    category: "DESIGN",
-    description: "Rapid social post templating, brand layout consistency, and agile visual asset assembly.",
-    accentColor: "#168BFF",
-    iconName: "Layout"
-  },
-  {
-    name: "Figma",
-    category: "DESIGN",
-    description: "UI/UX layouts, wireframing, presentation decks, and vector visual asset preparation.",
-    accentColor: "#55B7FF",
-    iconName: "Layers"
-  },
-  // 3D
-  {
-    name: "Blender",
-    category: "3D",
-    description: "3D camera tracking, basic 3D asset integration, spatial lighting, and camera depth passes.",
-    accentColor: "#168BFF",
-    iconName: "Box"
-  },
-  // AI AND CREATIVE TOOLS
-  {
-    name: "ChatGPT",
-    category: "AI AND CREATIVE TOOLS",
-    description: "Narrative research, structural script hooks, concept ideation, and video storytelling outlines.",
-    accentColor: "#55B7FF",
-    iconName: "Cpu"
-  },
-  {
-    name: "Gemini AI",
-    category: "AI AND CREATIVE TOOLS",
-    description: "Creative brainstorming, research analysis, video concept exploration, and narrative refinement.",
-    accentColor: "#168BFF",
-    iconName: "Cpu"
-  },
-  {
-    name: "Higgsfield AI",
-    category: "AI AND CREATIVE TOOLS",
-    description: "Generative AI video creation, prompt-driven cinematic camera synthesis, and dynamic scene generation.",
-    accentColor: "#55B7FF",
-    iconName: "Sparkles"
-  },
-  {
-    name: "Adobe Firefly",
-    category: "AI AND CREATIVE TOOLS",
-    description: "Generative fill, conceptual digital assets, high-impact background elements, and textures.",
-    accentColor: "#168BFF",
-    iconName: "Image"
-  },
-  {
-    name: "Magnific AI",
-    category: "AI AND CREATIVE TOOLS",
-    description: "Photorealistic detail injection, resolution upscaling, texture enhancement, and high-clarity finishing.",
-    accentColor: "#55B7FF",
-    iconName: "Sparkles"
+    description: "Color grade, sound mix, master, and export platform-ready deliverables.",
+    details: "Final Rec.709 color finetune, audio loudness mastering (-14 LUFS), format encoding, and multi-ratio deliverables."
   }
 ];

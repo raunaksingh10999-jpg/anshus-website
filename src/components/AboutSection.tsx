@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { User, MapPin, GraduationCap, Mail, Phone, ExternalLink, Sparkles, CheckCircle } from 'lucide-react';
+import { User, MapPin, GraduationCap, Mail, Phone, ExternalLink, Sparkles, CheckCircle, Award } from 'lucide-react';
 import { personalInfo } from '../data/portfolio';
 
 export const AboutSection: React.FC = () => {
   const [imageError, setImageError] = useState(false);
 
   return (
-    <section id="about" className="relative py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <section id="about" className="relative py-24 sm:py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-cinema-border/50">
       {/* Background glow */}
       <div className="absolute top-1/2 left-10 w-96 h-96 bg-electric/5 rounded-full blur-[150px] pointer-events-none" />
 
@@ -15,25 +15,25 @@ export const AboutSection: React.FC = () => {
         {/* LEVEL 1: Section Eyebrow */}
         <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-electric/10 border border-electric/25 text-electric-bright text-xs font-mono tracking-widest uppercase mb-4">
           <User className="w-3.5 h-3.5 text-electric-bright" />
-          <span>ABOUT / BACKGROUND</span>
+          <span>BIOGRAPHY & BACKGROUND</span>
         </div>
 
         {/* LEVEL 2: Section Headline */}
         <h2 className="font-display font-extrabold text-2xl sm:text-4xl md:text-5xl text-text-primary uppercase tracking-tight leading-[1.15]">
-          <span>CREATIVITY MEETS </span>
+          <span>ABOUT </span>
           <span className="text-gradient-cyan text-electric-glow">
-            TECHNOLOGY.
+            ME
           </span>
         </h2>
 
-        {/* LEVEL 3: Supporting Headline Statement */}
+        {/* LEVEL 3: Supporting Statement */}
         <p className="mt-4 text-sm sm:text-base text-text-secondary font-sans leading-relaxed max-w-xl mx-auto">
-          Behind the timelines, storytelling instincts, and technical discipline that drive every visual cut.
+          Transforming creative concepts into immersive visual experiences through modern editing and visual craftsmanship.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        {/* Left Column: Real Portrait & Status Card */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 sm:gap-12 items-center">
+        {/* Left Column: Real Profile Photo & Status Card */}
         <div className="lg:col-span-5 flex flex-col items-center">
           <div className="relative w-full max-w-md aspect-[4/5] rounded-2xl overflow-hidden border border-cinema-border hover:border-electric/50 bg-cinema-card shadow-2xl group transition-all duration-500">
             {/* Ambient inner rim glow */}
@@ -47,7 +47,6 @@ export const AboutSection: React.FC = () => {
                 className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105 filter brightness-95 group-hover:brightness-100"
               />
             ) : (
-              /* Clean architectural monogram fallback if portrait asset is missing */
               <div className="w-full h-full flex flex-col items-center justify-center bg-cinema-card text-center p-8">
                 <div className="w-24 h-24 rounded-2xl bg-cinema-secondary border border-electric/30 flex items-center justify-center mb-4">
                   <span className="font-display font-bold text-4xl text-electric-bright">AK</span>
@@ -61,15 +60,15 @@ export const AboutSection: React.FC = () => {
             <div className="absolute bottom-5 left-5 right-5 p-4 rounded-xl bg-cinema-bg/90 border border-cinema-border backdrop-blur-xl space-y-2 z-20">
               <div className="flex items-center justify-between">
                 <div>
-                  <h3 className="font-display font-bold text-lg text-white">
+                  <h3 className="font-display font-bold text-base sm:text-lg text-white">
                     {personalInfo.name}
                   </h3>
                   <p className="text-[11px] font-mono text-electric-bright">
-                    Video Editor & Motion Designer
+                    Video Editor | Graphic Designer | AI Video Creator
                   </p>
                 </div>
                 <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-electric/10 border border-electric/20 text-[10px] font-mono text-electric-bright">
-                  <span className="w-1.5 h-1.5 rounded-full bg-electric-bright animate-pulse" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                   <span>Available</span>
                 </div>
               </div>
@@ -87,7 +86,7 @@ export const AboutSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Direct link to Google Sites Portfolio */}
+          {/* Direct link to original Google Sites Portfolio */}
           <a
             href={personalInfo.portfolioWebsiteUrl}
             target="_blank"
@@ -99,45 +98,46 @@ export const AboutSection: React.FC = () => {
           </a>
         </div>
 
-        {/* Right Column: Exact Biography & Verified Education */}
-        <div className="lg:col-span-7 flex flex-col justify-center space-y-8">
-          <div className="p-8 rounded-2xl bg-cinema-card border border-cinema-border relative overflow-hidden">
+        {/* Right Column: Exact About Me Statement & Approach */}
+        <div className="lg:col-span-7 flex flex-col justify-center space-y-7">
+          <div className="p-7 sm:p-8 rounded-2xl bg-cinema-card border border-cinema-border relative overflow-hidden">
             <h3 className="font-mono text-xs font-semibold uppercase tracking-widest text-electric-bright mb-4 flex items-center gap-2">
               <Sparkles className="w-3.5 h-3.5" />
-              <span>THE CREATIVE PROFILE</span>
+              <span>THE CREATIVE APPROACH</span>
             </h3>
 
-            {/* Biography with selective tasteful keyword highlights */}
-            <p className="text-base sm:text-lg text-text-secondary font-sans leading-relaxed">
-              I'm <span className="text-white font-semibold">Anshu Kushwaha</span>, a video editor and creative designer focused on{' '}
-              <span className="text-white font-medium">cinematic storytelling</span>,{' '}
+            {/* Exact About Me content from prompt */}
+            <p className="text-base sm:text-lg text-text-primary font-sans leading-relaxed">
+              I'm a creative professional passionate about{' '}
+              <span className="text-white font-semibold">video editing</span>,{' '}
+              <span className="text-white font-semibold">graphic design</span>,{' '}
               <span className="text-electric-bright font-medium">motion graphics</span>, and{' '}
-              <span className="text-electric-bright font-medium">AI-powered visual content</span>. Since 2023, I've been developing my creative skills across video editing, graphic design, and AI-assisted production, turning ideas into{' '}
-              <span className="text-gradient-cyan font-semibold text-electric-glow">engaging visual experiences</span>.
+              <span className="text-electric-bright font-medium">AI-powered visual storytelling</span>. I enjoy transforming ideas into engaging digital experiences through creative visuals and modern editing techniques.
             </p>
 
-            <div className="mt-6 pt-6 border-t border-cinema-border/70 grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-mono text-text-secondary">
+            {/* Key Creative Pillars */}
+            <div className="mt-6 pt-6 border-t border-cinema-border/70 grid grid-cols-1 sm:grid-cols-2 gap-3.5 text-xs font-mono text-text-secondary">
               <div className="flex items-center gap-2">
                 <CheckCircle className="w-4 h-4 text-electric-bright flex-shrink-0" />
-                <span>Specialized in High-Retention Storytelling</span>
+                <span>High-Retention Rhythmic Video Cuts</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle className="w-4 h-4 text-electric-bright flex-shrink-0" />
-                <span>Modern Generative AI Tooling</span>
+                <span>Generative AI Visual Concepting</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle className="w-4 h-4 text-electric-bright flex-shrink-0" />
-                <span>Industry Timeline Software Mastery</span>
+                <span>Vector Branding & Thumbnail Strategy</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle className="w-4 h-4 text-electric-bright flex-shrink-0" />
-                <span>Client Communication & Strict Deadlines</span>
+                <span>Strict Delivery Deadlines & Communication</span>
               </div>
             </div>
           </div>
 
           {/* Education & Academic Training from CV */}
-          <div className="p-8 rounded-2xl bg-cinema-card border border-cinema-border space-y-6">
+          <div className="p-7 sm:p-8 rounded-2xl bg-cinema-card border border-cinema-border space-y-5">
             <h3 className="font-mono text-xs font-semibold uppercase tracking-widest text-electric-bright flex items-center gap-2">
               <GraduationCap className="w-4 h-4" />
               <span>EDUCATION & DESIGN TRAINING</span>

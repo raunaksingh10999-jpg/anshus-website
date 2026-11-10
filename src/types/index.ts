@@ -1,22 +1,34 @@
-export type ProjectCategory = 
-  | 'All'
-  | 'Graphic Design'
-  | 'AI Video Creation'
-  | 'Cinematic Video Editing'
+export type VideoCategory =
+  | 'All Videos'
+  | 'Commercial Ads'
+  | 'Real Estate Videos'
+  | 'Brand Promotional Videos'
+  | 'AI Generated Videos'
   | 'Motion Graphics'
-  | 'Visual Effects'
   | 'Social Media Reels'
-  | 'Brand and Promotional Videos';
+  | 'Documentary Videos';
+
+export type GraphicCategory =
+  | 'All Designs'
+  | 'Social Media Creatives'
+  | 'Advertising Posters'
+  | 'Marketing Banners'
+  | 'Brand Designs'
+  | 'YouTube Thumbnails'
+  | 'Promotional Creatives'
+  | 'Typography Designs';
+
+export type ProjectCategory = VideoCategory | GraphicCategory | 'Graphic Design' | 'All';
 
 export interface Project {
   id: string;
   title: string;
-  category: ProjectCategory;
+  category: string;
   subtitle: string;
   description: string;
   thumbnail: string;
   videoUrl?: string; // YouTube URL or direct video
-  role?: string; // Verified creative role
+  role?: string; // Creative role
   platform?: 'youtube' | 'instagram' | 'direct' | 'other';
   software?: string[];
   featured?: boolean;
@@ -25,7 +37,6 @@ export interface Project {
   aspectRatio?: '9:16' | '16:9' | '1:1' | '4:5' | 'banner';
   clientName?: string;
   externalWatchUrl?: string;
-  isPlaceholder?: boolean;
   isGraphic?: boolean;
 }
 
@@ -64,6 +75,9 @@ export interface PersonalInfo {
   email: string;
   portfolioWebsiteUrl: string;
   whatsAppUrl: string;
+  linkedInUrl: string;
+  instagramUrl: string;
+  resumeUrl: string;
   avatarUrl: string;
   availableForCommissions: boolean;
   availabilityText: string;

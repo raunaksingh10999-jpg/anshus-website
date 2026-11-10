@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ArrowUpRight } from 'lucide-react';
+import { Menu, X, ArrowUpRight, Download } from 'lucide-react';
 import { personalInfo } from '../data/portfolio';
 
 export const Navbar: React.FC = () => {
@@ -11,7 +11,7 @@ export const Navbar: React.FC = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 40);
 
-      const sections = ['hero', 'showreel', 'work', 'services', 'about', 'workflow', 'skills', 'contact'];
+      const sections = ['hero', 'showreel', 'video-editing', 'graphic-design', 'about', 'skills', 'contact'];
       const scrollPos = window.scrollY + 200;
 
       for (const sectionId of sections) {
@@ -34,9 +34,10 @@ export const Navbar: React.FC = () => {
   const navLinks = [
     { name: 'HOME', href: '#hero', sectionId: 'hero' },
     { name: 'SHOWREEL', href: '#showreel', sectionId: 'showreel' },
-    { name: 'WORK', href: '#work', sectionId: 'work' },
-    { name: 'SERVICES', href: '#services', sectionId: 'services' },
+    { name: 'VIDEO EDITING', href: '#video-editing', sectionId: 'video-editing' },
+    { name: 'GRAPHIC DESIGN', href: '#graphic-design', sectionId: 'graphic-design' },
     { name: 'ABOUT', href: '#about', sectionId: 'about' },
+    { name: 'SKILLS', href: '#skills', sectionId: 'skills' },
     { name: 'CONTACT', href: '#contact', sectionId: 'contact' },
   ];
 
@@ -44,7 +45,7 @@ export const Navbar: React.FC = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
         isScrolled
-          ? 'bg-cinema-bg/92 backdrop-blur-xl border-b border-cinema-border py-3.5 shadow-2xl shadow-black/70'
+          ? 'bg-cinema-bg/95 backdrop-blur-xl border-b border-cinema-border py-3 shadow-2xl shadow-black/80'
           : 'bg-transparent py-5 sm:py-6'
       }`}
     >
@@ -53,7 +54,7 @@ export const Navbar: React.FC = () => {
         <a
           href="#hero"
           className="group flex items-center gap-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-electric rounded"
-          aria-label="Anshu Kushwaha - Return to top"
+          aria-label="Anshu Singh Kushwaha - Return to top"
         >
           <div className="relative flex items-center justify-center w-8 h-8 rounded-lg bg-cinema-card border border-cinema-border group-hover:border-electric transition-colors duration-300">
             <span className="font-mono text-xs font-bold text-electric">AK</span>
@@ -71,7 +72,7 @@ export const Navbar: React.FC = () => {
 
         {/* Desktop Navigation Links */}
         <nav
-          className="hidden md:flex items-center gap-1 px-3 py-1.5 rounded-full bg-cinema-card/75 border border-cinema-border backdrop-blur-md"
+          className="hidden xl:flex items-center gap-0.5 px-3 py-1.5 rounded-full bg-cinema-card/75 border border-cinema-border backdrop-blur-md"
           aria-label="Main navigation"
         >
           {navLinks.map((link) => {
@@ -80,7 +81,7 @@ export const Navbar: React.FC = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className={`relative px-3.5 py-1 text-xs font-mono tracking-wider uppercase transition-all duration-200 rounded-full focus:outline-none focus-visible:ring-1 focus-visible:ring-electric ${
+                className={`relative px-3 py-1 text-xs font-mono tracking-wider uppercase transition-all duration-200 rounded-full focus:outline-none focus-visible:ring-1 focus-visible:ring-electric ${
                   isActive
                     ? 'text-white bg-electric/15 text-electric-bright font-semibold'
                     : 'text-text-secondary hover:text-text-primary hover:bg-white/5 font-normal'
@@ -95,32 +96,31 @@ export const Navbar: React.FC = () => {
           })}
         </nav>
 
-        {/* Right Action: Availability Status & Let's Talk CTA */}
-        <div className="hidden lg:flex items-center gap-4">
-          {personalInfo.availableForCommissions && (
-            <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-electric/10 border border-electric/25 text-[11px] font-mono text-electric-bright">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-electric-bright opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-electric"></span>
-              </span>
-              <span>AVAILABLE</span>
-            </div>
-          )}
+        {/* Right Action: Download CV & Contact CTA */}
+        <div className="hidden sm:flex items-center gap-3">
+          <a
+            href={personalInfo.resumeUrl}
+            download="Anshu-Singh-Kushwaha-CV.pdf"
+            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-mono text-text-secondary hover:text-white bg-cinema-card border border-cinema-border hover:border-electric transition-colors"
+          >
+            <Download className="w-3.5 h-3.5 text-electric-bright" />
+            <span>CV</span>
+          </a>
 
           <a
             href="#contact"
-            className="group relative inline-flex items-center gap-1.5 px-5 py-2 rounded-full text-xs font-mono font-semibold uppercase tracking-wider text-white bg-cinema-card border border-cinema-border hover:border-electric hover:shadow-electric-button transition-all duration-300 transform hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-electric"
+            className="group relative inline-flex items-center gap-1.5 px-5 py-2 rounded-full text-xs font-mono font-semibold uppercase tracking-wider text-white bg-electric hover:bg-electric-bright shadow-electric-button transition-all duration-300 transform hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-electric"
           >
             <span>LET'S TALK</span>
-            <ArrowUpRight className="w-3.5 h-3.5 text-electric-bright group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            <ArrowUpRight className="w-3.5 h-3.5 text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </a>
         </div>
 
-        {/* Mobile Hamburger & Quick Contact Button */}
-        <div className="flex md:hidden items-center gap-2.5">
+        {/* Mobile Hamburger Button */}
+        <div className="flex xl:hidden items-center gap-2">
           <a
             href="#contact"
-            className="px-3.5 py-1.5 text-xs font-mono font-semibold text-white bg-electric rounded-full uppercase tracking-wider"
+            className="px-3 py-1.5 text-xs font-mono font-semibold text-white bg-electric rounded-full uppercase tracking-wider sm:hidden"
           >
             TALK
           </a>
@@ -136,7 +136,7 @@ export const Navbar: React.FC = () => {
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-cinema-bg/95 border-b border-cinema-border backdrop-blur-2xl px-6 py-6 space-y-4 animate-fadeIn">
+        <div className="xl:hidden bg-cinema-bg/95 border-b border-cinema-border backdrop-blur-2xl px-6 py-6 space-y-4 animate-fadeIn">
           <div className="flex flex-col space-y-2">
             {navLinks.map((link) => (
               <a
@@ -151,12 +151,21 @@ export const Navbar: React.FC = () => {
             ))}
           </div>
 
-          {personalInfo.availableForCommissions && (
-            <div className="flex items-center gap-2 pt-2 text-xs font-mono text-electric-bright">
+          <div className="flex items-center justify-between pt-2">
+            <a
+              href={personalInfo.resumeUrl}
+              download="Anshu-Singh-Kushwaha-CV.pdf"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-cinema-card border border-cinema-border text-xs font-mono text-electric-bright"
+            >
+              <Download className="w-3.5 h-3.5" />
+              <span>Download CV</span>
+            </a>
+
+            <div className="flex items-center gap-2 text-xs font-mono text-electric-bright">
               <span className="h-2 w-2 rounded-full bg-electric animate-pulse" />
-              <span>{personalInfo.availabilityText}</span>
+              <span>Available</span>
             </div>
-          )}
+          </div>
         </div>
       )}
     </header>

@@ -31,14 +31,14 @@ export const ShowreelSection: React.FC = () => {
         {/* LEVEL 1: Section Label Badge */}
         <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-electric/10 border border-electric/25 text-electric-bright text-xs font-mono tracking-widest uppercase mb-4">
           <Film className="w-3.5 h-3.5 text-electric-bright" />
-          <span>{featuredShowreel.sectionLabel}</span>
+          <span>FEATURED SHOWCASE</span>
         </div>
 
         {/* LEVEL 2: Section Headline */}
         <h2 className="font-display font-extrabold text-2xl sm:text-4xl md:text-5xl text-text-primary uppercase tracking-tight leading-[1.15]">
-          <span>EVERY FRAME HAS </span>
+          <span>MY </span>
           <span className="text-gradient-cyan text-electric-glow">
-            A PURPOSE.
+            SHOWREEL
           </span>
         </h2>
 
