@@ -728,510 +728,307 @@ export const videoProjects: Project[] = [
 
 export const graphicProjects: Project[] = [
   {
-    "id": "gfx-ev-01",
-    "title": "Next-Gen EV Commercial Campaign Banner",
-    "category": "YouTube Thumbnails",
-    "subtitle": "Automotive Electric Vehicle Ad Creative",
-    "role": "Graphic & Brand Designer",
-    "description": "High-impact automotive commercial campaign banner featuring modern lighting highlights, dynamic angle framing, and bold typography hierarchy.",
-    "thumbnail": "/graphics/works/New_Gen_EV_1.jpg",
-    "aspectRatio": "1:1",
-    "software": [
-      "Adobe Photoshop",
-      "Adobe Illustrator"
-    ],
-    "featured": true,
-    "isGraphic": true,
-    "section": "Graphic",
-    "date": "2024"
-  },
-  {
-    "id": "gfx-skin-02",
-    "title": "Botanical Organic Skincare Social Ad",
-    "category": "Social Media Creatives",
-    "subtitle": "Organic Cosmetic Social Campaign",
-    "role": "Visual Designer & Art Director",
-    "description": "Elegant product composition with natural lighting, soft shadow falloff, and clean typographic framing tailored for social ad conversion.",
-    "thumbnail": "/graphics/works/Skin-Care-1.jpg",
-    "aspectRatio": "1:1",
-    "software": [
-      "Adobe Photoshop",
-      "Figma"
-    ],
-    "featured": true,
-    "isGraphic": true,
-    "section": "Graphic",
-    "date": "2024"
-  },
-  {
-    "id": "gfx-ad1-03",
-    "title": "Commercial Product Advertisement 01",
-    "category": "Promotional Creatives",
-    "subtitle": "Product Marketing & Campaign Creative",
-    "role": "Commercial Graphic Designer",
-    "description": "Dynamic commercial advertisement with vibrant color grading, high-contrast focal highlights, and structured call-to-action layout.",
-    "thumbnail": "/graphics/works/Ads_1.jpg",
-    "aspectRatio": "1:1",
-    "software": [
-      "Adobe Photoshop",
-      "Adobe Illustrator"
-    ],
-    "featured": false,
-    "isGraphic": true,
-    "section": "Graphic",
-    "date": "2024"
-  },
-  {
-    "id": "gfx-ad3-04",
-    "title": "Special Offer Product Campaign Ad 03",
-    "category": "Promotional Creatives",
-    "subtitle": "E-Commerce Promotional Graphic",
-    "role": "Promotional Creative Designer",
-    "description": "High-conversion digital advertisement engineered with attention-grabbing headline typography and dimensional product shadows.",
-    "thumbnail": "/graphics/works/Ads_3.jpg",
-    "aspectRatio": "1:1",
-    "software": [
-      "Adobe Photoshop",
-      "Canva"
-    ],
-    "featured": false,
-    "isGraphic": true,
-    "section": "Graphic",
-    "date": "2024"
-  },
-  {
-    "id": "gfx-ad4-05",
-    "title": "Brand Identity Social Creative 04",
-    "category": "Social Media Creatives",
-    "subtitle": "Digital Marketing Campaign Asset",
-    "role": "Visual Designer",
-    "description": "Multi-layered promotional artwork with modern editorial aesthetics, layered textures, and bold visual contrast.",
-    "thumbnail": "/graphics/works/Ads_4.jpg",
-    "aspectRatio": "1:1",
-    "software": [
-      "Adobe Photoshop",
-      "Figma"
-    ],
-    "featured": false,
-    "isGraphic": true,
-    "section": "Graphic",
-    "date": "2024"
-  },
-  {
-    "id": "gfx-bottle-06",
-    "title": "Kids Water Bottle 3D Product Mockup",
-    "category": "Brand Designs",
-    "subtitle": "Packaging Design & 3D Product Mockup",
-    "role": "Packaging & Brand Designer",
-    "description": "Product branding and label artwork rendered on realistic 3D bottle surfaces with studio reflections and materials.",
-    "thumbnail": "/graphics/works/8a.-Kids-Water-Bottle-Mokup.jpg",
-    "aspectRatio": "1:1",
-    "software": [
-      "Adobe Photoshop",
-      "Adobe Illustrator",
-      "Blender"
-    ],
-    "featured": false,
-    "isGraphic": true,
-    "section": "Graphic",
-    "date": "2024"
-  },
-  {
-    "id": "gfx-post-07",
-    "title": "Digital Marketing Social Post",
-    "category": "Social Media Creatives",
-    "subtitle": "High-CTR Social Creative",
+    "id": "gsite-art-01",
+    "title": "Graphic Design",
+    "category": "Graphic Design",
+    "subtitle": "",
     "role": "Graphic Designer",
-    "description": "Clean modern social media post layout with balanced typographic contrast and brand accents.",
-    "thumbnail": "/graphics/works/Post.png",
+    "description": "",
+    "thumbnail": "/graphics/gsite/gsite_1.jpg",
     "aspectRatio": "1:1",
-    "software": [
-      "Adobe Photoshop",
-      "Figma"
-    ],
-    "featured": false,
     "isGraphic": true,
-    "section": "Graphic",
-    "date": "2024"
+    "section": "Graphic"
   },
   {
-    "id": "gfx-car-08",
-    "title": "Social Carousel Slide 01: Headline & Hook",
-    "category": "Social Media Creatives",
-    "subtitle": "Multi-Slide Editorial Carousel",
-    "role": "Content & Visual Designer",
-    "description": "First slide of educational social carousel engineered for high thumb-stopping power on LinkedIn and Instagram.",
-    "thumbnail": "/graphics/works/First.jpg",
-    "aspectRatio": "1:1",
-    "software": [
-      "Adobe Photoshop",
-      "Illustrator"
-    ],
-    "featured": false,
-    "isGraphic": true,
-    "section": "Graphic",
-    "date": "2024"
-  },
-  {
-    "id": "gfx-car-09",
-    "title": "Social Carousel Slide 02: Educational Insights",
-    "category": "Social Media Creatives",
-    "subtitle": "Multi-Slide Editorial Carousel",
-    "role": "Content & Visual Designer",
-    "description": "Structured information hierarchy presenting complex creative workflows in easily digestible visual blocks.",
-    "thumbnail": "/graphics/works/Second.jpg",
-    "aspectRatio": "1:1",
-    "software": [
-      "Adobe Photoshop",
-      "Illustrator"
-    ],
-    "featured": false,
-    "isGraphic": true,
-    "section": "Graphic",
-    "date": "2024"
-  },
-  {
-    "id": "gfx-car-10",
-    "title": "Social Carousel Slide 03: Process & Frameworks",
-    "category": "Social Media Creatives",
-    "subtitle": "Multi-Slide Editorial Carousel",
-    "role": "Content & Visual Designer",
-    "description": "Step-by-step breakdown illustrating motion design and video editing pipelines.",
-    "thumbnail": "/graphics/works/Third.jpg",
-    "aspectRatio": "1:1",
-    "software": [
-      "Adobe Photoshop",
-      "Illustrator"
-    ],
-    "featured": false,
-    "isGraphic": true,
-    "section": "Graphic",
-    "date": "2024"
-  },
-  {
-    "id": "gfx-car-11",
-    "title": "Social Carousel Slide 04: Visual Demonstrations",
-    "category": "Social Media Creatives",
-    "subtitle": "Multi-Slide Editorial Carousel",
-    "role": "Content & Visual Designer",
-    "description": "Comparison and visual demonstration slide demonstrating before/after editing quality.",
-    "thumbnail": "/graphics/works/Forth.jpg",
-    "aspectRatio": "1:1",
-    "software": [
-      "Adobe Photoshop",
-      "Illustrator"
-    ],
-    "featured": false,
-    "isGraphic": true,
-    "section": "Graphic",
-    "date": "2024"
-  },
-  {
-    "id": "gfx-car-12",
-    "title": "Social Carousel Slide 05: Practical Tips",
-    "category": "Social Media Creatives",
-    "subtitle": "Multi-Slide Editorial Carousel",
-    "role": "Content & Visual Designer",
-    "description": "Actionable creative tips for video editors and creators seeking retention improvements.",
-    "thumbnail": "/graphics/works/Fifth.jpg",
-    "aspectRatio": "1:1",
-    "software": [
-      "Adobe Photoshop",
-      "Illustrator"
-    ],
-    "featured": false,
-    "isGraphic": true,
-    "section": "Graphic",
-    "date": "2024"
-  },
-  {
-    "id": "gfx-car-13",
-    "title": "Social Carousel Slide 06: Key Takeaways",
-    "category": "Social Media Creatives",
-    "subtitle": "Multi-Slide Editorial Carousel",
-    "role": "Content & Visual Designer",
-    "description": "Summary slide distilling the core lessons into high-retention bullet points.",
-    "thumbnail": "/graphics/works/Sixth.jpg",
-    "aspectRatio": "1:1",
-    "software": [
-      "Adobe Photoshop",
-      "Illustrator"
-    ],
-    "featured": false,
-    "isGraphic": true,
-    "section": "Graphic",
-    "date": "2024"
-  },
-  {
-    "id": "gfx-car-14",
-    "title": "Social Carousel Slide 07: Follow & Outro CTA",
-    "category": "Social Media Creatives",
-    "subtitle": "Multi-Slide Editorial Carousel",
-    "role": "Content & Visual Designer",
-    "description": "Concluding call-to-action slide formatted for social saves, shares, and client inquiry generation.",
-    "thumbnail": "/graphics/works/Last-page.jpg",
-    "aspectRatio": "1:1",
-    "software": [
-      "Adobe Photoshop",
-      "Illustrator"
-    ],
-    "featured": false,
-    "isGraphic": true,
-    "section": "Graphic",
-    "date": "2024"
-  },
-  {
-    "id": "gfx-ccn-15",
-    "title": "Creative Key Art & Poster Design",
-    "category": "Advertising Posters",
-    "subtitle": "Vertical Storytelling & Editorial Art",
-    "role": "Art Director & Graphic Artist",
-    "description": "Vertical key art poster exploring surreal color palettes, subject depth extraction, and cinematic texture grading.",
-    "thumbnail": "/graphics/works/CC_N.jpg",
-    "aspectRatio": "9:16",
-    "software": [
-      "Adobe Photoshop",
-      "Adobe Firefly"
-    ],
-    "featured": true,
-    "isGraphic": true,
-    "section": "Graphic",
-    "date": "2024"
-  },
-  {
-    "id": "gfx-ps-16",
-    "title": "Photoshop Surreal Digital Art Composition",
-    "category": "Typography Designs",
-    "subtitle": "Digital Key Art & Photo Manipulation",
-    "role": "Photoshop Compositor & Visual Artist",
-    "description": "Multi-layered digital matte manipulation combining practical elements with atmospheric volumetric lighting and color harmonies.",
-    "thumbnail": "/graphics/works/Ps.jpg",
-    "aspectRatio": "9:16",
-    "software": [
-      "Adobe Photoshop"
-    ],
-    "featured": true,
-    "isGraphic": true,
-    "section": "Graphic",
-    "date": "2024"
-  },
-  {
-    "id": "gfx-dog-17",
-    "title": "Character Visual Art & Pet Brand Design",
-    "category": "Advertising Posters",
-    "subtitle": "Character Key Art & Visual Framing",
-    "role": "Graphic Designer & Illustrator",
-    "description": "Subject detail enhancement with fur texture cleanup, rim lighting passes, and cinematic portrait background depth.",
-    "thumbnail": "/graphics/works/Dog.jpg",
-    "aspectRatio": "9:16",
-    "software": [
-      "Adobe Photoshop",
-      "Adobe Illustrator"
-    ],
-    "featured": false,
-    "isGraphic": true,
-    "section": "Graphic",
-    "date": "2024"
-  },
-  {
-    "id": "gfx-thu-18",
-    "title": "Vertical Visual Storytelling Poster",
-    "category": "Advertising Posters",
-    "subtitle": "Mobile-First Poster & Social Creative",
+    "id": "gsite-art-02",
+    "title": "Graphic Design",
+    "category": "Graphic Design",
+    "subtitle": "",
     "role": "Graphic Designer",
-    "description": "Mobile poster artwork formatted with high vertical visual flow, focal subject rim lights, and bold graphic presence.",
-    "thumbnail": "/graphics/works/Thu.jpg",
-    "aspectRatio": "9:16",
-    "software": [
-      "Adobe Photoshop",
-      "Lightroom"
-    ],
-    "featured": false,
-    "isGraphic": true,
-    "section": "Graphic",
-    "date": "2024"
-  },
-  {
-    "id": "gfx-art2-19",
-    "title": "Digital Artwork & Editorial Key Poster",
-    "category": "Advertising Posters",
-    "subtitle": "Digital Painting & Key Visual",
-    "role": "Digital Artist",
-    "description": "Stylized portrait composition with volumetric brushwork, dramatic rim lights, and artistic character expression.",
-    "thumbnail": "/graphics/works/2.jpg",
-    "aspectRatio": "9:16",
-    "software": [
-      "Adobe Photoshop",
-      "Illustrator"
-    ],
-    "featured": false,
-    "isGraphic": true,
-    "section": "Graphic",
-    "date": "2024"
-  },
-  {
-    "id": "gfx-coder-20",
-    "title": "Coder Life High-CTR Visual Banner",
-    "category": "Marketing Banners",
-    "subtitle": "Tech Creator YouTube Banner & Creative",
-    "role": "Thumbnail & Banner Designer",
-    "description": "Tech-themed editorial landscape graphic featuring neon ambient rim lighting, custom vector code elements, and focal contrast.",
-    "thumbnail": "/graphics/works/coder-life-3.jpg",
-    "aspectRatio": "16:9",
-    "software": [
-      "Adobe Photoshop",
-      "Adobe Illustrator"
-    ],
-    "featured": true,
-    "isGraphic": true,
-    "section": "Graphic",
-    "date": "2024"
-  },
-  {
-    "id": "gfx-web1-21",
-    "title": "Corporate Web Header & Promotional Banner 01",
-    "category": "Marketing Banners",
-    "subtitle": "Digital Marketing Header Graphic",
-    "role": "UI Graphic Designer",
-    "description": "Clean horizontal promotional banner with brand visual consistency, typography alignment, and responsive layout balance.",
-    "thumbnail": "/graphics/works/Page_1.jpg",
-    "aspectRatio": "banner",
-    "software": [
-      "Figma",
-      "Adobe Illustrator"
-    ],
-    "featured": false,
-    "isGraphic": true,
-    "section": "Graphic",
-    "date": "2024"
-  },
-  {
-    "id": "gfx-web2-22",
-    "title": "Corporate Web Header & Promotional Banner 02",
-    "category": "Marketing Banners",
-    "subtitle": "Digital Marketing Secondary Banner",
-    "role": "UI Graphic Designer",
-    "description": "Secondary promotional banner formatted for wide desktop hero headers and digital ad placements.",
-    "thumbnail": "/graphics/works/Third_.jpg",
-    "aspectRatio": "banner",
-    "software": [
-      "Figma",
-      "Adobe Illustrator"
-    ],
-    "featured": false,
-    "isGraphic": true,
-    "section": "Graphic",
-    "date": "2024"
-  },
-  {
-    "id": "gfx-cardf-23",
-    "title": "Brand Identity Business Card (Front)",
-    "category": "Brand Designs",
-    "subtitle": "Stationery & Corporate Branding",
-    "role": "Brand Identity Designer",
-    "description": "Minimalist corporate business card design with embossed typography details and balanced spacing.",
-    "thumbnail": "/graphics/works/Card-Front.jpg",
-    "aspectRatio": "16:9",
-    "software": [
-      "Adobe Illustrator",
-      "Photoshop"
-    ],
-    "featured": false,
-    "isGraphic": true,
-    "section": "Graphic",
-    "date": "2024"
-  },
-  {
-    "id": "gfx-cardb-24",
-    "title": "Brand Identity Business Card (Back)",
-    "category": "Brand Designs",
-    "subtitle": "Stationery & Corporate Branding",
-    "role": "Brand Identity Designer",
-    "description": "Reverse layout of business card featuring brand logo mark and modern layout architecture.",
-    "thumbnail": "/graphics/works/Card-Back.jpg",
-    "aspectRatio": "16:9",
-    "software": [
-      "Adobe Illustrator",
-      "Photoshop"
-    ],
-    "featured": false,
-    "isGraphic": true,
-    "section": "Graphic",
-    "date": "2024"
-  },
-  {
-    "id": "gfx-statf-25",
-    "title": "Corporate Stationery Brand Identity (Front)",
-    "category": "Brand Designs",
-    "subtitle": "Corporate Brand Collateral",
-    "role": "Brand Identity Designer",
-    "description": "Executive stationery design engineered for cohesive corporate communications.",
-    "thumbnail": "/graphics/works/Front.jpg",
-    "aspectRatio": "16:9",
-    "software": [
-      "Adobe Illustrator",
-      "Photoshop"
-    ],
-    "featured": false,
-    "isGraphic": true,
-    "section": "Graphic",
-    "date": "2024"
-  },
-  {
-    "id": "gfx-statb-26",
-    "title": "Corporate Stationery Brand Identity (Back)",
-    "category": "Brand Designs",
-    "subtitle": "Corporate Brand Collateral",
-    "role": "Brand Identity Designer",
-    "description": "Cohesive branded reverse collateral completing the corporate visual identity system.",
-    "thumbnail": "/graphics/works/Back.jpg",
-    "aspectRatio": "16:9",
-    "software": [
-      "Adobe Illustrator",
-      "Photoshop"
-    ],
-    "featured": false,
-    "isGraphic": true,
-    "section": "Graphic",
-    "date": "2024"
-  },
-  {
-    "id": "gfx-chips-27",
-    "title": "Chips Packet Packaging Design Mockup",
-    "category": "Brand Designs",
-    "subtitle": "FMCG Food Packaging Design",
-    "role": "Packaging & Brand Designer",
-    "description": "Vibrant commercial snack packaging design with dynamic flavor splash graphics, bold typographic branding, and metallic pouch reflections.",
-    "thumbnail": "/graphics/works/7.-Chips-Packet-design-Moke-up3x.jpg",
+    "description": "",
+    "thumbnail": "/graphics/gsite/gsite_2.jpg",
     "aspectRatio": "1:1",
-    "software": [
-      "Adobe Illustrator",
-      "Adobe Photoshop"
-    ],
-    "featured": true,
     "isGraphic": true,
-    "section": "Graphic",
-    "date": "2024"
+    "section": "Graphic"
   },
   {
-    "id": "gfx-firodiya-28",
-    "title": "Firodiya Event & Stage Visual Poster",
-    "category": "Advertising Posters",
-    "subtitle": "Large Format Cultural Event Poster",
-    "role": "Key Visual & Poster Designer",
-    "description": "High-resolution large-format stage poster created for prestigious cultural event showcasing dramatic composition and thematic lighting.",
-    "thumbnail": "/graphics/works/2200Firodiya_1-.jpg",
-    "aspectRatio": "9:16",
-    "software": [
-      "Adobe Photoshop",
-      "Adobe Illustrator"
-    ],
-    "featured": true,
+    "id": "gsite-art-03",
+    "title": "Graphic Design",
+    "category": "Graphic Design",
+    "subtitle": "",
+    "role": "Graphic Designer",
+    "description": "",
+    "thumbnail": "/graphics/gsite/gsite_3.jpg",
+    "aspectRatio": "1:1",
     "isGraphic": true,
-    "section": "Graphic",
-    "date": "2023"
+    "section": "Graphic"
+  },
+  {
+    "id": "gsite-art-04",
+    "title": "Graphic Design",
+    "category": "Graphic Design",
+    "subtitle": "",
+    "role": "Graphic Designer",
+    "description": "",
+    "thumbnail": "/graphics/gsite/gsite_4.jpg",
+    "aspectRatio": "1:1",
+    "isGraphic": true,
+    "section": "Graphic"
+  },
+  {
+    "id": "gsite-art-05",
+    "title": "Graphic Design",
+    "category": "Graphic Design",
+    "subtitle": "",
+    "role": "Graphic Designer",
+    "description": "",
+    "thumbnail": "/graphics/gsite/gsite_5.jpg",
+    "aspectRatio": "1:1",
+    "isGraphic": true,
+    "section": "Graphic"
+  },
+  {
+    "id": "gsite-art-06",
+    "title": "Graphic Design",
+    "category": "Graphic Design",
+    "subtitle": "",
+    "role": "Graphic Designer",
+    "description": "",
+    "thumbnail": "/graphics/gsite/gsite_6.jpg",
+    "aspectRatio": "1:1",
+    "isGraphic": true,
+    "section": "Graphic"
+  },
+  {
+    "id": "gsite-art-14",
+    "title": "Graphic Design",
+    "category": "Graphic Design",
+    "subtitle": "",
+    "role": "Graphic Designer",
+    "description": "",
+    "thumbnail": "/graphics/gsite/gsite_14.jpg",
+    "aspectRatio": "1:1",
+    "isGraphic": true,
+    "section": "Graphic"
+  },
+  {
+    "id": "gsite-art-15",
+    "title": "Graphic Design",
+    "category": "Graphic Design",
+    "subtitle": "",
+    "role": "Graphic Designer",
+    "description": "",
+    "thumbnail": "/graphics/gsite/gsite_15.jpg",
+    "aspectRatio": "1:1",
+    "isGraphic": true,
+    "section": "Graphic"
+  },
+  {
+    "id": "gsite-art-16",
+    "title": "Graphic Design",
+    "category": "Graphic Design",
+    "subtitle": "",
+    "role": "Graphic Designer",
+    "description": "",
+    "thumbnail": "/graphics/gsite/gsite_16.jpg",
+    "aspectRatio": "1:1",
+    "isGraphic": true,
+    "section": "Graphic"
+  },
+  {
+    "id": "gsite-art-07",
+    "title": "Graphic Design",
+    "category": "Graphic Design",
+    "subtitle": "",
+    "role": "Graphic Designer",
+    "description": "",
+    "thumbnail": "/graphics/gsite/gsite_7.jpg",
+    "aspectRatio": "9:16",
+    "isGraphic": true,
+    "section": "Graphic"
+  },
+  {
+    "id": "gsite-art-08",
+    "title": "Graphic Design",
+    "category": "Graphic Design",
+    "subtitle": "",
+    "role": "Graphic Designer",
+    "description": "",
+    "thumbnail": "/graphics/gsite/gsite_8.jpg",
+    "aspectRatio": "9:16",
+    "isGraphic": true,
+    "section": "Graphic"
+  },
+  {
+    "id": "gsite-art-09",
+    "title": "Graphic Design",
+    "category": "Graphic Design",
+    "subtitle": "",
+    "role": "Graphic Designer",
+    "description": "",
+    "thumbnail": "/graphics/gsite/gsite_9.jpg",
+    "aspectRatio": "9:16",
+    "isGraphic": true,
+    "section": "Graphic"
+  },
+  {
+    "id": "gsite-art-10",
+    "title": "Graphic Design",
+    "category": "Graphic Design",
+    "subtitle": "",
+    "role": "Graphic Designer",
+    "description": "",
+    "thumbnail": "/graphics/gsite/gsite_10.jpg",
+    "aspectRatio": "9:16",
+    "isGraphic": true,
+    "section": "Graphic"
+  },
+  {
+    "id": "gsite-art-11",
+    "title": "Graphic Design",
+    "category": "Graphic Design",
+    "subtitle": "",
+    "role": "Graphic Designer",
+    "description": "",
+    "thumbnail": "/graphics/gsite/gsite_11.jpg",
+    "aspectRatio": "9:16",
+    "isGraphic": true,
+    "section": "Graphic"
+  },
+  {
+    "id": "gsite-art-12",
+    "title": "Graphic Design",
+    "category": "Graphic Design",
+    "subtitle": "",
+    "role": "Graphic Designer",
+    "description": "",
+    "thumbnail": "/graphics/gsite/gsite_12.jpg",
+    "aspectRatio": "9:16",
+    "isGraphic": true,
+    "section": "Graphic"
+  },
+  {
+    "id": "gsite-art-13",
+    "title": "Graphic Design",
+    "category": "Graphic Design",
+    "subtitle": "",
+    "role": "Graphic Designer",
+    "description": "",
+    "thumbnail": "/graphics/gsite/gsite_13.jpg",
+    "aspectRatio": "9:16",
+    "isGraphic": true,
+    "section": "Graphic"
+  },
+  {
+    "id": "gsite-art-17",
+    "title": "Graphic Design",
+    "category": "Graphic Design",
+    "subtitle": "",
+    "role": "Graphic Designer",
+    "description": "",
+    "thumbnail": "/graphics/gsite/gsite_17.jpg",
+    "aspectRatio": "9:16",
+    "isGraphic": true,
+    "section": "Graphic"
+  },
+  {
+    "id": "gsite-art-18",
+    "title": "Graphic Design",
+    "category": "Graphic Design",
+    "subtitle": "",
+    "role": "Graphic Designer",
+    "description": "",
+    "thumbnail": "/graphics/gsite/gsite_18.jpg",
+    "aspectRatio": "9:16",
+    "isGraphic": true,
+    "section": "Graphic"
+  },
+  {
+    "id": "gsite-art-19",
+    "title": "Graphic Design",
+    "category": "Graphic Design",
+    "subtitle": "",
+    "role": "Graphic Designer",
+    "description": "",
+    "thumbnail": "/graphics/gsite/gsite_19.jpg",
+    "aspectRatio": "9:16",
+    "isGraphic": true,
+    "section": "Graphic"
+  },
+  {
+    "id": "gsite-art-20",
+    "title": "Graphic Design",
+    "category": "Graphic Design",
+    "subtitle": "",
+    "role": "Graphic Designer",
+    "description": "",
+    "thumbnail": "/graphics/gsite/gsite_20.jpg",
+    "aspectRatio": "9:16",
+    "isGraphic": true,
+    "section": "Graphic"
+  },
+  {
+    "id": "gsite-art-21",
+    "title": "Graphic Design",
+    "category": "Graphic Design",
+    "subtitle": "",
+    "role": "Graphic Designer",
+    "description": "",
+    "thumbnail": "/graphics/gsite/gsite_21.jpg",
+    "aspectRatio": "9:16",
+    "isGraphic": true,
+    "section": "Graphic"
+  },
+  {
+    "id": "gsite-art-22",
+    "title": "Graphic Design",
+    "category": "Graphic Design",
+    "subtitle": "",
+    "role": "Graphic Designer",
+    "description": "",
+    "thumbnail": "/graphics/gsite/gsite_22.jpg",
+    "aspectRatio": "9:16",
+    "isGraphic": true,
+    "section": "Graphic"
+  },
+  {
+    "id": "gsite-art-23",
+    "title": "Graphic Design",
+    "category": "Graphic Design",
+    "subtitle": "",
+    "role": "Graphic Designer",
+    "description": "",
+    "thumbnail": "/graphics/gsite/gsite_23.jpg",
+    "aspectRatio": "9:16",
+    "isGraphic": true,
+    "section": "Graphic"
+  },
+  {
+    "id": "gsite-art-24",
+    "title": "Graphic Design",
+    "category": "Graphic Design",
+    "subtitle": "",
+    "role": "Graphic Designer",
+    "description": "",
+    "thumbnail": "/graphics/gsite/gsite_24.jpg",
+    "aspectRatio": "9:16",
+    "isGraphic": true,
+    "section": "Graphic"
+  },
+  {
+    "id": "gsite-art-25",
+    "title": "Graphic Design",
+    "category": "Graphic Design",
+    "subtitle": "",
+    "role": "Graphic Designer",
+    "description": "",
+    "thumbnail": "/graphics/gsite/gsite_25.jpg",
+    "aspectRatio": "16:9",
+    "isGraphic": true,
+    "section": "Graphic"
   }
 ];
+
 
 export const portfolioProjects: Project[] = [...videoProjects, ...graphicProjects];
 

@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { Palette, Maximize2, Image, Layout, Square } from 'lucide-react';
+import { Palette, Maximize2, Image, Square, Layout } from 'lucide-react';
 import { graphicProjects } from '../data/portfolio';
 import { Project } from '../types';
 
@@ -7,12 +7,12 @@ interface GraphicDesignSectionProps {
   onSelectProject: (project: Project) => void;
 }
 
-type GraphicFormatFilter = 'all' | '1:1' | '9:16' | 'banner';
+type GraphicFormatFilter = 'all' | '1:1' | '9:16' | '16:9';
 
 export const GraphicDesignSection: React.FC<GraphicDesignSectionProps> = ({ onSelectProject }) => {
   const [selectedFormat, setSelectedFormat] = useState<GraphicFormatFilter>('all');
 
-  // Split into square (1:1), vertical (9:16), and banner (16:9 / banner)
+  // Exact Google Sites Graphic items grouped by orientation
   const squareProjects = useMemo(() => {
     return graphicProjects.filter((p) => p.aspectRatio === '1:1');
   }, []);
@@ -21,13 +21,13 @@ export const GraphicDesignSection: React.FC<GraphicDesignSectionProps> = ({ onSe
     return graphicProjects.filter((p) => p.aspectRatio === '9:16');
   }, []);
 
-  const bannerProjects = useMemo(() => {
-    return graphicProjects.filter((p) => p.aspectRatio === '16:9' || p.aspectRatio === 'banner');
+  const wideProjects = useMemo(() => {
+    return graphicProjects.filter((p) => p.aspectRatio === '16:9');
   }, []);
 
   const showSquare = selectedFormat === 'all' || selectedFormat === '1:1';
   const showVertical = selectedFormat === 'all' || selectedFormat === '9:16';
-  const showBanner = selectedFormat === 'all' || selectedFormat === 'banner';
+  const showWide = selectedFormat === 'all' || selectedFormat === '16:9';
 
   return (
     <section id="graphic-design" className="relative py-20 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-cinema-border/50 scroll-mt-28">
@@ -49,7 +49,7 @@ export const GraphicDesignSection: React.FC<GraphicDesignSectionProps> = ({ onSe
           </span>
         </h2>
 
-        {/* Format / Orientation Switcher */}
+        {/* Orientation Filter Switcher (No marketing categories) */}
         <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mt-8">
           <button
             onClick={() => setSelectedFormat('all')}
@@ -84,25 +84,27 @@ export const GraphicDesignSection: React.FC<GraphicDesignSectionProps> = ({ onSe
             }`}
           >
             <Image className="w-3.5 h-3.5" />
-            <span>Posters ({verticalProjects.length})</span>
+            <span>Posters & Key Art ({verticalProjects.length})</span>
           </button>
 
-          <button
-            onClick={() => setSelectedFormat('banner')}
-            className={`px-4 py-2 rounded-full text-xs font-mono uppercase tracking-wider transition-all duration-300 focus:outline-none flex items-center gap-1.5 ${
-              selectedFormat === 'banner'
-                ? 'bg-electric text-white font-bold shadow-electric-button scale-105'
-                : 'bg-cinema-card text-text-secondary hover:text-white hover:bg-cinema-cardHover border border-cinema-border'
-            }`}
-          >
-            <Layout className="w-3.5 h-3.5" />
-            <span>Banners & Web ({bannerProjects.length})</span>
-          </button>
+          {wideProjects.length > 0 && (
+            <button
+              onClick={() => setSelectedFormat('16:9')}
+              className={`px-4 py-2 rounded-full text-xs font-mono uppercase tracking-wider transition-all duration-300 focus:outline-none flex items-center gap-1.5 ${
+                selectedFormat === '16:9'
+                  ? 'bg-electric text-white font-bold shadow-electric-button scale-105'
+                  : 'bg-cinema-card text-text-secondary hover:text-white hover:bg-cinema-cardHover border border-cinema-border'
+              }`}
+            >
+              <Layout className="w-3.5 h-3.5" />
+              <span>Widescreen ({wideProjects.length})</span>
+            </button>
+          )}
         </div>
       </div>
 
       <div className="space-y-16">
-        {/* GROUP 1: SQUARE CREATIVES & BRAND DESIGNS (1:1) */}
+        {/* GROUP 1: SQUARE CREATIVES (1:1) */}
         {showSquare && squareProjects.length > 0 && (
           <div className="space-y-6">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 border-b border-cinema-border/60">
@@ -112,10 +114,10 @@ export const GraphicDesignSection: React.FC<GraphicDesignSectionProps> = ({ onSe
                 </div>
                 <div>
                   <h3 className="font-display font-bold text-lg sm:text-xl text-white tracking-tight">
-                    SQUARE CREATIVES & BRAND DESIGNS
+                    SQUARE CREATIVES
                   </h3>
                   <p className="text-xs font-mono text-text-muted">
-                    1:1 Ratio • Social Media Ads, Product Creatives & Packaging Mockups
+                    1:1 Ratio • Social Creatives & Brand Designs
                   </p>
                 </div>
               </div>
@@ -151,7 +153,7 @@ export const GraphicDesignSection: React.FC<GraphicDesignSectionProps> = ({ onSe
           </div>
         )}
 
-        {/* GROUP 2: VERTICAL KEY ART & POSTERS (9:16) */}
+        {/* GROUP 2: VERTICAL POSTERS & KEY ART (9:16) */}
         {showVertical && verticalProjects.length > 0 && (
           <div className="space-y-6 pt-4">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 border-b border-cinema-border/60">
@@ -161,10 +163,10 @@ export const GraphicDesignSection: React.FC<GraphicDesignSectionProps> = ({ onSe
                 </div>
                 <div>
                   <h3 className="font-display font-bold text-lg sm:text-xl text-white tracking-tight">
-                    VERTICAL KEY ART & POSTERS
+                    POSTERS & KEY ART
                   </h3>
                   <p className="text-xs font-mono text-text-muted">
-                    9:16 Portrait • Visual Storytelling Posters, Surreal Digital Art & Character Key Art
+                    Portrait Proportions • Creative Visual Posters & Art Compositions
                   </p>
                 </div>
               </div>
@@ -200,8 +202,8 @@ export const GraphicDesignSection: React.FC<GraphicDesignSectionProps> = ({ onSe
           </div>
         )}
 
-        {/* GROUP 3: WIDESCREEN MARKETING BANNERS & HEADERS */}
-        {showBanner && bannerProjects.length > 0 && (
+        {/* GROUP 3: WIDESCREEN ARTWORK (16:9) */}
+        {showWide && wideProjects.length > 0 && (
           <div className="space-y-6 pt-4">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 border-b border-cinema-border/60">
               <div className="flex items-center gap-2.5">
@@ -210,21 +212,21 @@ export const GraphicDesignSection: React.FC<GraphicDesignSectionProps> = ({ onSe
                 </div>
                 <div>
                   <h3 className="font-display font-bold text-lg sm:text-xl text-white tracking-tight">
-                    MARKETING BANNERS & HEADERS
+                    WIDESCREEN ARTWORK
                   </h3>
                   <p className="text-xs font-mono text-text-muted">
-                    16:9 & Widescreen • Channel Banners, Tech Header Creatives & Promotional Web Banners
+                    16:9 Landscape Artwork
                   </p>
                 </div>
               </div>
               <span className="self-start sm:self-auto px-2.5 py-1 rounded-full text-[11px] font-mono text-electric-bright bg-electric/10 border border-electric/20 font-medium">
-                {bannerProjects.length} Banners
+                {wideProjects.length} Artwork
               </span>
             </div>
 
-            {/* Banner Grid */}
+            {/* Wide Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-              {bannerProjects.map((project) => (
+              {wideProjects.map((project) => (
                 <article
                   key={project.id}
                   title={project.title}
