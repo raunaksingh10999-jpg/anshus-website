@@ -58,22 +58,6 @@ export const personalInfo: PersonalInfo = {
 
 /**
  * ============================================================================
- * 🎥 MY SHOWREEL
- * ============================================================================
- */
-export const featuredShowreel = {
-  sectionLabel: "SHOWREEL",
-  headline: "MY SHOWREEL",
-  title: "Cinematic Visual Reel & Narrative",
-  aspectRatio: "16:9",
-  posterUrl: "https://i.ytimg.com/vi/nkhllsnaQGM/hqdefault.jpg",
-  videoUrl: "https://www.youtube.com/watch?v=nkhllsnaQGM",
-  embedId: "nkhllsnaQGM",
-  description: "A showcase of high-impact visual cuts, rhythmic pacing, kinetic sound design, and color grading crafted to immerse viewers from the opening frame."
-};
-
-/**
- * ============================================================================
  * 🎬 VIDEO EDITING PORTFOLIO PROJECTS
  * Categories:
  * - Commercial Ads

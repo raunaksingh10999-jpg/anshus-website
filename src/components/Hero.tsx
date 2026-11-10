@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Play, Download, Send, Linkedin, Instagram, Phone, Mail, ChevronDown } from 'lucide-react';
+import { Play, Download, Send, Linkedin, Instagram, Phone, Mail } from 'lucide-react';
 import { personalInfo } from '../data/portfolio';
 
 export const Hero: React.FC = () => {
@@ -166,18 +166,6 @@ export const Hero: React.FC = () => {
           </a>
         </div>
       </div>
-
-      {/* Understated Scroll Down Indicator */}
-      <a
-        href="#showreel"
-        className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 text-text-muted hover:text-electric-bright transition-colors group focus:outline-none"
-        aria-label="Scroll to showreel section"
-      >
-        <span className="text-[10px] font-mono uppercase tracking-widest text-text-muted group-hover:text-electric-bright transition-colors">
-          SHOWREEL
-        </span>
-        <ChevronDown className="w-4 h-4 animate-bounce text-electric" />
-      </a>
     </section>
   );
 };
