@@ -30,7 +30,7 @@ export const VideoEditingSection: React.FC<VideoEditingSectionProps> = ({ onSele
   const showMotionGraphics = selectedSection === 'all' || selectedSection === 'Reels Motion Graphic';
 
   return (
-    <div className="relative py-20 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-24">
+    <div id="video-editing" className="relative pt-8 sm:pt-12 pb-20 sm:pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-16 sm:space-y-20 scroll-mt-24">
       {/* Background ambient lighting */}
       <div className="absolute top-1/3 left-0 w-96 h-96 bg-electric/5 rounded-full blur-[160px] pointer-events-none" />
       <div className="absolute bottom-1/3 right-0 w-96 h-96 bg-electric-bright/5 rounded-full blur-[160px] pointer-events-none" />
@@ -103,7 +103,7 @@ export const VideoEditingSection: React.FC<VideoEditingSectionProps> = ({ onSele
 
       {/* SECTION 1: VIDEO EDITING (16:9 Landscape) */}
       {showVideoEditing && videoEditingProjects.length > 0 && (
-        <section id="video-editing" className="space-y-6 scroll-mt-28">
+        <section className="space-y-6">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 border-b border-cinema-border/60">
             <div className="flex items-center gap-2.5">
               <div className="p-1.5 rounded-lg bg-electric/10 border border-electric/20 text-electric-bright">

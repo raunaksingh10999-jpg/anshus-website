@@ -21,7 +21,7 @@ export const Hero: React.FC = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-screen w-full flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8 pt-28 pb-16 overflow-hidden bg-cinema-bg"
+      className="relative w-full flex flex-col items-center px-4 sm:px-6 lg:px-8 pt-28 sm:pt-32 pb-8 sm:pb-10 overflow-hidden bg-cinema-bg"
     >
       {/* Cinematic ambient electric lighting */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[380px] bg-electric/10 rounded-full blur-[150px] pointer-events-none animate-pulse-glow" />
@@ -30,8 +30,8 @@ export const Hero: React.FC = () => {
       {/* Viewfinder corner crop marks */}
       <div className="absolute top-28 left-6 sm:left-12 w-5 h-5 border-t border-l border-white/10 pointer-events-none" />
       <div className="absolute top-28 right-6 sm:right-12 w-5 h-5 border-t border-r border-white/10 pointer-events-none" />
-      <div className="absolute bottom-16 left-6 sm:left-12 w-5 h-5 border-b border-l border-white/10 pointer-events-none" />
-      <div className="absolute bottom-16 right-6 sm:right-12 w-5 h-5 border-b border-r border-white/10 pointer-events-none" />
+      <div className="absolute bottom-4 left-6 sm:left-12 w-5 h-5 border-b border-l border-white/10 pointer-events-none" />
+      <div className="absolute bottom-4 right-6 sm:right-12 w-5 h-5 border-b border-r border-white/10 pointer-events-none" />
 
       {/* Main Hero Container */}
       <div className="relative z-10 max-w-4xl mx-auto text-center flex flex-col items-center">
