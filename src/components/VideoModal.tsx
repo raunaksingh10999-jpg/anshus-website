@@ -57,7 +57,7 @@ export const VideoModal: React.FC<VideoModalProps> = ({ project, onClose }) => {
 
       <div
         className={`relative z-10 w-full rounded-2xl bg-cinema-card border border-cinema-border shadow-2xl overflow-hidden flex flex-col max-h-[94vh] transition-all duration-300 ${
-          isVertical ? 'max-w-md' : isSquare ? 'max-w-2xl' : 'max-w-5xl'
+          isVertical ? 'max-w-sm sm:max-w-md' : isSquare ? 'max-w-2xl' : 'max-w-5xl'
         }`}
       >
         {/* Top bar with category, title and close button */}
@@ -85,9 +85,9 @@ export const VideoModal: React.FC<VideoModalProps> = ({ project, onClose }) => {
 
         {/* Modal Media Body */}
         <div
-          className={`relative w-full bg-black/90 flex items-center justify-center overflow-auto max-h-[72vh] p-2 sm:p-4 select-none ${
+          className={`relative w-full bg-black flex items-center justify-center overflow-hidden max-h-[72vh] select-none ${
             isVertical ? 'aspect-[9/16]' : isSquare ? 'aspect-square' : 'aspect-video'
-          }`}
+          } ${isGraphic ? 'p-2 sm:p-4' : 'p-0'}`}
         >
           {isGraphic ? (
             /* High-Resolution Uncropped Graphic Design Showcase */

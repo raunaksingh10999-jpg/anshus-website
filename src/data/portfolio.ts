@@ -168,7 +168,7 @@ export const videoProjects: Project[] = [
     featured: true,
     duration: "0:30",
     date: "2024",
-    aspectRatio: "16:9",
+    aspectRatio: "9:16",
     externalWatchUrl: "https://sites.google.com/view/kushwahaanshu"
   },
   {
@@ -185,7 +185,7 @@ export const videoProjects: Project[] = [
     featured: false,
     duration: "0:20",
     date: "2024",
-    aspectRatio: "16:9",
+    aspectRatio: "9:16",
     externalWatchUrl: "https://www.youtube.com/watch?v=Urfi2yMevbo"
   },
   {
@@ -202,7 +202,7 @@ export const videoProjects: Project[] = [
     featured: false,
     duration: "0:22",
     date: "2024",
-    aspectRatio: "16:9",
+    aspectRatio: "9:16",
     externalWatchUrl: "https://www.youtube.com/watch?v=1zGvq1A5AJ4"
   },
   {
@@ -236,7 +236,7 @@ export const videoProjects: Project[] = [
     featured: false,
     duration: "0:28",
     date: "2024",
-    aspectRatio: "16:9",
+    aspectRatio: "9:16",
     externalWatchUrl: "https://www.youtube.com/watch?v=kDtfX6sylxY"
   },
   {
@@ -253,7 +253,7 @@ export const videoProjects: Project[] = [
     featured: false,
     duration: "0:35",
     date: "2024",
-    aspectRatio: "16:9",
+    aspectRatio: "9:16",
     externalWatchUrl: "https://www.youtube.com/watch?v=x7zH5Dnya48"
   },
   {
@@ -270,7 +270,7 @@ export const videoProjects: Project[] = [
     featured: false,
     duration: "0:30",
     date: "2024",
-    aspectRatio: "16:9",
+    aspectRatio: "9:16",
     externalWatchUrl: "https://sites.google.com/view/kushwahaanshu"
   },
   {
